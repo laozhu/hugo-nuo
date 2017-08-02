@@ -1,0 +1,119 @@
+<header class="site-header">
+  <img class="avatar" src="{{ .Site.Params.avatar }}" alt="我的头像">
+  {{  if eq .Kind "home" }}
+  <h1 class="title">{{ .Site.Title }}</h1>
+  {{ else }}
+  <h2 class="title">{{ .Site.Title }}</h2>
+  {{ end }}
+  <p class="subtitle">{{ .Site.Params.subtitle }}</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">网站菜单</h2>
+    <ul class="menu-list">
+      {{ $type := .Type }}
+      {{ $kind := .Kind }}
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <li class="menu-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{ end }}{{ if and (eq .Identifier "home") (eq $type "post") }} is-active{{ end }}{{ if and (eq .Identifier "home") (and (eq $type "page") (eq $kind "taxonomy"))}} is-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">社交账号</h2>
+    <ul class="social-list">
+
+      {{ if isset .Site.Params "email" }}
+      <li class="social-item">
+        <a href="mailto:{{ .Site.Params.email }}" title="Email"><span class="icon icon-email"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "github" }}
+      <li class="social-item">
+        <a href="//github.com/{{ .Site.Params.github }}" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "twitter" }}<li class="social-item">
+        <a href="//twitter.com/{{ .Site.Params.twitter }}" title="Wwitter"><span class="icon icon-twitter"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "facebook" }}<li class="social-item">
+        <a href="//www.facebook.com/{{ .Site.Params.facebook }}" title="Facebook"><span class="icon icon-facebook"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "google" }}<li class="social-item">
+        <a href="//plus.google.com/{{ .Site.Params.google }}" title="Google+"><span class="icon icon-google"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "instagram" }}<li class="social-item">
+        <a href="//www.instagram.com/{{ .Site.Params.instagram }}" title="Instagram"><span class="icon icon-instagram"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "youtube" }}<li class="social-item">
+        <a href="//www.youtube.com/user/{{ .Site.Params.youtube }}" title="YouTube"><span class="icon icon-youtube"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "vimeo" }}<li class="social-item">
+        <a href="//vimeo.com/{{ .Site.Params.vimeo }}" title="Vimeo"><span class="icon icon-vimeo"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "medium" }}<li class="social-item">
+        <a href="//medium.com/@{{ .Site.Params.medium }}" title="Medium"><span class="icon icon-medium"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "quora" }}<li class="social-item">
+        <a href="//www.quora.com/profile/{{ .Site.Params.quora }}" title="Quora"><span class="icon icon-quora"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "dribbble" }}<li class="social-item">
+        <a href="//dribbble.com/{{ .Site.Params.dribbble }}" title="Dribbble"><span class="icon icon-dribbble"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "behance" }}<li class="social-item">
+        <a href="//www.behance.net/{{ .Site.Params.behance }}" title="Behance"><span class="icon icon-behance"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "pinterest" }}<li class="social-item">
+        <a href="//www.pinterest.com/{{ .Site.Params.pinterest }}" title="Pinterest"><span class="icon icon-pinterest"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "jsfiddle" }}<li class="social-item">
+        <a href="//jsfiddle.net/user/{{ .Site.Params.jsfiddle }}" title="JSFiddle"><span class="icon icon-jsfiddle"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "codepen" }}<li class="social-item">
+        <a href="//codepen.io/{{ .Site.Params.codepen }}" title="Codepen"><span class="icon icon-codepen"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "weibo" }}<li class="social-item">
+        <a href="//weibo.com/{{ .Site.Params.weibo }}" title="Weibo"><span class="icon icon-weibo"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "wechat" }}<li class="social-item">
+        <a href="{{ .Site.Params.wechat }}" title="Wechat"><span class="icon icon-wechat"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "linkedin" }}<li class="social-item">
+        <a href="//www.linkedin.com/in/{{ .Site.Params.linkedin }}" title="Linkedin"><span class="icon icon-linkedin"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "zhihu" }}<li class="social-item">
+        <a href="//www.zhihu.com/people/{{ .Site.Params.zhihu }}" title="Zhihu"><span class="icon icon-zhihu"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "douban" }}<li class="social-item">
+        <a href="//www.douban.com/people/{{ .Site.Params.douban }}" title="Douban"><span class="icon icon-douban"></span></a>
+      </li>{{ end }}
+
+      {{ if isset .Site.Params "bilibili" }}<li class="social-item">
+        <a href="//space.bilibili.com/{{ .Site.Params.bilibili }}" title="Bilibili"><span class="icon icon-bilibili"></span></a>
+      </li>{{ end }}
+
+      <li class="social-item">
+        <a href="/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>

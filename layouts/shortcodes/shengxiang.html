@@ -1,0 +1,60 @@
+{{/*
+
+    ## Sheng Xiang PPT
+
+    ### Params:
+
+    - `id`
+
+      required param
+      you can extract from shengxiang url
+      url format "https://ppt.baomitu.com/d/a8a49a00#/"
+
+    - Fiddle `style`
+
+      optional param
+      default value "light"
+      you can overwrite it with "dark"
+
+    ### Examples:
+
+    - Simple
+
+      {{% shengxiang "a8a49a00" %}}
+      {{% shengxiang "a8a49a00" "dark" %}}
+
+    - Named Params
+
+      {{% shengxiang id="a8a49a00" %}}
+      {{% shengxiang id="a8a49a00" style="dark" %}}
+
+*/}}
+
+{{/* DEFAULTS */}}
+{{ $style := "light" }}
+
+{{ if .IsNamedParams }}
+
+  <iframe
+    class="shengxiang"
+    width="576"
+    height="420"
+    scrolling="no"
+    frameborder="0"
+    allowfullscreen
+    src="https://ppt.baomitu.com/embed/{{ .Get "id" }}?style={{ or (.Get "style") $style }}">
+  </iframe>
+
+{{ else }}
+
+  <iframe
+    class="shengxiang"
+    width="576"
+    height="420"
+    scrolling="no"
+    frameborder="0"
+    allowfullscreen
+    src="https://ppt.baomitu.com/embed/{{ .Get 0 }}?style={{ if isset .Params 1 }}{{ .Get 1 }}{{ else }}{{ $style }}{{ end }}">
+  </iframe>
+
+{{ end }}

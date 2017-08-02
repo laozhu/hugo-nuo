@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+
+  <meta charset="utf-8" />
+
+  <!-- Page Title -->
+  <title>
+    {{- block "title" . -}}
+      {{ if eq .Kind "page" }}{{ .Title }}{{ else if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+    {{- end -}}
+  </title>
+
+  <!-- Shared Head -->
+  {{ partial "head.html" . }}
+
+  <!-- Polyfill for old browsers -->
+  {{ partial "polyfill.html" . }}
+
+</head>
+  <body>
+    {{ if ne .Kind "404" }}
+    <div class="suspension">
+      <a title="回到顶部" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      {{ if and (eq .Type "post") (eq .Kind "page") }}
+        {{ if .Site.Params.changyan }}
+        <a title="文章讨论区" class="to-comment" href="#SOHUCS"><span class="icon icon-comment"></span></a>
+        {{ else if .Site.DisqusShortname }}
+        <a title="文章讨论区" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        {{ else }}{{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>

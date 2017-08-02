@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "es6": true,
+    "browser": true,
+  },
+  "plugins": [ "import" ],
+  "rules": {
+    "no-alert": 0,
+    "no-console": 0
+  }
+}

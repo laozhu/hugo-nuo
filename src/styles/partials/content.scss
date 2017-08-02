@@ -1,0 +1,321 @@
+.post-content {
+  position: relative;
+  color: $text;
+  line-height: 1.8;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+
+  a {
+    padding-bottom: 0.1em;
+    border-bottom: 1px dashed $green-light;
+    color: $primary;
+    opacity: 1;
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid $green-light;
+    }
+  }
+
+  em {
+    color: $text-light;
+    font-style: italic;
+  }
+
+  strong {
+    color: $text-strong;
+  }
+
+  del {
+    color: $text-light;
+    text-decoration: line-through;
+  }
+
+  ins {
+    color: $text-strong;
+    text-decoration: underline;
+  }
+
+  hr {
+    position: relative;
+    margin: 2rem auto;
+    border-top: 1px dashed $grey-lighter;
+    border-bottom: none;
+
+    &::before {
+      content: "sep line";
+      position: absolute;
+      top: -12px;
+      left: calc(50% - 40px);
+      padding: 0 0.5rem;
+      background-color: $white;
+      color: $grey-lighter;
+      font-size: $size-7;
+      font-family: $family-monospace;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $text-strong;
+    font-weight: $weight-semibold;
+    line-height: 1.125;
+    text-align: left;
+  }
+
+  h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: $size-2;
+  }
+
+  h2 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-size: $size-3;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: $size-4;
+  }
+
+  h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+    font-size: $size-5;
+  }
+
+  h5 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: $size-6;
+  }
+
+  h6 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: $size-7;
+  }
+
+  p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+
+  blockquote {
+    background-color: $background;
+    border-left: 5px solid $border;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
+
+    p {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    cite {
+      margin-top: 1.5rem;
+      color: $text-light;
+      font-size: 0.9rem;
+    }
+  }
+
+  tt,
+  code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 0.9em;
+    background-color: $pre-background;
+    font-family: $family-monospace;
+
+    &::before,
+    &::after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 0.25em;
+    background-color: $white-bis;
+    border: 1px solid $grey-lighter;
+    border-bottom-color: $grey-light;
+    border-radius: $radius;
+    box-shadow: inset 0 -1px 0 $grey-light;
+    font-size: 0.8em;
+    line-height: 1.25;
+    font-family: $family-monospace;
+    color: $text;
+  }
+
+  pre {
+    margin: 2rem auto;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: $radius;
+    font-size: 0.9rem;
+    line-height: 1.618;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    background: $pre-background;
+    color: $text;
+
+    code {
+      font-size: 0.9rem;
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  sup,
+  sub {
+    font-size: $size-7;
+
+    a {
+      border-bottom: none;
+
+      &:focus,
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
+
+  ol {
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    list-style: decimal outside;
+
+    ol {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      list-style: lower-roman outside;
+    }
+
+    ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      list-style: disc outside;
+    }
+  }
+
+  ul {
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    list-style: disc outside;
+
+    ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      list-style: circle outside;
+    }
+
+    ol {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      list-style: decimal outside;
+    }
+  }
+
+  .task-list {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+    padding-left: 0;
+
+    .task-list {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+
+  dl {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    dt {
+      color: $primary;
+      margin-top: 1rem;
+
+      &::after {
+        content: ':';
+      }
+    }
+
+    dd {
+      text-indent: 2rem;
+      margin-left: 0;
+      margin-top: 0.25rem;
+    }
+  }
+
+  figure {
+    margin: 2rem auto;
+
+    img {
+      max-width: 100%;
+      box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+
+      @media screen and (max-width: $tablet) {
+        max-width: 100vw;
+        margin: 2rem -1rem;
+        box-shadow: none;
+      }
+    }
+
+    figcaption {
+      h4 {
+        margin: 0 auto;
+        color: $grey-light;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+
+    @media screen and (max-width: $tablet) {
+      max-width: 100vw;
+      margin: 2rem -1rem;
+      box-shadow: none;
+    }
+  }
+
+  .MathJax_Display {
+    margin: 2rem auto;
+  }
+
+  .MathJax_Display,
+  .MathJax {
+    &:focus {
+      outline: none;
+    }
+  }
+}

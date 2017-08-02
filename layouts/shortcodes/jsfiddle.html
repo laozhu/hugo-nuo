@@ -1,0 +1,67 @@
+{{/*
+
+    ## jsFiddle Code Demo
+
+    ### Params:
+
+    - `fiddle`
+
+      required param
+      you can extract from fiddle url
+      url format "https://jsfiddle.net/laozhu/L479wueo/3/"
+
+    - Fiddle `tabs`
+
+      optional param
+      default value "js,html,css,result"
+      you can overwrite it with subset of "js,html,css,result"
+
+    - Fiddle `style`
+
+      optional param
+      default value "light"
+      you can overwrite it with "dark"
+
+    ### Examples:
+
+    - Simple
+
+      {{% jsfiddle "laozhu/L479wueo" %}}
+      {{% jsfiddle "laozhu/L479wueo" "html,css,result" %}}
+      {{% jsfiddle "laozhu/L479wueo" "html,css,result" "light" %}}
+
+    - Named Params
+
+      {{% jsfiddle fiddle="laozhu/L479wueo/3" %}}
+      {{% jsfiddle fiddle="laozhu/L479wueo/3" tabs="html,css,result" %}}
+      {{% jsfiddle fiddle="laozhu/L479wueo/3" tabs="html,css,result" style="light" %}}
+
+*/}}
+
+{{/* DEFAULTS */}}
+{{ $tabs := "js,html,css,result" }}
+{{ $style := "light" }}
+
+{{ if .IsNamedParams }}
+
+  <iframe
+    class="jsfiddle"
+    width="100%"
+    height="300"
+    frameborder="0"
+    allowfullscreen
+    src="//jsfiddle.net/{{ .Get "fiddle" }}/embedded/{{ or (.Get "tabs") $tabs }}/{{ or (.Get "style") $style }}/">
+  </iframe>
+
+{{ else }}
+
+  <iframe
+    class="jsfiddle"
+    width="100%"
+    height="300"
+    frameborder="0"
+    allowfullscreen
+    src="//jsfiddle.net/{{ .Get 0 }}/embedded/{{ if isset .Params 1 }}{{ .Get 1 }}{{ else }}{{ $tabs }}{{ end }}/{{ if isset .Params 2 }}{{ .Get 2 }}{{ else }}{{ $style }}{{ end }}/">
+  </iframe>
+
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "title" }}
+  友链 | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <section class="main links-list">
+    <header class="list-header offscreen">
+      <h2 class="list-label">友情链接</h2>
+    </header>
+    {{ range $.Site.Data.links }}
+      <a class="link-item" href="{{ .link }}">
+        <img class="link-avatar" src="{{ .avatar }}" alt="{{ .title }}">
+        <h3 class="link-title">{{ .title }}</h3>
+        <p class="link-description">{{ .description }}</p>
+      </a>
+    {{ end }}
+  </section>
+  {{ partial "footer.html" . }}
+{{ end }}

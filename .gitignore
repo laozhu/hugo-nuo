@@ -1,0 +1,8 @@
+.sass-cache
+.DS_Store
+.eslintcache
+static
+npm-debug.log
+yarn-error.log
+node_modules
+!.gitignore

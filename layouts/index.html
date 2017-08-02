@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <section class="main post-list">
+    <header class="list-header offscreen">
+      <h2 class="list-label">全部文章</h2>
+    </header>
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate") }}
+    {{ if ne $paginator.TotalPages 0 }}
+      {{ range $paginator.Pages.ByDate.Reverse }}
+        {{ .Render "summary" }}
+      {{ end }}
+    {{ else }}
+      <p>这里空空如也，什么也没有<br>快去创建一些有趣的页面吧~</p>
+      <p><code>$ hugo new post/hello-world.md</code></p>
+    {{ end }}
+    {{ if gt $paginator.TotalPages 1 }}
+      <footer class="list-footer">
+        <nav class="pagination">
+          <h3 class="offscreen">分页导航</h3>
+          {{ if $paginator.HasPrev }}
+            <a class="pagination-previous" href="{{ $paginator.Prev.URL }}">← 更新的文章</a>
+          {{ end }}
+          {{ if $paginator.HasNext }}
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">更旧的文章 →</a>
+          {{ end }}
+        </nav>
+      </footer>
+    {{ end }}
+  </section>
+  {{ partial "footer.html" . }}
+{{ end }}

@@ -1,0 +1,87 @@
+{{/*
+
+    ## Code Pen Demo
+
+    ### Params:
+
+    - `pen`
+
+      required param
+      you can extract from pen url
+      url format "https://codepen.io/laozhu/pen/RoaWdE"
+
+    - Pen `user`
+
+      required param
+      you can extract from pen url
+      url format "https://codepen.io/laozhu/pen/RoaWdE"
+
+    - Pen user `fullname`
+
+      required param
+      you can get from pen page
+      pen page url "https://codepen.io/laozhu/pen/RoaWdE"
+
+    - Pen `height`
+
+      required param
+      set height for pen result
+
+    - Pen `style`
+
+      optional param
+      default value "light"
+      you can overwrite it with "dark"
+
+    - Pen `tabs`
+
+      optional param
+      default value "result"
+      you can choose two from "js,html,css,result", for example "js,result"
+
+    - Preview prefs
+
+      optional param
+      default value "true"
+      you can set "false"
+
+    ### Examples:
+
+    - Simple
+
+      {{% codepen "RoaWdE" "🐍 Snake Rush" "laozhu" "Ritchie Zhu" %}}
+      {{% codepen "RoaWdE" "🐍 Snake Rush" "laozhu" "Ritchie Zhu" "600" "dark" "css,result" "false" %}}
+
+    - Named Params
+
+      {{% codepen pen="RoaWdE" title="🐍 Snake Rush" user="laozhu" fullname="Ritchie Zhu" %}}
+      {{% codepen pen="RoaWdE" title="🐍 Snake Rush" user="laozhu" fullname="Ritchie Zhu" height="600" style="dark" tabs="css,result" preview="false" %}}
+
+*/}}
+
+{{/* DEFAULTS */}}
+{{ $height := "265" }}
+{{ $style := "light" }}
+{{ $tabs := "result" }}
+{{ $preview := "true" }}
+
+{{ if .IsNamedParams }}
+
+  <p data-height="{{ or (.Get "height") $height }}" data-theme-id="{{ or (.Get "style") $style }}" data-slug-hash="{{ .Get "pen" }}" data-default-tab="{{ or (.Get "tabs") $tabs }}" data-user="{{ .Get "user" }}" data-embed-version="2" data-pen-title="{{ .Get "title" }}" data-preview="{{ or (.Get "preview") $preview }}"
+  class="codepen">
+    See the Pen <a href="https://codepen.io/{{ .Get "user" }}/pen/{{ .Get "pen" }}/">{{ .Get "title" }}</a> by {{ .Get "fullname" }} (<a href="https://codepen.io/{{ .Get "user" }}">@{{ .Get "user" }}</a>) on <a href="https://codepen.io">CodePen</a>.
+  </p>
+  <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{{ else }}
+
+  <p data-height="{{ if isset .Params 4 }}{{ .Get 4 }}{{ else }}{{ $height }}{{ end }}" data-theme-id="{{ if isset .Params 5 }}{{ .Get 5 }}{{ else }}{{ $style }}{{ end }}" data-slug-hash="{{ .Get 0 }}" data-default-tab="{{ if isset .Params 6 }}{{ .Get 6 }}{{ else }}{{ $tabs }}{{ end }}" data-user="{{ .Get "user" }}" data-embed-version="2" data-pen-title="{{ .Get 1 }}" data-preview="{{ if isset .Params 7 }}{{ .Get 7 }}{{ else }}{{ $preview }}{{ end }}"
+  class="codepen">
+    See the Pen <a href="https://codepen.io/{{ .Get 2 }}/pen/{{ .Get 0 }}/">{{ .Get "title" }}</a> by {{ .Get 3 }} (<a href="https://codepen.io/{{ .Get 2 }}">@{{ .Get 2 }}</a>) on <a href="https://codepen.io">CodePen</a>.
+  </p>
+  <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{{ end }}
+
+
+

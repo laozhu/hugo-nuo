@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <p>© {{ if eq now.Year 2017 }}2017{{ else }}2017-{{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  {{ if and (isset .Site.Params "icp") (ne .Site.Params.ICP "") }}
+    <p><a href="http://www.miitbeian.gov.cn" title="查看备案信息" target="_blank">{{ .Site.Params.ICP }}</a></p>
+  {{ end }}
+</footer>
+
+<!-- Scripts -->
+{{ if ne .Kind "home" }}
+<script src="//cdn.bootcss.com/video.js/6.2.1/video.min.js"></script>
+<script src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{{ end }}
+<script src="/js/bundle.js"></script>
+{{ if .Site.GoogleAnalytics }}
+{{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+{{ if isset .Site.Params "baidutongji" }}
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?{{ .Site.Params.baiduTongji }}";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+{{ end }}

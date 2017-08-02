@@ -1,0 +1,65 @@
+{
+  "name": "hugo-nuo",
+  "version": "1.0.0",
+  "description": "An elegant hand-crafted hugo blog theme.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "sass": "sass --scss --style compressed --watch ./src/styles/main.scss:./static/css/bundle.css",
+    "fonts": "cpx './src/fonts/**/*.{svg,ttf,otf,woff,woff2,eot}' ./static/fonts --verbose",
+    "images": "cpx './src/images/**/*.{png,gif,jpg,ico,svg,webp}' ./static/img --verbose",
+    "eslint": "eslint --cache --fix index.js src/scripts",
+    "stylelint": "stylelint ./src/styles/**/*.scss",
+    "imagemin": "open -a ImageOptim ./src/images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laozhu/hugo-nuo.git"
+  },
+  "keywords": [
+    "blog",
+    "hugo",
+    "theme",
+    "sass",
+    "es6",
+    "rollup",
+    "hand-crafted",
+    "responsive",
+    "polyfill"
+  ],
+  "author": {
+    "name": "Ritchie Zhu",
+    "email": "laozhu.me@gmail.com",
+    "url": "https://laozhu.me"
+  },
+  "browserslist": [
+    "> 2%",
+    "last 2 versions",
+    "not IE < 10"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laozhu/hugo-nuo/issues"
+  },
+  "homepage": "https://github.com/laozhu/hugo-nuo#readme",
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "cpx": "^1.5.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.3.1",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,133 @@
+.avatar {
+  margin-top: 3rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 4px solid $media-border;
+  box-shadow: 0 1px 4px $box-shadow-darker;
+  transition: all $easing $speed;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  @media screen and (max-width: $tablet) {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0;
+    border: 2px solid $media-border;
+  }
+}
+
+.title {
+  font-size: $size-4;
+  font-family: $family-lobster;
+  font-weight: $weight-bold;
+  margin: 1rem auto;
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 3rem;
+  }
+}
+
+.subtitle {
+  margin-bottom: 3rem;
+  opacity: 0.7;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  outline: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: $size-4;
+  background-color: transparent;
+  transition: all $easing $speed;
+
+  @media screen and (max-width: $tablet) {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+  }
+}
+
+.site-menu {
+  letter-spacing: 0.25rem;
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-item {
+    padding: 1rem 0;
+
+    a {
+      display: inline-block;
+      height: 1.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  &.collapsed {
+    @media screen and (max-width: $tablet) {
+      max-height: 0;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    overflow-y: hidden;
+    max-height: 1000px;
+    transition: max-height $easing $speed;
+  }
+}
+
+.social-menu {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 0;
+
+  .social-list {
+    padding: 0;
+    list-style: none;
+    line-height: 2;
+  }
+
+  .social-item {
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  li + li {
+    padding-left: 1rem;
+  }
+
+  &.collapsed {
+    @media screen and (max-width: $tablet) {
+      margin: 0 auto;
+      max-height: 0;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 2rem auto;
+    max-height: 125px;
+    overflow-y: hidden;
+    transition: all $easing $speed;
+  }
+
+  @media screen and (min-width: $tablet) and (max-height: $min-height) {
+    display: none;
+  }
+}
