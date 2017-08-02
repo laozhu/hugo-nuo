@@ -1,0 +1,88 @@
+baseURL = "https://laozhu.me"
+languageCode = "zh-Hans"
+title = "Ritchie Pub."
+theme = "hugo-nuo"
+enableRobotsTXT = true
+pygmentsuseclasses = true
+PygmentsCodeFences = true
+canonifyurls = true
+
+# Disqus Username
+disqusShortname = "melaozhu"
+
+# Google Analytics UA number
+googleAnalytics = "UA-33369276-1"
+
+# Copyright of your post
+copyright = "© 本站所有文章均采用「知识共享署名-非商业性使用 4.0 国际许可协议」进行许可，如需转载请注明出处。"
+
+# Initial site menu, you can extend menu with content.
+[[menu.main]]
+  name = "🏠 首页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+
+[[menu.main]]
+  name = "💻 作品"
+  weight = 20
+  identifier = "works"
+  url = "https://github.com/laozhu"
+
+# Add your own params here
+[params]
+  author = "米老朱"
+  avatar = "/img/avatar.jpg"
+  seotitle = "米老朱的博客 Ritchie Pub."
+  subtitle = "~ 带着爱和梦想生活 ~"
+  description = "这里是 @米老朱 的个人博客，记录他在互联网新世界探索的点点滴滴。"
+  paginate = 10
+
+  # Choose your social accounts
+  email = "laozhu.me@gmail.com"
+  github = "laozhu"
+  twitter = "melaozhu"
+  linkedin = "melaozhu"
+  weibo = "shiaohoo"
+  wechat= "/img/qrcode.jpg"
+  # facebook = "melaozhu"
+  # google = "109063353665074282689"
+  # instagram = "melaozhu"
+  # youtube = "melaozhu"
+  # vimeo = "melaozhu"
+  # medium = "melaozhu"
+  # quora = "melaozhu"
+  # pinterest = "laozhu"
+  # dribbble = "laozhu"
+  # behance = "melaozhu"
+  # jsfiddle = "laozhu"
+  # codepen = "laozhu"
+  # zhihu = "melaozhu"
+  # douban = "melaozhu"
+  # bilibili = "13395348"
+
+  # Changyan Comments (China Only)
+  changyan = true
+  changyanId = "cyt3toRiB"
+  changyanConf = "prod_0908b1cb9a581501753cce1ed074dbe3"
+
+  # Google Webmaster
+  # https://www.google.com/webmasters/
+  googleSiteVerification = "_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc"
+  # Bing Webmaster
+  # https://www.bing.com/toolbox/webmaster/
+  msValidate = "22596E34341DD1D17D6022C44647E587"
+  # Baidu Webmaster (China Only)
+  # https://zhanzhang.baidu.com/
+  baiduSiteVerification = "MZ23SPxxfa"
+  # Sogou Webmaster (China Only)
+  # http://zhanzhang.sogou.com/
+  sogouSiteVerification = "m2jktMQTZm"
+  # 360 Webmaster (China Only)
+  # http://zhanzhang.so.com/
+  soSiteVerification = "b7ab3b4c2edbc856642004d1b8c27a91"
+  # Baidu Tongji (China Only)
+  # https://tongji.baidu.com/
+  baiduTongji = "e21dc1e8a592188271b615159dc88af7"
+  # ICP Number (China Only)
+  ICP = "苏ICP备16005986号-2"
