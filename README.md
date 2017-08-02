@@ -5,7 +5,7 @@ Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme featu
 
 ![Hugo Nuo Theme Screenshot](https://raw.githubusercontent.com/laozhu/hugo-nuo/master/images/screenshot.png)
 
-Or you want → [A real site demo](https://laozhu.me)
+Or you want → [A real site demo](https://laozhu.me) | [Hugo 主题 Nuo 文章样式预览](https://laozhu.me/post/hugo-nuo-post-preview/)
 
 ## Installation
 
@@ -94,7 +94,7 @@ The hugo-nuo theme support [Google](https://www.google.com/webmasters/), [Bing](
 ```toml
 [params]
   seotitle = "Hugo Blog Title (SEO Version)"
-  description = "这里是 @米老朱 的个人博客，记录他在互联网新世界探索的点点滴滴。"
+  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
 
   # Google Webmaster
   # https://www.google.com/webmasters/
@@ -137,7 +137,7 @@ The hugo-nuo theme support [Disqus](https://disqus.com/) and [Chang Yan](https:/
 
 ```toml
 # Disqus Username
-disqusShortname = "melaozhu"
+disqusShortname = "disqus_shortname"
 
 [params]
   # Changyan Comments (China Only)
@@ -221,10 +221,10 @@ Write your portfolio as a post here, if you want comments in about page, you sho
 
 ## Build
 
-Inside the folder of your Hugo site run:
+If you want to modify styles and scripts by yourself, you should install dev packages by `npm install`, I use [sass](http://sass-lang.com/) for styles development, [rollup](https://github.com/rollup/rollup) for scripts development, inside the folder of your Hugo site run:
 
 ```bash
-# Install dependencese
+# Install dependences
 $ cd themes/hugo-nuo
 $ npm install
 # Scripts dev
