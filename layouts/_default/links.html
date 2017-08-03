@@ -6,7 +6,7 @@
   {{ partial "header.html" . }}
   <section class="main links-list">
     <header class="list-header offscreen">
-      <h2 class="list-label">Links</h2>
+      <h2 class="list-label">{{ .Title }}</h2>
     </header>
     {{ range $.Site.Data.links }}
       <a class="link-item" href="{{ .link }}">

@@ -6,7 +6,7 @@
   {{ partial "header.html" . }}
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">About</h1>
+      <h1 class="post-title">{{ .Title }}</h1>
     </header>
     <article class="post-content">{{ .Content }}</article>
     {{ if ne .Params.comment false }}
