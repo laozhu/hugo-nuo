@@ -1,12 +1,12 @@
 {{ define "title" }}
-  友链 | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+  Links | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
 {{ end }}
 
 {{ define "main" }}
   {{ partial "header.html" . }}
   <section class="main links-list">
     <header class="list-header offscreen">
-      <h2 class="list-label">友情链接</h2>
+      <h2 class="list-label">Links</h2>
     </header>
     {{ range $.Site.Data.links }}
       <a class="link-item" href="{{ .link }}">

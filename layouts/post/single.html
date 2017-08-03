@@ -15,7 +15,7 @@
       </ul>
       {{ end }}
       <p class="post-copyright">
-        {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}该篇文章最后更新于 <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> 天前，文中所描述的信息可能已经发生了变化，请读者谨慎参考或使用。{{ end }}
+        {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}This post was published <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.{{ end }}
       </p>
     </footer>
     {{ if ne .Params.comments false }}

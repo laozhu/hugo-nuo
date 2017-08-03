@@ -1,12 +1,12 @@
 {{ define "title" }}
-  关于 | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+  About | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
 {{ end }}
 
 {{ define "main" }}
   {{ partial "header.html" . }}
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">关于</h1>
+      <h1 class="post-title">About</h1>
     </header>
     <article class="post-content">{{ .Content }}</article>
     {{ if ne .Params.comment false }}

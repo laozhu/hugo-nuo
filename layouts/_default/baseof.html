@@ -21,12 +21,12 @@
   <body>
     {{ if ne .Kind "404" }}
     <div class="suspension">
-      <a title="回到顶部" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
       {{ if and (eq .Type "post") (eq .Kind "page") }}
         {{ if .Site.Params.changyan }}
-        <a title="文章讨论区" class="to-comment" href="#SOHUCS"><span class="icon icon-comment"></span></a>
+        <a title="Go to comments" class="to-comment" href="#SOHUCS"><span class="icon icon-comment"></span></a>
         {{ else if .Site.DisqusShortname }}
-        <a title="文章讨论区" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
         {{ else }}{{ end }}
       {{ end }}
     </div>

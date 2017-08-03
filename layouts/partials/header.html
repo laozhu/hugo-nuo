@@ -1,5 +1,5 @@
 <header class="site-header">
-  <img class="avatar" src="{{ .Site.Params.avatar }}" alt="我的头像">
+  <img class="avatar" src="{{ .Site.Params.avatar }}" alt="Avatar">
   {{  if eq .Kind "home" }}
   <h1 class="title">{{ .Site.Title }}</h1>
   {{ else }}
@@ -10,7 +10,7 @@
     <span class="icon icon-menu"></span>
   </button>
   <nav class="site-menu collapsed">
-    <h2 class="offscreen">网站菜单</h2>
+    <h2 class="offscreen">Main Menu</h2>
     <ul class="menu-list">
       {{ $type := .Type }}
       {{ $kind := .Kind }}
@@ -21,7 +21,7 @@
     </ul>
   </nav>
   <nav class="social-menu collapsed">
-    <h2 class="offscreen">社交账号</h2>
+    <h2 class="offscreen">Socail Networks</h2>
     <ul class="social-list">
 
       {{ if isset .Site.Params "email" }}

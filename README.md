@@ -1,7 +1,7 @@
 Hugo Nuo
 ========
 
-Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), [网易云音乐](https://music.163.com/) and [声享](https://ppt.baomitu.com/).
+Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), [Music 163 (网易云音乐)](https://music.163.com/) and [Sheng Xiang (声享)](https://ppt.baomitu.com/).
 
 ![Hugo Nuo Theme Screenshot](https://raw.githubusercontent.com/laozhu/hugo-nuo/master/images/screenshot.png)
 
@@ -26,19 +26,19 @@ After installing the hugo-nuo theme successfully it requires just a few more ste
 
 Take a look inside the [exampleSite](https://github.com/laozhu/hugo-nuo/tree/master/exampleSite) folder of this theme. You'll find a file called [config.toml](https://github.com/laozhu/hugo-nuo/blob/master/exampleSite/config.toml). To use it, copy the config.toml in the root folder of your Hugo site. Feel free to customize this theme as you like.
 
-**Site Menu**
+**Main Menu**
 
 The hugo-nuo theme add `home` and `works` page to initial site menu, you can add your own menu item here.
 
 ```toml
 [[menu.main]]
-  name = "🏠 首页"
+  name = "🏠 Home"
   weight = 10
   identifier = "home"
   url = "/"
 
 [[menu.main]]
-  name = "💻 作品"
+  name = "💻 Works"
   weight = 20
   identifier = "works"
   url = "https://github.com/laozhu"
@@ -48,7 +48,7 @@ Or you can add some other page to menu in page's front matter:
 
 ```markdown
 ---
-title: "🔗 友链"
+title: "🔗 Links"
 date: 2017-08-02
 layout: "links"
 menu: "main"
@@ -167,7 +167,7 @@ Change the content of `links.md`, set page layout to `links`, If you want to add
 
 ```markdown
 ---
-title: "🔗 友链"
+title: "🔗 Links"
 date: 2017-08-02
 layout: "links"
 menu: "main"
@@ -182,13 +182,13 @@ The links page read data from `data/link.yml` file, now you can add friend's lin
   title: chekun's blog
   link: https://chekun.me
   avatar: /media/links/chekun.jpg
-  description: 车老板的博客
+  description: A full-stack PHP developer
 
 02_link:
-  title: 十里波澜
+  title: Boof Wang
   link: http://boof.wang
   avatar: /media/links/wangbo.jpg
-  description: 王老板的博客
+  description: Another full-stack PHP developer
 ```
 
 The links page need friend's avatar, finally you should add friend's avatar to `content/media/links` directory and link to avatar in the `links.yml` file.
@@ -206,7 +206,7 @@ Change the content of `about.md`, set page layout to `about`, If you want to add
 
 ```markdown
 ---
-title: "🤓 关于"
+title: "🤓 About"
 date: 2017-08-02
 layout: "about"
 menu: "main"

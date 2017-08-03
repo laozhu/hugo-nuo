@@ -1,6 +1,6 @@
-baseURL = "https://laozhu.me"
-languageCode = "zh-Hans"
-title = "Ritchie Pub."
+baseURL = "http://localhost:1313"
+languageCode = "en"
+title = "Hugo Blog"
 theme = "hugo-nuo"
 enableRobotsTXT = true
 pygmentsuseclasses = true
@@ -8,81 +8,89 @@ PygmentsCodeFences = true
 canonifyurls = true
 
 # Disqus Username
-disqusShortname = "melaozhu"
+disqusShortname = "disqus_shortname"
 
 # Google Analytics UA number
-googleAnalytics = "UA-33369276-1"
+googleAnalytics = "UA-XXXXXXXX-X"
 
 # Copyright of your post
-copyright = "© 本站所有文章均采用「知识共享署名-非商业性使用 4.0 国际许可协议」进行许可，如需转载请注明出处。"
+copyright = "© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce."
 
 # Initial site menu, you can extend menu with content.
 [[menu.main]]
-  name = "🏠 首页"
+  name = "Home"
   weight = 10
   identifier = "home"
   url = "/"
 
 [[menu.main]]
-  name = "💻 作品"
+  name = "Works"
   weight = 20
   identifier = "works"
   url = "https://github.com/laozhu"
 
 # Add your own params here
 [params]
-  author = "米老朱"
+  author = "Ritchie Zhu"
   avatar = "/img/avatar.jpg"
-  seotitle = "米老朱的博客 Ritchie Pub."
-  subtitle = "~ 带着爱和梦想生活 ~"
-  description = "这里是 @米老朱 的个人博客，记录他在互联网新世界探索的点点滴滴。"
+  seotitle = "Hugo Blog (SEO Version)"
+  subtitle = "~ Keep It Simple & Stupid ~"
+  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
   paginate = 10
 
-  # Choose your social accounts
-  email = "laozhu.me@gmail.com"
-  github = "laozhu"
-  twitter = "melaozhu"
-  linkedin = "melaozhu"
-  weibo = "shiaohoo"
-  wechat= "/img/qrcode.jpg"
-  # facebook = "melaozhu"
-  # google = "109063353665074282689"
-  # instagram = "melaozhu"
-  # youtube = "melaozhu"
-  # vimeo = "melaozhu"
-  # medium = "melaozhu"
-  # quora = "melaozhu"
-  # pinterest = "laozhu"
-  # dribbble = "laozhu"
-  # behance = "melaozhu"
-  # jsfiddle = "laozhu"
-  # codepen = "laozhu"
-  # zhihu = "melaozhu"
-  # douban = "melaozhu"
-  # bilibili = "13395348"
+  # Choose your social networks
+  email = "name@domain.com"
+  github = "github_username"
+  twitter = "twitter_username"
+  linkedin = "linkedin_username"
+  weibo = "weibo_username"
+  wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
+  # facebook = "facebook_username"
+  # google = "googlplus_id_number"
+  # instagram = "instagram_username"
+  # youtube = "youtube_username"
+  # vimeo = "vimeo_username"
+  # medium = "medium_username"
+  # quora = "quora_username"
+  # pinterest = "pinterest_username"
+  # dribbble = "dribbble_username"
+  # behance = "behance_username"
+  # jsfiddle = "jsfiddle_username"
+  # codepen = "codepen_username"
+  # zhihu = "zhihu_username"
+  # douban = "douban_username"
+  # bilibili = "bilibili_id_number"
 
   # Changyan Comments (China Only)
-  changyan = true
+  changyan = false
   changyanId = "cyt3toRiB"
   changyanConf = "prod_0908b1cb9a581501753cce1ed074dbe3"
 
   # Google Webmaster
   # https://www.google.com/webmasters/
   googleSiteVerification = "_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc"
+
   # Bing Webmaster
   # https://www.bing.com/toolbox/webmaster/
   msValidate = "22596E34341DD1D17D6022C44647E587"
+
   # Baidu Webmaster (China Only)
   # https://zhanzhang.baidu.com/
-  baiduSiteVerification = "MZ23SPxxfa"
+  # baiduSiteVerification = "MZ23SPxxfa"
+
   # Sogou Webmaster (China Only)
   # http://zhanzhang.sogou.com/
-  sogouSiteVerification = "m2jktMQTZm"
+  # sogouSiteVerification = "m2jktMQTZm"
+
   # 360 Webmaster (China Only)
   # http://zhanzhang.so.com/
-  soSiteVerification = "b7ab3b4c2edbc856642004d1b8c27a91"
+  # soSiteVerification = "b7ab3b4c2edbc856642004d1b8c27a91"
+
   # Baidu Tongji (China Only)
   # https://tongji.baidu.com/
-  baiduTongji = "e21dc1e8a592188271b615159dc88af7"
+  # baiduTongji = "e21dc1e8a592188271b615159dc88af7"
+
   # ICP Number (China Only)
-  ICP = "苏ICP备16005986号-2"
+  # ICP = "苏ICP备16005986号-2"
+
+

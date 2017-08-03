@@ -1,7 +1,7 @@
 {{ define "title" }}
-  {{ if eq .Data.Singular "tag" }}标签「{{ .Data.Term }}」下的文章
-  {{ else if eq .Data.Singular "category" }}分类「{{ .Data.Term }}」下的文章
-  {{ else }}文章{{ end }}
+  {{ if eq .Data.Singular "tag" }}Tag → {{ .Data.Term }}
+  {{ else if eq .Data.Singular "category" }}Category → {{ .Data.Term }}
+  {{ else }}Posts{{ end }}
   {{ if isset .Site.Params "seotitle" }} | {{ .Site.Params.seotitle }}{{ else }} | {{ .Site.Title }}{{ end }}
 {{ end }}
 
@@ -9,7 +9,7 @@
   {{ partial "header.html" . }}
   <section class="main post-list">
     <header class="list-header offscreen">
-      <h2 class="list-label">全部文章</h2>
+      <h2 class="list-label">Posts List</h2>
     </header>
     {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate") }}
     {{ if ne $paginator.TotalPages 0 }}
@@ -17,18 +17,18 @@
         {{ .Render "summary" }}
       {{ end }}
     {{ else }}
-      <p>这里空空如也，什么也没有<br>快去创建一些有趣的页面吧~</p>
+      <p>There's nothing here.<br>Create interesting post with the command:</p>
       <p><code>$ hugo new post/hello-world.md</code></p>
     {{ end }}
     {{ if gt $paginator.TotalPages 1 }}
       <footer class="list-footer">
         <nav class="pagination">
-          <h3 class="offscreen">分页导航</h3>
+          <h3 class="offscreen">Pagination</h3>
           {{ if $paginator.HasPrev }}
-            <a class="pagination-previous" href="{{ $paginator.Prev.URL }}">← 更新的文章</a>
+            <a class="pagination-previous" href="{{ $paginator.Prev.URL }}">← Older Posts</a>
           {{ end }}
           {{ if $paginator.HasNext }}
-            <a class="pagination-next" href="{{ $paginator.Next.URL }}">更旧的文章 →</a>
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">Newer Posts →</a>
           {{ end }}
         </nav>
       </footer>
