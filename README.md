@@ -1,11 +1,11 @@
 Hugo Nuo
 ========
 
-Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), [Music 163 (网易云音乐)](https://music.163.com/) and [Sheng Xiang (声享)](https://ppt.baomitu.com/).
+Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), [Music 163](https://music.163.com/) and [Sheng Xiang](https://ppt.baomitu.com/).
 
 ![Hugo Nuo Theme Screenshot](https://raw.githubusercontent.com/laozhu/hugo-nuo/master/images/screenshot.png)
 
-Or you want → [A real site demo](https://laozhu.me) | [Hugo 主题 Nuo 文章样式预览](https://laozhu.me/post/hugo-nuo-post-preview/)
+Or you want → [A Real Site Demo](https://laozhu.me) | [Hugo Nuo Theme Post Preview](https://laozhu.me/post/hugo-nuo-post-preview/)
 
 ## Installation
 
@@ -32,7 +32,7 @@ The hugo-nuo theme add `home` and `works` page to initial site menu, you can add
 
 ```toml
 [[menu.main]]
-  name = "🏠 Home"
+  name = "Home"
   weight = 10
   identifier = "home"
   url = "/"
@@ -48,7 +48,7 @@ Or you can add some other page to menu in page's front matter:
 
 ```markdown
 ---
-title: "🔗 Links"
+title: "Links"
 date: 2017-08-02
 layout: "links"
 menu: "main"
@@ -167,7 +167,7 @@ Change the content of `links.md`, set page layout to `links`, If you want to add
 
 ```markdown
 ---
-title: "🔗 Links"
+title: "Links"
 date: 2017-08-02
 layout: "links"
 menu: "main"
@@ -206,7 +206,7 @@ Change the content of `about.md`, set page layout to `about`, If you want to add
 
 ```markdown
 ---
-title: "🤓 About"
+title: "About"
 date: 2017-08-02
 layout: "about"
 menu: "main"
