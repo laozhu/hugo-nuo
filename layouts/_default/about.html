@@ -1,5 +1,5 @@
 {{ define "title" }}
-  About | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+  {{ .Title }} | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
 {{ end }}
 
 {{ define "main" }}
