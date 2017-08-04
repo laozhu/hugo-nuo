@@ -33,11 +33,18 @@
 }
 
 /* video.js shortcode */
-.my-player-dimensions {
+.video-js {
   margin: 2rem auto;
   width: 100%;
   height: 0;
   padding-top: 56.25%;
+
+  &.my-player-dimensions {
+    margin: 2rem auto;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+  }
 
   &:focus {
     outline: none;
