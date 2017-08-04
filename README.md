@@ -38,7 +38,7 @@ The hugo-nuo theme add `home` and `works` page to initial site menu, you can add
   url = "/"
 
 [[menu.main]]
-  name = "💻 Works"
+  name = "Works"
   weight = 20
   identifier = "works"
   url = "https://github.com/laozhu"
@@ -227,19 +227,26 @@ If you want to modify styles and scripts by yourself, you should install dev pac
 # Install dependences
 $ cd themes/hugo-nuo
 $ npm install
+
 # Scripts dev
 $ npm run dev
 $ npm run build
+
 # Styles dev
 $ npm run sass
+
 # Copy fonts to static
 $ npm run fonts
+
 # Copy images to static
 $ npm run images
+
 # Scripts lint
 $ npm run eslint
+
 # Styles lint
 $ npm run stylelint
+
 # Minify images
 $ npm run imagemin
 ```
