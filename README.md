@@ -7,6 +7,8 @@ Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme featu
 
 Or you want → [A Real Site Demo](https://laozhu.me) | [Hugo Nuo Theme Post Preview](https://laozhu.me/post/hugo-nuo-post-preview/)
 
+[中文帮助](https://laozhu.me/post/hugo-nuo-theme/)
+
 ## Installation
 
 Inside the folder of your Hugo site run:
