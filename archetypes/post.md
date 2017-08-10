@@ -7,7 +7,7 @@ date: {{ .Date }}
 draft: true
 ---
 
-Cut out summery from your post content here.
+Cut out summary from your post content here.
 
 <!--more-->
 
