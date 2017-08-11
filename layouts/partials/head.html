@@ -17,7 +17,7 @@
     <meta name="twitter:site" content="@melaozhu" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ .Summary | plainify }}" />
-    <meta name="twitter:image" content="/img/avatar.jpg" />
+    <meta name="twitter:image" content={{ "/img/avatar.jpg" | absURL }} />
   {{ end }}
 
 {{ else }}
@@ -31,7 +31,7 @@
   <meta name="twitter:site" content="@melaozhu" />
   <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
   <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-  <meta name="twitter:image" content="/img/avatar.jpg" />
+  <meta name="twitter:image" content={{ "/img/avatar.jpg" | absURL }} />
 
 {{ end }}
 
