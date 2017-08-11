@@ -1,3 +1,4 @@
+{{ $melaozhu := "melaozhu" }}
 <!-- Site & Page Meta Data -->
 {{ if eq .Type "post" }}
 
@@ -8,13 +9,13 @@
   <!-- Twitter Card -->
   {{ if isset .Params "cover" }}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@melaozhu" />
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $melaozhu }}" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ .Summary | plainify }}" />
     <meta name="twitter:image" content="{{ .Params.cover }}" />
   {{ else }}
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@melaozhu" />
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $melaozhu }}" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ .Summary | plainify }}" />
     <meta name="twitter:image" content="/img/avatar.jpg" />
@@ -28,7 +29,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@melaozhu" />
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $melaozhu }}" />
   <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
   <meta name="twitter:description" content="{{ .Site.Params.description }}" />
   <meta name="twitter:image" content="/img/avatar.jpg" />
