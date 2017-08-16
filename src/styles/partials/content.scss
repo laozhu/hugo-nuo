@@ -272,6 +272,7 @@
   }
 
   figure {
+    display: block;
     margin: 2rem auto;
 
     img {
@@ -279,15 +280,12 @@
       box-shadow: 2px 20px 40px 10px $box-shadow-dark;
 
       @media screen and (max-width: $tablet) {
-        max-width: 100vw;
-        margin: 2rem -1rem;
         box-shadow: none;
       }
     }
 
     figcaption {
       h4 {
-        margin: 0 auto;
         color: $grey-light;
         font-size: 0.9rem;
         text-align: center;
@@ -302,8 +300,6 @@
     box-shadow: 2px 20px 40px 10px $box-shadow-dark;
 
     @media screen and (max-width: $tablet) {
-      max-width: 100vw;
-      margin: 2rem -1rem;
       box-shadow: none;
     }
   }
