@@ -9,7 +9,7 @@
       <h1 class="post-title">{{ .Title }}</h1>
     </header>
     <article class="post-content">{{ .Content }}</article>
-    {{ if ne .Params.comment false }}
+    {{ if ne .Params.comments false }}
       {{ if .Site.Params.changyan }}
       <div id="SOHUCS" sid="{{ .URL }}" ></div>
       <script type="text/javascript">
