@@ -1,4 +1,5 @@
 // Selected DOM elements
+const html = document.querySelector('html');
 const body = document.querySelector('body');
 const menuToggle = document.querySelector('.menu-toggle');
 const menuIcon = document.querySelector('.icon-menu');
@@ -39,7 +40,7 @@ objectFitImages('img.post-cover');
 let lastPosition = 0;
 let ticking = false;
 window.addEventListener('scroll', () => {
-  lastPosition = body.scrollTop;
+  lastPosition = body.scrollTop === 0 ? html.scrollTop : body.scrollTop;
   if (!ticking) {
     window.requestAnimationFrame(() => {
       if (lastPosition >= 600) {
