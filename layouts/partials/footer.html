@@ -8,8 +8,13 @@
 
 <!-- Scripts -->
 {{ if ne .Kind "home" }}
-<script src="//cdn.bootcss.com/video.js/6.2.1/video.min.js"></script>
-<script src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+});
+</script>
 {{ end }}
 <script src="/js/bundle.js"></script>
 {{ if .Site.GoogleAnalytics }}
