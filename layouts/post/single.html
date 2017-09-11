@@ -20,8 +20,11 @@
     </footer>
     {{ if ne .Params.comments false }}
       {{ if .Site.Params.changyan }}
+      <div id="cyReward" role="cylabs" data-use="reward"></div>
+      <script src="//changyan.itc.cn/js/lib/jquery.js"></script>
+      <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid=cyt3toRiB"></script>
       <div id="SOHUCS" sid="{{ .URL }}" ></div>
-      <script type="text/javascript">
+      <script>
       (function(){
       var appid = '{{ .Site.Params.changyanId }}';
       var conf = '{{ .Site.Params.changyanConf }}';
