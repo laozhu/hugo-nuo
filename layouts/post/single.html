@@ -22,7 +22,7 @@
       {{ if .Site.Params.changyan }}
       <div id="cyReward" role="cylabs" data-use="reward"></div>
       <script src="//changyan.itc.cn/js/lib/jquery.js"></script>
-      <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid=cyt3toRiB"></script>
+      <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid={{ .Site.Params.changyanId }}"></script>
       <div id="SOHUCS" sid="{{ .URL }}" ></div>
       <script>
       (function(){
