@@ -5,7 +5,7 @@
       <h1 class="post-title">{{ .Title }}</h1>
       <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</p>
     </header>
-    <article class="post-content">{{ .Content }}</article>
+    <article id="post-content" class="post-content">{{ .Content }}</article>
     <footer class="post-footer">
       {{ if isset .Params "tags" }}
       <ul class="post-tags">
