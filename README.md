@@ -255,9 +255,17 @@ $ npm run imagemin
 
 If you want to build hugo-nuo theme, you should have `node` and `npm` evironment installed. Besides, you should have dependencies below installed.
 
-- [ImageOptim](https://imageoptim.com/) - Makes images load faster
-- [SASS](http://sass-lang.com/install) - Ruby version SASS compiler
-- [Pygments](http://pygments.org/) - Python syntax highlighter
+* [ImageOptim](https://imageoptim.com/) - Makes images load faster
+* [SASS](http://sass-lang.com/install) - Ruby version SASS compiler
+* [Pygments](http://pygments.org/) - Python syntax hightlighter
+
+*From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/).*
+
+```bash
+$ hugo gen chromastyles --style=monokai > ./src/styles/partials/syntax.css
+```
+
+Run hugo gen `chromastyles -h` for more options. See <https://help.farbox.com/pygments.html> for a gallery of available styles.
 
 ## Nearly finished
 

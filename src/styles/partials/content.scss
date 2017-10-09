@@ -136,13 +136,19 @@
     padding-bottom: 0.2em;
     margin: 0;
     font-size: 0.9em;
-    background-color: $pre-background;
+    background-color: $code-background;
     font-family: $family-monospace;
 
     &::before,
     &::after {
       letter-spacing: -0.2em;
       content: "\00a0";
+    }
+
+    &.has-jax {
+      padding: 0;
+      font-size: 1em;
+      background-color: transparent;
     }
   }
 
@@ -170,8 +176,6 @@
     white-space: pre;
     word-wrap: normal;
     word-break: normal;
-    background: $pre-background;
-    color: $text;
 
     code {
       font-size: 0.9rem;
@@ -304,7 +308,7 @@
     }
   }
 
-  .MathJax_Display {
+  div.has-jax {
     margin: 2rem auto;
   }
 
