@@ -2,6 +2,8 @@
   position: relative;
   color: $text;
   line-height: 1.8;
+  word-wrap: break-word;
+  word-break: break-word;
 
   li + li {
     margin-top: 0.5rem;
