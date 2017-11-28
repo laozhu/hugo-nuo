@@ -30,7 +30,7 @@ Take a look inside the [exampleSite](https://github.com/laozhu/hugo-nuo/tree/mas
 
 **Main Menu**
 
-The hugo-nuo theme add `home` and `works` page to initial site menu, you can add your own menu item here.
+The hugo-nuo theme add `home`, `works` and `tags` page to initial site menu, you can add your own menu item here.
 
 ```toml
 [[menu.main]]
