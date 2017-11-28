@@ -1,25 +1,56 @@
-.term-list {
-	.term-header {
-		h2 {
-			font-size: 48px;
-		}
-	}
-	.term-tags {
-		max-width: 60em;
-		margin: 2em auto;
-		margin-top: 0em;
-		a {
-			margin-right: 1em;
-			line-height: 65px;
-			border-bottom: 1px solid gray;
-			white-space: nowrap;
-			transition: border-bottom .5s;
+.terms-list {
+  .tags-cloud {
+    margin: 2em auto;
 
-			&:hover {
-				border-bottom: 3px dotted gray;
-				text-decoration: none;
-				color: #404040;
-			}
-		}
-	}
+    a {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      opacity: 1;
+      border-radius: 5px;
+
+      &.tag-s {
+        color: $grey;
+        font-size: 1rem;
+        line-height: 2rem;
+        padding: 0 0.5rem;
+        opacity: 0.8;
+      }
+
+      &.tag-m {
+        color: $grey-dark;
+        font-size: 1.25rem;
+        line-height: 2.5rem;
+        padding: 0 0.75rem;
+        opacity: 0.9;
+      }
+
+      &.tag-l {
+        color: $grey-darker;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        padding: 0 1rem;
+      }
+
+      &.tag-xl {
+        color: $black-ter;
+        font-size: 1.75rem;
+        line-height: 3.25rem;
+        padding: 0 1.25rem;
+      }
+
+      &.tag-xxl {
+        color: $primary;
+        font-size: 2rem;
+        line-height: 3.5rem;
+        padding: 0 1.5rem;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $primary;
+        opacity: 0.8;
+      }
+    }
+  }
 }

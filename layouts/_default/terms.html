@@ -1,19 +1,18 @@
 {{ define "title" }}
-  {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
-  → Tags
+  Tags | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
 {{ end }}
 
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <section class="main term-list">
-    {{ $data := .Data }}
-    <header class="term-header">
-      <h2>Tags</h2>
+  <section class="main post-detail terms-list">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
     </header>
-
-    <div class="term-tags">
-      {{ range $key,$value := .Data.Terms.ByCount }}
-        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}" style="font-size: {{ add (mul $value.Count 3.17) 12.83 }}px;"> {{ $value.Name }}</a>
+    <div class="tags-cloud">
+      {{ $data := .Data }}
+      {{ range $key, $value := $data.Terms.ByCount }}
+        {{ $weight := $value.Count }}
+        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}" class="tag-{{ if eq $weight 1 }}s{{ else if eq $weight 2 }}m{{ else if eq $weight 4 }}l{{ else if eq $weight 8 }}xl{{ else }}xxl{{ end }}">{{ $value.Name }}</a>
       {{ end }}
     </div>
   </section>
