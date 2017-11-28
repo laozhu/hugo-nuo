@@ -1,0 +1,25 @@
+.term-list {
+	.term-header {
+		h2 {
+			font-size: 48px;
+		}
+	}
+	.term-tags {
+		max-width: 60em;
+		margin: 2em auto;
+		margin-top: 0em;
+		a {
+			margin-right: 1em;
+			line-height: 65px;
+			border-bottom: 1px solid gray;
+			white-space: nowrap;
+			transition: border-bottom .5s;
+
+			&:hover {
+				border-bottom: 3px dotted gray;
+				text-decoration: none;
+				color: #404040;
+			}
+		}
+	}
+}
