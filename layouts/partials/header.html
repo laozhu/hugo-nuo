@@ -17,28 +17,13 @@
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
         <li class="menu-item
-            {{ if or
-              ($currentPage.IsMenuCurrent "main" .)
-              ($currentPage.HasMenuCurrent "main" .)
-            }}
+            {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
               is-active
             {{ end }}
-            {{ if and
-                (eq .Identifier "tags")
-                (and
-                  (eq $type "page")
-                  (or
-                    (eq $kind "taxonomyTerm")
-                    (eq $kind "taxonomy")
-                  )
-                )
-            }}
+            {{ if and (eq .Identifier "tags") (and (eq $type "page") (or (eq $kind "taxonomyTerm") (eq $kind "taxonomy"))) }}
               is-active
             {{ end }}
-            {{ if and
-                (eq .Identifier "home")
-                (eq $type "post")
-            }}
+            {{ if and (eq .Identifier "home") (eq $type "post") }}
               is-active
             {{ end }}">
             <a href="{{ .URL }}">{{ .Name }}</a>
