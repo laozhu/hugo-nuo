@@ -16,33 +16,7 @@
       {{ $kind := .Kind }}
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        <li class="menu-item
-            {{ if or
-              ($currentPage.IsMenuCurrent "main" .)
-              ($currentPage.HasMenuCurrent "main" .)
-            }}
-              is-active
-            {{ end }}
-            {{ if and
-                (eq .Identifier "tags")
-                (and
-                  (eq $type "page")
-                  (or
-                    (eq $kind "taxonomyTerm")
-                    (eq $kind "taxonomy")
-                  )
-                )
-            }}
-              is-active
-            {{ end }}
-            {{ if and
-                (eq .Identifier "home")
-                (eq $type "post")
-            }}
-              is-active
-            {{ end }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
+        <li class="menu-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{ end }}{{ if and (eq .Identifier "home") (eq $type "post") }} is-active{{ end }}{{ if and (eq .Identifier "home") (and (eq $type "page") (eq $kind "taxonomy"))}} is-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
       {{ end }}
     </ul>
   </nav>
