@@ -29,6 +29,12 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   identifier = "works"
   url = "https://github.com/laozhu"
 
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags"
+
 # Add your own params here
 [params]
   author = "Ritchie Zhu"

@@ -44,6 +44,12 @@ The hugo-nuo theme add `home` and `works` page to initial site menu, you can add
   weight = 20
   identifier = "works"
   url = "https://github.com/laozhu"
+
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags"
 ```
 
 Or you can add some other page to menu in page's front matter:
