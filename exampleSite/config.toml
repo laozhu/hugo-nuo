@@ -3,7 +3,6 @@ languageCode = "en"
 title = "Hugo Blog"
 theme = "hugo-nuo"
 enableRobotsTXT = true
-pygmentsuseclasses = true
 PygmentsCodeFences = true
 canonifyurls = true
 
