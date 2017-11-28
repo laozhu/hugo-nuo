@@ -1,7 +1,7 @@
 Hugo Nuo
 ========
 
-Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), ~~Music 163~~ and [Sheng Xiang](https://ppt.baomitu.com/).
+Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a [tags page](https://laozhu.me/tags/) for your tags cloud, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), ~~Music 163~~ and [Sheng Xiang](https://ppt.baomitu.com/).
 
 ![Hugo Nuo Theme Screenshot](https://raw.githubusercontent.com/laozhu/hugo-nuo/master/images/screenshot.png)
 
@@ -49,7 +49,7 @@ The hugo-nuo theme add `home`, `works` and `tags` page to initial site menu, you
   name = "Tags"
   weight = 30
   identifier = "tags"
-  url = "/tags"
+  url = "/tags/"
 ```
 
 Or you can add some other page to menu in page's front matter:
@@ -160,6 +160,26 @@ If you want to use Disqus, you should disable `changyan` to `false`.
 
 The works page layout is under development, you can use github homepage for replacement temporarily.
 
+```toml
+[[menu.main]]
+  name = "Works"
+  weight = 20
+  identifier = "works"
+  url = "https://github.com/your_github_username"
+```
+
+### The tags page
+
+Thanks to [@bwangel23](https://github.com/bwangel23)'s great [PR](https://github.com/laozhu/hugo-nuo/pull/37), the tags page has been done, you can use this page by adding it to main menu.  
+
+```toml
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+```
+
 ### The links page
 
 Inside the folder of your Hugo site run:
@@ -171,7 +191,7 @@ $ mkdir -p content/media/links
 $ vim content/links.md
 ```
 
-Change the content of `links.md`, set page layout to `links`, If you want to add about page to menu, set menu to `main` and `weight` to 30.
+Change the content of `links.md`, set page layout to `links`, If you want to add about page to menu, set menu to `main` and `weight` to 40.
 
 ```markdown
 ---
@@ -179,7 +199,7 @@ title: "Links"
 date: 2017-08-02
 layout: "links"
 menu: "main"
-weight: 30
+weight: 40
 ---
 ```
 
@@ -210,7 +230,7 @@ $ hugo new about.md
 $ vim content/about.md
 ```
 
-Change the content of `about.md`, set page layout to `about`, If you want to add about page to menu, set menu to `main` and `weight` to 40.
+Change the content of `about.md`, set page layout to `about`, If you want to add about page to menu, set menu to `main` and `weight` to 50.
 
 ```markdown
 ---
@@ -218,7 +238,7 @@ title: "About"
 date: 2017-08-02
 layout: "about"
 menu: "main"
-weight: 40
+weight: 50
 comments: false
 ---
 
