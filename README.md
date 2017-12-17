@@ -1,7 +1,7 @@
 Hugo Nuo
 ========
 
-Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a [tags page](https://laozhu.me/tags/) for your tags cloud, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), ~~Music 163~~ and [Sheng Xiang](https://ppt.baomitu.com/).
+Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a [tags page](https://laozhu.me/tags/) for your tags cloud, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), ~~Music 163~~ and [Sheng Xiang](https://ppt.baomitu.com/), [Asciinema](https://asciinema.org/).
 
 ![Hugo Nuo Theme Screenshot](https://raw.githubusercontent.com/laozhu/hugo-nuo/master/images/screenshot.png)
 

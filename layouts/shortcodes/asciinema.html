@@ -1,0 +1,136 @@
+{{/*
+
+    ## Asciinema Cast
+
+    ### This shortcode is not mobile friendly :(
+    ### You can embed image for mobile
+    ### Or you can set rows and cols to make player small for mobile.
+
+    ### Params:
+
+    - Cast `id`
+
+      required param
+      you can extract from asciicast url
+      url format "https://asciinema.org/a/107960"
+
+    - Cast Embed `type`
+
+      optional param
+      Embed image link or the player
+      default value "player"
+      you can set "image" or "player"
+
+    - Cast `started`
+
+      optional param
+      Append ?t=30 to start the playback at 30s, ?t=3:20 to start the playback at 3m 20s.
+
+    - Cast `speed`
+
+      optional param
+      The speed option alters the playback speed.
+      The default speed is 1 which means it plays at the unaltered, original speed.
+
+    - Cast `size`
+
+      optional param
+      The size option alters the size of the terminal font. There are 3 available sizes:
+
+      * small (default)
+      * medium
+      * big
+
+    - Cast `theme`
+
+      optional param
+      The theme option allows overriding a theme used for the terminal.
+      It defaults to a theme set by the asciicast author, The available themes are:
+
+      * asciinema,
+      * tango
+      * solarized-dark
+      * solarized-light
+      * monokai
+
+    - Cast `cols`
+
+      optional param
+      The cols option allows overriding width (in characters) of the emulated terminal.
+      By default the recorded terminal’s width is used.
+
+    - Cast `rows`
+
+      optional param
+      The rows option allows overriding height (in lines) of the emulated terminal.
+      By default the recorded terminal’s height is used.
+
+    - Cast `autoplay`
+
+      optional param
+      The autoplay option controls whether the playback should automatically start when the player loads.
+      default value "0"
+      you can set "0" or "1"
+
+    - Cast `loop`
+
+      optional param
+      The loop option allows for looping the playback. This option is usually combined with autoplay option.
+      default value "0"
+      you can set "0" or "1"
+
+    - Cast `preload`
+
+      optional param
+      The preload option controls whether the player should immediately start fetching the recording.
+      default value "1"
+      you can set "0" or "1"
+
+    ### Examples:
+
+    - Simple
+
+      {{% asciinema "107960" %}}
+      {{% asciinema "107960" "image" "30" %}}
+      {{% asciinema "107960" "30" "3" "small" "monokai" "80" "20" "1" "1" "1" %}}
+
+    - Named Params
+
+      {{% asciinema id="107960" %}}
+      {{% asciinema id="107960" type="image" started="30" %}}
+      {{% asciinema id="107960" started="30" speed="3" size="small" theme="monokai" cols="80" rows="20" autoplay="1" loop="1" preload="1" %}}
+
+*/}}
+
+{{/* DEFAULTS */}}
+{{ $type := "player" }}
+{{ $size := "small" }}
+{{ $theme := "asciinema" }}
+{{ $preload := "1" }}
+
+{{ if .IsNamedParams }}
+
+  {{ if eq (.Get "type") "image" }}
+    <a href="https://asciinema.org/a/{{ .Get "id" }}{{ if ne (.Get "started") "" }}?t={{ .Get "started" }}{{ end }}" target="_blank"><img src="https://asciinema.org/a/{{ .Get "id" }}.png"></a>
+  {{ else }}
+    <script src="https://asciinema.org/a/{{ .Get "id" }}.js" id="asciicast-{{ .Get "id" }}" {{ if ne (.Get "started") "" }}data-t="{{ .Get "started" }}"{{ end }} {{ if ne (.Get "speed") "" }}data-speed="{{ .Get "speed" }}"{{ end }} data-size="{{ or (.Get "size") $size }}" data-theme="{{ or (.Get "theme") $theme }}" {{ if ne (.Get "cols") "" }}data-cols="{{ .Get "cols" }}"{{ end }} {{ if ne (.Get "rows") "" }}data-rows="{{ .Get "rows" }}"{{ end }} {{ if ne (.Get "autoplay") "" }}data-autoplay="{{ .Get "autoplay" }}"{{ end }} {{ if ne (.Get "loop") "" }}data-loop="{{ .Get "loop" }}"{{ end }}  data-preload={{ or (.Get "preload") $preload }} async></script>
+  {{ end }}
+
+{{ else }}
+
+  {{ if isset .Params 1 }}
+    {{ if eq (.Get 1) "image" }}
+      <a href="https://asciinema.org/a/{{ .Get 0 }}{{ if isset .Params 2 }}?t={{ .Get 2 }}{{ end }}" target="_blank"><img src="https://asciinema.org/a/{{ .Get 0 }}.png"></a>
+    {{ else if eq (.Get 1) $type }}
+      <script src="https://asciinema.org/a/{{ .Get 0 }}.js" id="asciicast-{{ .Get 0 }}" {{ if isset .Params 2 }}data-t="{{ .Get 2 }}"{{ end }} {{ if isset .Params 3 }}data-speed="{{ .Get 3 }}"{{ end }} {{ if isset .Params 4 }}data-size="{{ .Get 4 }}"{{ else }}data-size="{{ $size }}"{{ end }} {{ if isset .Params 5 }}data-theme="{{ .Get 5 }}"{{ else }}data-theme="{{ $theme }}"{{ end }} {{ if isset .Params 6 }}data-cols="{{ .Get 6 }}"{{ end }} {{ if isset .Params 7 }}data-rows="{{ .Get 7 }}"{{ end }} {{ if isset .Params 8 }}data-autoplay="{{ .Get 8 }}"{{ end }} {{ if isset .Params 9 }}data-loop="{{ .Get 9 }}"{{ end }} {{ if isset .Params 10 }}data-preload="{{ .Get 10 }}"{{ else }}data-preload="{{ $preload }}"{{ end }} async></script>
+    {{ else }}
+      <script src="https://asciinema.org/a/{{ .Get 0 }}.js" id="asciicast-{{ .Get 0 }}" {{ if isset .Params 1 }}data-t="{{ .Get 1 }}"{{ end }} {{ if isset .Params 2 }}data-speed="{{ .Get 2 }}"{{ end }} {{ if isset .Params 3 }}data-size="{{ .Get 3 }}"{{ else }}data-size="{{ $size }}"{{ end }} {{ if isset .Params 4 }}data-theme="{{ .Get 4 }}"{{ else }}data-theme="{{ $theme }}"{{ end }} {{ if isset .Params 5 }}data-cols="{{ .Get 5 }}"{{ end }} {{ if isset .Params 6 }}data-rows="{{ .Get 6 }}"{{ end }} {{ if isset .Params 7 }}data-autoplay="{{ .Get 7 }}"{{ end }} {{ if isset .Params 8 }}data-loop="{{ .Get 8 }}"{{ end }} {{ if isset .Params 9 }}data-preload="{{ .Get 9 }}"{{ else }}data-preload="{{ $preload }}"{{ end }} async></script>
+    {{ end }}
+  {{ else }}
+    <script src="https://asciinema.org/a/{{ .Get 0 }}.js" id="asciicast-{{ .Get 0 }}" async></script>
+  {{ end }}
+
+{{ end }}
+
+
+

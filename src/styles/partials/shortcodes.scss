@@ -1,3 +1,15 @@
+/* asciinema shortcode */
+.asciicast {
+  margin: 2rem auto !important;
+  text-align: center;
+
+   @media screen and (max-width: 1170px) {
+    iframe {
+      width: 100% !important;
+    }
+   }
+}
+
 /* jsfiddle shortcode */
 .jsfiddle {
   margin: 2rem auto;

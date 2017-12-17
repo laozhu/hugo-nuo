@@ -77,7 +77,7 @@
 
   <p data-height="{{ if isset .Params 4 }}{{ .Get 4 }}{{ else }}{{ $height }}{{ end }}" data-theme-id="{{ if isset .Params 5 }}{{ .Get 5 }}{{ else }}{{ $style }}{{ end }}" data-slug-hash="{{ .Get 0 }}" data-default-tab="{{ if isset .Params 6 }}{{ .Get 6 }}{{ else }}{{ $tabs }}{{ end }}" data-user="{{ .Get "user" }}" data-embed-version="2" data-pen-title="{{ .Get 1 }}" data-preview="{{ if isset .Params 7 }}{{ .Get 7 }}{{ else }}{{ $preview }}{{ end }}"
   class="codepen">
-    See the Pen <a href="https://codepen.io/{{ .Get 2 }}/pen/{{ .Get 0 }}/">{{ .Get "title" }}</a> by {{ .Get 3 }} (<a href="https://codepen.io/{{ .Get 2 }}">@{{ .Get 2 }}</a>) on <a href="https://codepen.io">CodePen</a>.
+    See the Pen <a href="https://codepen.io/{{ .Get 2 }}/pen/{{ .Get 0 }}/">{{ .Get 1 }}</a> by {{ .Get 3 }} (<a href="https://codepen.io/{{ .Get 2 }}">@{{ .Get 2 }}</a>) on <a href="https://codepen.io">CodePen</a>.
   </p>
   <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
