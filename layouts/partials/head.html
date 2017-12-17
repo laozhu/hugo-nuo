@@ -23,6 +23,13 @@
     <meta name="twitter:image" content="{{ $avatar | absURL }}" />
   {{ end }}
 
+  <!-- Facebook Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:description" content="{{ .Summary | plainify }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar | absURL }}{{ end }}" />
+
 {{ else }}
 
   <!-- Site Author & Description -->
@@ -35,6 +42,13 @@
   <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
   <meta name="twitter:description" content="{{ .Site.Params.description }}" />
   <meta name="twitter:image" content="{{ $avatar | absURL }}" />
+
+  <!-- Facebook Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
+  <meta property="og:description" content="{{ .Site.Params.description }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ $avatar | absURL }}" />
 
 {{ end }}
 
