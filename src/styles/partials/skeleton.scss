@@ -61,6 +61,10 @@ a {
     width: 100%;
     position: relative;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .main {
@@ -83,7 +87,7 @@ a {
     width: calc(100% - 20rem);
   }
 
-  @media screen and (max-width: $tablet) {
+  @media print, screen and (max-width: $tablet) {
     margin-left: 0;
     padding: 0 1rem;
     width: 100%;

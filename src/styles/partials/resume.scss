@@ -1,0 +1,64 @@
+.resume {
+  font-family: $family-sans-serif !important;
+
+  h2 {
+    text-align: center;
+  }
+
+  ul.contact {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  ul.contact li {
+    list-style-type: none;
+  }
+
+  h3 {
+    border-bottom: 1px solid $border;
+    width: 100%;
+    text-transform: uppercase;
+    color: $green;
+  }
+
+  .upper-row {
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .job-title {
+    color: $text-strong;
+    font-weight: $weight-bold;
+  }
+
+  .year {
+    color: $text-light;
+  }
+
+  .school {
+    color: $text-light;
+  }
+
+  .company {
+    color: $text-light;
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
+
+  @media print {
+    width: 100%;
+  }
+}
