@@ -1,0 +1,149 @@
+/* Google fonts Lobster */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lobster.eot');
+  src:
+    url('../fonts/lobster.woff2') format('woff2'),
+    url('../fonts/lobster.woff') format('woff'),
+    url('../fonts/lobster.ttf') format('truetype'),
+    url('../fonts/lobster.svg#lobster') format('svg'),
+    url('../fonts/lobster.eot?#iefix') format('embedded-opentype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* Icon fonts */
+@font-face {
+  font-family: 'iconfont';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/iconfont.eot');
+  src:
+    url('../fonts/iconfont.woff2') format('woff2'),
+    url('../fonts/iconfont.woff') format('woff'),
+    url('../fonts/iconfont.ttf') format('truetype'),
+    url('../fonts/iconfont.svg#iconfont') format('svg'),
+    url('../fonts/iconfont.eot#iefix') format('embedded-opentype');
+}
+
+:root {
+  /* Colors */
+  --black: rgb(10, 10, 10);
+  --black-bis: rgb(18, 18, 18);
+  --black-ter: rgb(36, 36, 36);
+  --grey-darker: rgb(54, 54, 54);
+  --grey-dark: rgb(74, 74, 74);
+  --grey: rgb(121, 121, 121);
+  --grey-light: rgb(181, 181, 181);
+  --grey-lighter: rgb(219, 219, 219);
+  --white-ter: rgb(244, 243, 241);
+  --white-bis: rgb(250, 250, 250);
+  --white: rgb(255, 255, 255);
+  --green: rgb(95, 191, 94);
+  --green-light: rgba(70, 185, 128, 0.5);
+  --green-invert: var(--green);
+
+  /* Theme colors */
+  --primary: var(--green);
+  --primary-invert: var(--green-invert);
+  --light: var(--white-ter);
+  --dark: var(--grey-darker);
+  --background: var(--white-ter);
+  --code-background: rgb(246, 248, 250);
+  --main-background: var(--white);
+
+  /* Text colors */
+  --text: var(--grey-dark);
+  --text-invert: var(--text);
+  --text-light: var(--grey);
+  --text-strong: var(--grey-darker);
+
+  /* Border colors */
+  --border: var(--grey-lighter);
+  --border-hover: var(--grey-light);
+  --main-border: rgba(0, 0, 0, 0.09);
+  --media-border: var(--white);
+
+  /* Box shadow colors */
+  --box-shadow: rgba(0, 0, 0, 0.04);
+  --box-shadow-dark: rgba(0, 0, 0, 0.15);
+  --box-shadow-darker: rgba(0, 0, 0, 0.3);
+
+  /* Background images */
+  --background-image: url('../images/grey-prism.svg');
+
+  /* Typography */
+  --family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", sans-serif;
+  --family-monospace: "SFMono-Regular", "Liberation Mono", "Roboto Mono", Menlo, Monaco, Consolas, "Courier New", Courier, monospace;
+  --family-lobster: "Lobster", var(--family-sans-serif);
+  --size-1: 3rem;
+  --size-2: 2.5rem;
+  --size-3: 2rem;
+  --size-4: 1.5rem;
+  --size-5: 1.25rem;
+  --size-6: 1rem;
+  --size-7: 0.8rem;
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-semibold: 500;
+  --weight-bold: 700;
+
+  /* Radius */
+  --radius-small: 2px;
+  --radius: 3px;
+  --radius-large: 5px;
+
+  /* Responsiveness */
+  --phone: 640px;
+  --tablet: 800px;
+  --desktop: 960px;
+  --widescreen: 1440px;
+  --min-height: 768px;
+
+  /* Icons */
+  --icon-douban: "\e900";
+  --icon-bilibili: "\e901";
+  --icon-zhihu: "\e902";
+  --icon-close: "\f00d";
+  --icon-facebook: "\f082";
+  --icon-twitter: "\f099";
+  --icon-github: "\f09b";
+  --icon-rss: "\f09e";
+  --icon-menu: "\f0c9";
+  --icon-pinterest: "\f0d2";
+  --icon-up: "\f0d8";
+  --icon-email: "\f0e0";
+  --icon-linkedin: "\f0e1";
+  --icon-youtube: "\f16a";
+  --icon-instagram: "\f16d";
+  --icon-dribbble: "\f17d";
+  --icon-weibo: "\f18a";
+  --icon-vimeo: "\f194";
+  --icon-google: "\f1a0";
+  --icon-behance: "\f1b4";
+  --icon-codepen: "\f1cb";
+  --icon-jsfiddle: "\f1cc";
+  --icon-wechat: "\f1d7";
+  --icon-medium: "\f23a";
+  --icon-comment: "\f27a";
+  --icon-quora: "\f2c4";
+
+  /* Table */
+  --table: var(--grey-darker);
+  --table-background: var(--white);
+  --table-border: var(--grey-lighter);
+  --table-head: var(--grey);
+  --table-row-hover-background: var(--white-bis);
+  --table-row-active-background: var(--primary);
+  --table-row-active: var(--primary-invert);
+  --table-row-even-background: var(--white-bis);
+  --table-row-even-hover-background: var(--white-ter);
+
+  /* Miscellaneous */
+  --easing: ease-out;
+  --speed: 0.5s;
+}
+
+/* Custom Media Queries */
+@custom-media --retina-screen (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx);

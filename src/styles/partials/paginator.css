@@ -1,0 +1,36 @@
+.pagination {
+  position: relative;
+  height: calc(2.9rem + 2px);
+
+  & a {
+    color: var(--text);
+  }
+
+  & .pagination-previous,
+  & .pagination-next {
+    position: absolute;
+    padding: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &:focus,
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+  }
+
+  & .pagination-previous {
+    top: 0;
+    left: 0;
+  }
+
+  & .pagination-next {
+    top: 0;
+    right: 0;
+  }
+}

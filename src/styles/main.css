@@ -1,0 +1,15 @@
+@import 'partials/reset.css';
+@import 'partials/variables.css';
+@import 'partials/icons.css';
+@import 'partials/skeleton.css';
+@import 'partials/header.css';
+@import 'partials/summary.css';
+@import 'partials/paginator.css';
+@import 'partials/post.css';
+@import 'partials/content.css';
+@import 'partials/shortcodes.css';
+@import 'partials/table.css';
+@import 'partials/syntax.css';
+@import 'partials/links.css';
+@import 'partials/misc.css';
+@import 'partials/terms.css';

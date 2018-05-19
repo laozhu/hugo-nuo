@@ -1,0 +1,119 @@
+table {
+  background-color: var(--table-background);
+  color: var(--table);
+  margin: 2rem auto;
+  width: 100%;
+  border-collapse: collapse;
+
+  & td,
+  & th {
+    border: 1px solid var(--table-border);
+    border-width: 0 0 1px;
+    padding: 0.5em 0.75em;
+    vertical-align: center;
+    // Modifiers
+    &.is-narrow {
+      white-space: nowrap;
+      width: 1%;
+    }
+  }
+
+  & th {
+    color: var(--text-strong);
+  }
+
+  & tr {
+    &:hover {
+      background-color: var(--table-row-hover-background);
+    }
+
+    &.is-selected {
+      background-color: var(--table-row-active-background);
+      color: var(--table-row-active);
+
+      & a,
+      & strong {
+        color: currentColor;
+      }
+
+      & td,
+      & th {
+        border-color: var(--table-row-active);
+        color: currentColor;
+      }
+    }
+  }
+
+  & thead {
+    & td,
+    & th {
+      border-width: 0 0 2px;
+      color: var(--table-head);
+    }
+  }
+
+  & tfoot {
+    & td,
+    & th {
+      border-width: 2px 0 0;
+      color: var(--table-head);
+    }
+  }
+
+  & tbody {
+    & tr {
+      &:last-child {
+        & td,
+        & th {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+
+  // Modifiers
+  &.is-bordered {
+    & td,
+    & th {
+      border-width: 1px;
+    }
+
+    & tr {
+      &:last-child {
+        & td,
+        & th {
+          border-bottom-width: 1px;
+        }
+      }
+    }
+  }
+
+  &.is-narrow {
+    & td,
+    & th {
+      padding: 0.25em 0.5em;
+    }
+  }
+
+  &.is-centered {
+    & td,
+    & th,
+    & tr {
+      text-align: center;
+    }
+  }
+
+  &.is-striped {
+    & tbody {
+      & tr:not(.is-selected) {
+        &:nth-child(even) {
+          background-color: var(--table-row-even-background);
+
+          &:hover {
+            background-color: var(--table-row-even-hover-background);
+          }
+        }
+      }
+    }
+  }
+}

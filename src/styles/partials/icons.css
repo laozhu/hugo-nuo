@@ -1,16 +1,3 @@
-@font-face {
-  font-family: 'iconfont';
-  font-weight: normal;
-  font-style: normal;
-  src: url('../iconfont.eot');
-  src:
-    url('../fonts/iconfont.woff2') format('woff2'),
-    url('../fonts/iconfont.woff') format('woff'),
-    url('../fonts/iconfont.ttf') format('truetype'),
-    url('../fonts/iconfont.svg#iconfont') format('svg'),
-    url('../fonts/iconfont.eot#iefix') format('embedded-opentype');
-}
-
 .icon {
   font-family: 'iconfont' !important;
   speak: none;
@@ -27,156 +14,156 @@
 
 .icon-douban {
   &::before {
-    content: $icon-douban;
+    content: var(--icon-douban);
   }
 }
 
 .icon-bilibili {
   &::before {
-    content: $icon-bilibili;
+    content: var(--icon-bilibili);
   }
 }
 
 .icon-zhihu {
   &::before {
-    content: $icon-zhihu;
+    content: var(--icon-zhihu);
   }
 }
 
 .icon-close {
   &::before {
-    content: $icon-close;
+    content: var(--icon-close);
   }
 }
 
 .icon-facebook {
   &::before {
-    content: $icon-facebook;
+    content: var(--icon-facebook);
   }
 }
 
 .icon-twitter {
   &::before {
-    content: $icon-twitter;
+    content: var(--icon-twitter);
   }
 }
 
 .icon-github {
   &::before {
-    content: $icon-github;
+    content: var(--icon-github);
   }
 }
 
 .icon-rss {
   &::before {
-    content: $icon-rss;
+    content: var(--icon-rss);
   }
 }
 
 .icon-menu {
   &::before {
-    content: $icon-menu;
+    content: var(--icon-menu);
   }
 }
 
 .icon-pinterest {
   &::before {
-    content: $icon-pinterest;
+    content: var(--icon-pinterest);
   }
 }
 
 .icon-up {
   &::before {
-    content: $icon-up;
+    content: var(--icon-up);
   }
 }
 
 .icon-email {
   &::before {
-    content: $icon-email;
+    content: var(--icon-email);
   }
 }
 
 .icon-linkedin {
   &::before {
-    content: $icon-linkedin;
+    content: var(--icon-linkedin);
   }
 }
 
 .icon-youtube {
   &::before {
-    content: $icon-youtube;
+    content: var(--icon-youtube);
   }
 }
 
 .icon-instagram {
   &::before {
-    content: $icon-instagram;
+    content: var(--icon-instagram);
   }
 }
 
 .icon-dribbble {
   &::before {
-    content: $icon-dribbble;
+    content: var(--icon-dribbble);
   }
 }
 
 .icon-weibo {
   &::before {
-    content: $icon-weibo;
+    content: var(--icon-weibo);
   }
 }
 
 .icon-vimeo {
   &::before {
-    content: $icon-vimeo;
+    content: var(--icon-vimeo);
   }
 }
 
 .icon-google {
   &::before {
-    content: $icon-google;
+    content: var(--icon-google);
   }
 }
 
 .icon-behance {
   &::before {
-    content: $icon-behance;
+    content: var(--icon-behance);
   }
 }
 
 .icon-codepen {
   &::before {
-    content: $icon-codepen;
+    content: var(--icon-codepen);
   }
 }
 
 .icon-jsfiddle {
   &::before {
-    content: $icon-jsfiddle;
+    content: var(--icon-jsfiddle);
   }
 }
 
 .icon-wechat {
   &::before {
-    content: $icon-wechat;
+    content: var(--icon-wechat);
   }
 }
 
 .icon-medium {
   &::before {
-    content: $icon-medium;
+    content: var(--icon-medium);
   }
 }
 
 .icon-comment {
   &::before {
-    content: $icon-comment;
+    content: var(--icon-comment);
   }
 }
 
 .icon-quora {
   &::before {
-    content: $icon-quora;
+    content: var(--icon-quora);
   }
 }

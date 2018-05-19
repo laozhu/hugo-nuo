@@ -1,49 +1,49 @@
 .post-content {
   position: relative;
-  color: $text;
+  color: var(--text);
   line-height: 1.8;
   word-wrap: break-word;
   word-break: break-word;
 
-  li + li {
+  & li + li {
     margin-top: 0.5rem;
   }
 
-  a {
+  & a {
     padding-bottom: 0.1em;
-    border-bottom: 1px dashed $green-light;
-    color: $primary;
+    border-bottom: 1px dashed var(--green-light);
+    color: var(--primary);
     opacity: 1;
 
     &:focus,
     &:hover {
-      border-bottom: 1px solid $green-light;
+      border-bottom: 1px solid var(--green-light);
     }
   }
 
-  em {
-    color: $text-light;
+  & em {
+    color: var(--text-light);
     font-style: italic;
   }
 
-  strong {
-    color: $text-strong;
+  & strong {
+    color: var(--text-strong);
   }
 
-  del {
-    color: $text-light;
+  & del {
+    color: var(--text-light);
     text-decoration: line-through;
   }
 
-  ins {
-    color: $text-strong;
+  & ins {
+    color: var(--text-strong);
     text-decoration: underline;
   }
 
-  hr {
+  & hr {
     position: relative;
     margin: 2rem auto;
-    border-top: 1px dashed $grey-lighter;
+    border-top: 1px dashed var(--grey-lighter);
     border-bottom: none;
 
     &::before {
@@ -52,94 +52,94 @@
       top: -12px;
       left: calc(50% - 40px);
       padding: 0 0.5rem;
-      background-color: $white;
-      color: $grey-lighter;
-      font-size: $size-7;
-      font-family: $family-monospace;
+      background-color: var(--white);
+      color: var(--grey-lighter);
+      font-size: var(--size-7);
+      font-family: var(--family-monospace);
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: $text-strong;
-    font-weight: $weight-semibold;
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    color: var(--text-strong);
+    font-weight: var(--weight-semibold);
     line-height: 1.125;
     text-align: left;
   }
 
-  h1 {
+  & h1 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-size: $size-2;
+    font-size: var(--size-2);
   }
 
-  h2 {
+  & h2 {
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
-    font-size: $size-3;
+    font-size: var(--size-3);
   }
 
-  h3 {
+  & h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    font-size: $size-4;
+    font-size: var(--size-4);
   }
 
-  h4 {
+  & h4 {
     margin-top: 1.25rem;
     margin-bottom: 0.25rem;
-    font-size: $size-5;
+    font-size: var(--size-5);
   }
 
-  h5 {
+  & h5 {
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: $size-6;
+    font-size: var(--size-6);
   }
 
-  h6 {
+  & h6 {
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: $size-7;
+    font-size: var(--size-7);
   }
 
-  p {
+  & p {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: justify;
   }
 
-  blockquote {
-    background-color: $background;
-    border-left: 5px solid $border;
+  & blockquote {
+    background-color: var(--background);
+    border-left: 5px solid var(--border);
     padding: 0.5rem 1rem;
     margin: 2rem 0;
 
-    p {
+    & p {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
 
-    cite {
+    & cite {
       margin-top: 1.5rem;
-      color: $text-light;
+      color: var(--text-light);
       font-size: 0.9rem;
     }
   }
 
-  tt,
-  code {
+  & tt,
+  & code {
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
     font-size: 0.9em;
-    background-color: $code-background;
-    font-family: $family-monospace;
+    background-color: var(--code-background);
+    font-family: var(--family-monospace);
 
     &::before,
     &::after {
@@ -154,32 +154,32 @@
     }
   }
 
-  kbd {
+  & kbd {
     display: inline-block;
     padding: 0.25em;
-    background-color: $white-bis;
-    border: 1px solid $grey-lighter;
-    border-bottom-color: $grey-light;
-    border-radius: $radius;
-    box-shadow: inset 0 -1px 0 $grey-light;
+    background-color: var(--white-bis);
+    border: 1px solid var(--grey-lighter);
+    border-bottom-color: var(--grey-light);
+    border-radius: var(--radius);
+    box-shadow: inset 0 -1px 0 var(--grey-light);
     font-size: 0.8em;
     line-height: 1.25;
-    font-family: $family-monospace;
-    color: $text;
+    font-family: var(--family-monospace);
+    color: var(--text);
   }
 
-  pre {
+  & pre {
     margin: 2rem auto;
     padding: 1rem;
     overflow-x: auto;
-    border-radius: $radius;
+    border-radius: var(--radius);
     font-size: 0.9rem;
     line-height: 1.618;
     white-space: pre;
     word-wrap: normal;
     word-break: normal;
 
-    code {
+    & code {
       font-size: 0.9rem;
       background-color: transparent;
 
@@ -190,11 +190,11 @@
     }
   }
 
-  sup,
-  sub {
-    font-size: $size-7;
+  & sup,
+  & sub {
+    font-size: var(--size-7);
 
-    a {
+    & a {
       border-bottom: none;
 
       &:focus,
@@ -204,65 +204,65 @@
     }
   }
 
-  ol {
+  & ol {
     margin-left: 0;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     list-style: decimal outside;
 
-    ol {
+    & ol {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       list-style: lower-roman outside;
     }
 
-    ul {
+    & ul {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       list-style: disc outside;
     }
   }
 
-  ul {
+  & ul {
     margin-left: 0;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     list-style: disc outside;
 
-    ul {
+    & ul {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       list-style: circle outside;
     }
 
-    ol {
+    & ol {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       list-style: decimal outside;
     }
   }
 
-  .task-list {
+  & .task-list {
     margin-top: 2rem;
     margin-bottom: 2rem;
     list-style: none;
     padding-left: 0;
 
-    .task-list {
+    & .task-list {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       padding-left: 1.5rem;
     }
   }
 
-  dl {
+  & dl {
     margin-top: 2rem;
     margin-bottom: 2rem;
 
-    dt {
-      color: $primary;
+    & dt {
+      color: var(--primary);
       margin-top: 1rem;
 
       &::after {
@@ -270,52 +270,52 @@
       }
     }
 
-    dd {
+    & dd {
       text-indent: 2rem;
       margin-left: 0;
       margin-top: 0.25rem;
     }
   }
 
-  figure {
+  & figure {
     display: block;
     margin: 2rem auto;
 
-    img {
+    & img {
       max-width: 100%;
-      box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+      box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 800px) {
         box-shadow: none;
       }
     }
 
-    figcaption {
-      h4 {
-        color: $grey-light;
+    & figcaption {
+      & h4 {
+        color: var(--grey-light);
         font-size: 0.9rem;
         text-align: center;
       }
     }
   }
 
-  img {
+  & img {
     display: block;
     margin: 2rem auto;
     max-width: 100%;
-    box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+    box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 800px) {
       box-shadow: none;
     }
   }
 
-  div.has-jax {
+  & div.has-jax {
     margin: 2rem auto;
   }
 
-  .MathJax_Display,
-  .MathJax {
+  & .MathJax_Display,
+  & .MathJax {
     &:focus {
       outline: none;
     }
