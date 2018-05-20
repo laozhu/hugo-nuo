@@ -67,6 +67,7 @@ a {
   position: relative;
   margin-left: 20rem;
   padding: 1rem 2rem;
+  width: calc(100% - 20rem);
   max-width: 70rem;
   min-height: 100vh;
   box-sizing: border-box;
@@ -77,10 +78,6 @@ a {
 
   & .list-footer {
     padding: 1.5rem 0;
-  }
-
-  @media screen and (max-width: 1440px) {
-    width: calc(100% - 20rem);
   }
 
   @media screen and (max-width: 800px) {
