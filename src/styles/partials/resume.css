@@ -1,11 +1,11 @@
 .resume {
   font-family: var(--family-sans-serif) !important;
 
-  h2 {
+  & h2 {
     text-align: center;
   }
 
-  ul.contact {
+  & ul.contact {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -13,44 +13,44 @@
     text-align: center;
   }
 
-  ul.contact li {
+  & ul.contact li {
     list-style-type: none;
   }
 
-  h3 {
+  & h3 {
     border-bottom: 1px solid var(--border);
     width: 100%;
     text-transform: uppercase;
     color: var(--green);
   }
 
-  .upper-row {
+  & .upper-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 
-    h4 {
+    & h4 {
       margin-top: 0;
       margin-bottom: 0;
     }
   }
 
-  .job-title {
+  & .job-title {
     color: var(--text-strong);
     font-weight: var(--weight-bold);
   }
 
-  .year {
+  & .year {
     color: var(--text-light);
   }
 
-  .school {
+  & .school {
     color: var(--text-light);
   }
 
-  .company {
+  & .company {
     color: var(--text-light);
     font-size: 0.8em;
   }
