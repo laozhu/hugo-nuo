@@ -1,13 +1,13 @@
 html {
-  font-size: 16px;
   line-height: 1.618;
   font-family: var(--family-sans-serif);
+  font-size: 16px;
 }
 
 body {
-  color: var(--text);
   background: var(--background) var(--background-image) repeat fixed;
   text-rendering: optimizeLegibility;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
@@ -16,26 +16,26 @@ body {
 }
 
 a {
-  color: var(--text-strong);
   opacity: 0.7;
   text-decoration: none;
+  color: var(--text-strong);
 
   &:focus,
   &:hover {
-    color: var(--black-ter);
     opacity: 1;
     outline: none;
+    color: var(--black-ter);
   }
 }
 
 .site-header {
+  box-sizing: border-box;
   position: fixed;
-  left: 0;
   top: 0;
   bottom: 0;
-  width: 20rem;
+  left: 0;
   padding: 1rem;
-  box-sizing: border-box;
+  width: 20rem;
   text-align: center;
 
   & .is-active {
@@ -58,8 +58,8 @@ a {
   }
 
   @media screen and (max-width: 800px) {
-    width: 100%;
     position: relative;
+    width: 100%;
   }
 
   @media print {
@@ -68,17 +68,17 @@ a {
 }
 
 .main {
+  box-sizing: border-box;
   position: relative;
   margin-left: 20rem;
+  border-right: 1px solid var(--main-border);
+  border-left: 1px solid var(--main-border);
+  box-shadow: 0 1px 4px var(--box-shadow);
+  background: var(--main-background);
   padding: 1rem 2rem;
   width: calc(100% - 20rem);
   max-width: 70rem;
   min-height: 100vh;
-  box-sizing: border-box;
-  border-left: 1px solid var(--main-border);
-  border-right: 1px solid var(--main-border);
-  box-shadow: 0 1px 4px var(--box-shadow);
-  background: var(--main-background);
 
   & .list-footer {
     padding: 1.5rem 0;
@@ -86,13 +86,13 @@ a {
 
   @media print, screen and (max-width: 800px) {
     margin-left: 0;
+    border-top: 1px solid var(--main-border);
+    border-right: none;
+    border-bottom: 1px solid var(--main-border);
+    border-left: none;
     padding: 0 1rem;
     width: 100%;
     min-height: initial;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--main-border);
-    border-bottom: 1px solid var(--main-border);
   }
 }
 
@@ -102,14 +102,14 @@ a {
   @media screen and (max-width: 800px) {
     display: block;
     padding: 2rem 1rem;
-    color: var(--text);
-    font-size: var(--size-7);
     text-align: center;
+    color: var(--text);
     font-family: var(--family-monospace);
+    font-size: var(--size-7);
 
     & a {
-      color: var(--text);
       opacity: 0.7;
+      color: var(--text);
 
       &:focus,
       &:hover {

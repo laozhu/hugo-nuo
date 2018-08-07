@@ -6,11 +6,11 @@
   }
 
   ul.contact {
-    text-align: center;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
+    text-align: center;
   }
 
   ul.contact li {
@@ -25,15 +25,16 @@
   }
 
   .upper-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
     h4 {
       margin-top: 0;
       margin-bottom: 0;
     }
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
   }
 
   .job-title {
