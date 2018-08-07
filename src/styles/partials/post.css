@@ -1,17 +1,17 @@
 .post-detail {
-  .post-header {
+  & .post-header {
     margin-bottom: 2.5rem;
 
-    .post-title {
-      font-size: $size-3;
+    & .post-title {
+      font-size: var(--size-3);
       line-height: 1.5;
-      font-weight: $weight-bold;
+      font-weight: var(--weight-bold);
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
     }
 
-    .post-meta {
-      font-size: $size-7;
+    & .post-meta {
+      font-size: var(--size-7);
       letter-spacing: 1px;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
@@ -19,22 +19,22 @@
     }
   }
 
-  .post-footer {
+  & .post-footer {
     margin: 2rem 0;
     line-height: 1.8;
 
-    .post-tags {
+    & .post-tags {
       margin-top: 0;
       margin-bottom: 1rem;
       padding-left: 0;
 
-      li {
+      & li {
         display: inline-block;
         margin-bottom: 0.5rem;
-        border-radius: $radius;
+        border-radius: var(--radius);
         padding: 5px 10px;
-        background: $background;
-        font-size: $size-7;
+        background: var(--background);
+        font-size: var(--size-7);
 
         & + li {
           margin-left: 0.5rem;
@@ -42,11 +42,11 @@
       }
     }
 
-    .post-copyright {
-      color: $text;
+    & .post-copyright {
+      color: var(--text);
       margin-top: 1rem;
       margin-bottom: 0;
-      border-radius: $radius;
+      border-radius: var(--radius);
       font-size: 0.9rem;
       opacity: 0.5;
 
@@ -54,34 +54,34 @@
         opacity: 1;
       }
 
-      a {
+      & a {
         opacity: 1;
       }
 
-      strong {
-        color: $text-strong;
+      & strong {
+        color: var(--text-strong);
       }
     }
   }
 
-  #cyReward > #cy-reward-click {
+  & #cyReward > #cy-reward-click {
     display: block;
     margin: 3rem auto;
   }
 
-  #SOHUCS {
+  & #SOHUCS {
     margin: 2rem auto;
 
-    .invalidity {
+    & .invalidity {
       box-sizing: border-box;
     }
   }
 
-  #disqus_thread {
+  & #disqus_thread {
     margin: 2rem auto;
   }
 
-  .dsq-brlink {
+  & .dsq-brlink {
     display: none;
   }
 }

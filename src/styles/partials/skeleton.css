@@ -1,28 +1,28 @@
 html {
   font-size: 16px;
   line-height: 1.618;
-  font-family: $family-sans-serif;
+  font-family: var(--family-sans-serif);
 }
 
 body {
-  color: $text;
-  background: $background $background-image repeat fixed;
+  color: var(--text);
+  background: var(--background) var(--background-image) repeat fixed;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
   -webkit-tap-highlight-color: transparent;
-  -webkit-overflow-scrolling: touch; // Smoothly on mobile browser
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
-  color: $text-strong;
+  color: var(--text-strong);
   opacity: 0.7;
   text-decoration: none;
 
   &:focus,
   &:hover {
-    color: $black-ter;
+    color: var(--black-ter);
     opacity: 1;
     outline: none;
   }
@@ -38,26 +38,26 @@ a {
   box-sizing: border-box;
   text-align: center;
 
-  .is-active {
-    a {
+  & .is-active {
+    & a {
       opacity: 1;
-      color: $text-strong;
-      font-weight: $weight-bold;
+      color: var(--text-strong);
+      font-weight: var(--weight-bold);
     }
   }
 
-  a {
+  & a {
     opacity: 0.5;
-    color: $black-ter;
+    color: var(--black-ter);
 
     &:focus,
     &:hover {
       opacity: 1;
-      color: $text-strong;
+      color: var(--text-strong);
     }
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 800px) {
     width: 100%;
     position: relative;
   }
@@ -71,47 +71,44 @@ a {
   position: relative;
   margin-left: 20rem;
   padding: 1rem 2rem;
+  width: calc(100% - 20rem);
   max-width: 70rem;
   min-height: 100vh;
   box-sizing: border-box;
-  border-left: 1px solid $main-border;
-  border-right: 1px solid $main-border;
-  box-shadow: 0 1px 4px $box-shadow;
-  background: $main-background;
+  border-left: 1px solid var(--main-border);
+  border-right: 1px solid var(--main-border);
+  box-shadow: 0 1px 4px var(--box-shadow);
+  background: var(--main-background);
 
-  .list-footer {
+  & .list-footer {
     padding: 1.5rem 0;
   }
 
-  @media screen and (max-width: $widescreen) {
-    width: calc(100% - 20rem);
-  }
-
-  @media print, screen and (max-width: $tablet) {
+  @media print, screen and (max-width: 800px) {
     margin-left: 0;
     padding: 0 1rem;
     width: 100%;
     min-height: initial;
     border-left: none;
     border-right: none;
-    border-top: 1px solid $main-border;
-    border-bottom: 1px solid $main-border;
+    border-top: 1px solid var(--main-border);
+    border-bottom: 1px solid var(--main-border);
   }
 }
 
 .site-footer {
   display: none;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 800px) {
     display: block;
     padding: 2rem 1rem;
-    color: $text;
-    font-size: $size-7;
+    color: var(--text);
+    font-size: var(--size-7);
     text-align: center;
-    font-family: $family-monospace;
+    font-family: var(--family-monospace);
 
-    a {
-      color: $text;
+    & a {
+      color: var(--text);
       opacity: 0.7;
 
       &:focus,

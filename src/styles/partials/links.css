@@ -1,9 +1,8 @@
-
 .links-list {
   font-size: 0;
   text-align: center;
 
-  .link-item {
+  & .link-item {
     margin: 1.5rem auto;
     display: inline-block;
     width: 25%;
@@ -13,36 +12,36 @@
       padding-left: 1rem;
     }
 
-    .link-avatar {
+    & .link-avatar {
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 2px solid $media-border;
-      box-shadow: 0 1px 4px $box-shadow-darker;
-      transition: transform $easing $speed;
+      border: 2px solid var(--media-border);
+      box-shadow: 0 1px 4px var(--box-shadow-darker);
+      transition: transform var(--easing) var(--speed);
 
       &:hover {
         transform: rotate(45deg);
       }
     }
 
-    .link-title {
-      font-size: $size-6;
+    & .link-title {
+      font-size: var(--size-6);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
       min-width: 100px;
     }
 
-    .link-description {
-      font-size: $size-7;
+    & .link-description {
+      font-size: var(--size-7);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
       min-width: 100px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 800px) {
       width: 50%;
     }
   }

@@ -1,5 +1,5 @@
 .resume {
-  font-family: $family-sans-serif !important;
+  font-family: var(--family-sans-serif) !important;
 
   h2 {
     text-align: center;
@@ -18,10 +18,10 @@
   }
 
   h3 {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid var(--border);
     width: 100%;
     text-transform: uppercase;
-    color: $green;
+    color: var(--green);
   }
 
   .upper-row {
@@ -37,28 +37,24 @@
   }
 
   .job-title {
-    color: $text-strong;
-    font-weight: $weight-bold;
+    color: var(--text-strong);
+    font-weight: var(--weight-bold);
   }
 
   .year {
-    color: $text-light;
+    color: var(--text-light);
   }
 
   .school {
-    color: $text-light;
+    color: var(--text-light);
   }
 
   .company {
-    color: $text-light;
+    color: var(--text-light);
     font-size: 0.8em;
   }
 
-  @media screen and (max-width: $tablet) {
-    width: 100%;
-  }
-
-  @media print {
+  @media print, screen and (max-width: 800px) {
     width: 100%;
   }
 }

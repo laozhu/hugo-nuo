@@ -273,41 +273,43 @@ can print out for job hunting.
 
 ## Build
 
-If you want to modify styles and scripts by yourself, you should install dev packages by `npm install`, I use [sass](http://sass-lang.com/) for styles development, [rollup](https://github.com/rollup/rollup) for scripts development, inside the folder of your Hugo site run:
+> **⚠️ Big Change**
+>
+> npm => yarn
+>
+> rollup => webpack
+>
+> SASS => PostCSS
+
+In the new build system, I use webpack to generate dist files and a `manifest.json` file which lists all dist scripts and styles, then I use hugo data template to read the `manifest.json` content and insert them into the html layout. In this way I can use webpack chunkHash for browser cache and I don't need to change the layout.
 
 ```bash
-# Install dependences
+# Install all dependences
 $ cd themes/hugo-nuo
-$ npm install
+$ yarn
 
-# Scripts dev
-$ npm run dev
-$ npm run build
+# Development watch
+$ yarn dev
 
-# Styles dev
-$ npm run sass
+# Build static files for production
+$ yarn build
 
-# Copy fonts to static
-$ npm run fonts
+# Scripts lint and autofix
+$ yarn eslint
+$ yarn eslint:fix
 
-# Copy images to static
-$ npm run images
-
-# Scripts lint
-$ npm run eslint
-
-# Styles lint
-$ npm run stylelint
+# Styles lint and autofix
+$ yarn stylelint
+$ yarn stylelint:fix
 
 # Minify images
-$ npm run imagemin
+$ yarn imagemin
+
+# Clean
+$ yarn clean
 ```
 
-If you want to build hugo-nuo theme, you should have `node` and `npm` evironment installed. Besides, you should have dependencies below installed.
-
-* [ImageOptim](https://imageoptim.com/) - Makes images load faster
-* [SASS](http://sass-lang.com/install) - Ruby version SASS compiler
-* [Pygments](http://pygments.org/) - Python syntax hightlighter
+I use [ImageOptim](https://imageoptim.com/) to make images load faster, you should install this app before you run `yarn imagemin` script.
 
 *From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/).*
 

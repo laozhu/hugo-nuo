@@ -3,40 +3,40 @@
   line-height: 1.8;
   border-top: 1px solid transparent;
 
-  a {
-    color: $text;
+  & a {
+    color: var(--text);
 
     &:focus,
     &:hover {
-      color: $primary;
+      color: var(--primary);
     }
   }
 
   & + .post-entry {
-    border-color: $white-ter;
+    border-color: var(--white-ter);
   }
 
-  .post-title {
+  & .post-title {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
     line-height: 1.3;
-    font-weight: $weight-bold;
+    font-weight: var(--weight-bold);
 
-    a {
+    & a {
       opacity: 1;
     }
   }
 
-  .post-meta {
+  & .post-meta {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font-size: $size-7;
+    font-size: var(--size-7);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
 
-  .post-cover {
+  & .post-cover {
     position: absolute;
     top: 4.6rem;
     right: 0;
@@ -44,13 +44,13 @@
     height: 8rem;
     object-fit: cover;
     font-family: 'object-fit: cover;'; // Polyfill for object-fit
-    border-radius: $radius;
+    border-radius: var(--radius);
 
     & + .post-summary {
       padding-right: 9rem;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 800px) {
       position: static;
       width: 100vw;
       height: 56.25vw;
@@ -63,7 +63,7 @@
     }
   }
 
-  .post-summary {
+  & .post-summary {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
@@ -71,12 +71,12 @@
     opacity: 0.7;
   }
 
-  .post-footer {
+  & .post-footer {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 
-    .read-more {
-      font-size: $size-7;
+    & .read-more {
+      font-size: var(--size-7);
       letter-spacing: 1px;
       text-transform: uppercase;
     }
