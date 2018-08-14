@@ -1,0 +1,97 @@
+{{ define "title" }}
+  {{ .Title }} |
+  {{ if isset .Site.Params "seotitle" }}
+    {{ .Site.Params.seotitle }}
+  {{ else }}
+    {{ .Site.Title }}
+  {{ end }}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <section class="main">
+    <header class="offscreen">
+      <h2>{{ .Title }}</h2>
+    </header>
+    <div class="resume">
+    {{ if (isset $.Site.Data.resume "name") }}
+    <h2>
+      {{ $.Site.Data.resume.name }}
+    </h2>
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "contact") }}
+    <ul class="contact">
+      {{ range $.Site.Data.resume.contact.list }}
+        <li><a href="{{ .url }}">{{ .title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "education") }}
+    <h3>Education</h3>
+    {{ range $.Site.Data.resume.education.list }}
+      <div class="meta">
+        <div class="upper-row">
+          <h4 class="job-title">{{ .degree }}</h4>
+          <div class="year">{{ .year }}</div>
+        </div>
+        <div class="school">{{ .school }}</div>
+      </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "experience") }}
+    <h3>Experiences</h3>
+    {{ range $.Site.Data.resume.experience.list }}
+      <div class="meta">
+        <div class="upper-row">
+          <h4 class="job-title">{{ .title }}, {{ .name }}</h4>
+          <div class="year">{{ .year }}</div>
+        </div>
+        <div class="company">{{ .company }}, {{ .location }}</div>
+      </div>
+      <div class="details">
+      {{ if (not (isset . "description")) }}
+        <ul>
+        {{ range .projects }}
+          <li> {{ . }} </li>
+        {{ end }}
+        </ul>
+      {{ else }}
+        <p> {{ .description | markdownify }} </p>
+      {{ end }}
+      </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "skill") }}
+    <h3>Skills</h3>
+    <ul class="skill">
+      {{ range $.Site.Data.resume.skill.list }}
+        <li> {{ .name }} : {{ .level }}% </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "languages") }}
+    <h3>Languages</h3>
+    <ul>
+      {{ range $.Site.Data.resume.languages }}
+      <li> {{ . }} </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ if (isset $.Site.Data.resume "interests") }}
+    <h3>Interests</h3>
+    <ul>
+      {{ range $.Site.Data.resume.interests }}
+      <li> {{ . }} </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    </div>
+  </section>
+  {{ partial "footer.html" . }}
+{{ end }}

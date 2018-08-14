@@ -247,6 +247,30 @@ Write something about you here.
 
 Write your portfolio as a post here, if you want comments in about page, you should turn comments to `true`.
 
+### The resume page
+
+Inside the folder of your Hugo site run:
+
+```bash
+$ hugo new resume.md
+$ cat << EOF > content/resume.md
+---
+title: "Resume"
+date: 2017-12-01
+layout: "resume"
+---
+EOF
+```
+
+Then create a file at `data/resume.toml`, where the resume page reads data from.
+You can reference
+[exampleSite/data/resume.toml](https://github.com/laozhu/hugo-nuo/tree/master/exampleSite/data/resume.toml)
+for how to construct your resume.
+
+The resume page will be located at `/resume` off your website root. Different
+from the about page, the resume page is intended as a one pager that you
+can print out for job hunting.
+
 ## Build
 
 > **⚠️ Big Change**

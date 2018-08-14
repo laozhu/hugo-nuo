@@ -1,0 +1,102 @@
+name = "John Doe"
+
+# These two variable definitions need to go before [contact], etc.
+languages = [
+  "English (native)",
+  "Chinese (conversational)"
+]
+
+interests = [
+  "Photography",
+  "Web development"
+]
+
+[contact]
+
+  [[contact.list]]
+    class = "email"
+    url = "mailto:example@domain.com"
+    title = "example@domain.com"
+
+  [[contact.list]]
+    class = "phone"
+    url = "tel:123-456-7890"
+    title = "+1 (123) 456-7890"
+
+  [[contact.list]]
+    class = "github"
+    url = "//github.com/username"
+    title = "github.com/username"
+
+  [[contact.list]]
+    class = "website"
+    url = "//domain.com"
+    title = "domain.com"
+
+[education]
+
+  [[education.list]]
+    degree = "M.Sc. Computer Science"
+    school = "University of Universe"
+    year = "2006 - 2008"
+    description = "Thesis: Automatic Peeling Bananas."
+
+  [[education.list]]
+    degree = "B.S. Computer Science"
+    school = "University of Universe"
+    year = "2002 - 2006"
+    description = "Courses: Algorithms, Computer Architecture."
+
+
+[experience]
+
+  [[experience.list]]
+    name = "Google Cloud"
+    company = "Google, Inc."
+    location = "Mountain View, CA, USA"
+    title = "Software Engineer"
+    year = "01/2016 - now"
+    description = """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse elit quam, maximus eget ex eget, vehicula ultricies nunc.
+      Nam sodales eu ipsum non ultricies."""
+
+  [[experience.list]]
+    name = "Amazon Web Services"
+    company = "Amazon"
+    location = "Seattle, WA, USA"
+    title = "Software Engineer"
+    year = "09/2014 - 12/2015"
+    projects = [
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Suspendisse elit quam""",
+    ]
+
+  [[experience.list]]
+    name = "Aliyun"
+    company = "Alibaba, Inc."
+    location = "Hangzhou, Zhejiang, China"
+    title = "Software Engineer"
+    year = "01/2009 - 08/2014"
+    projects = [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ]
+
+[skill]
+
+  [[skill.list]]
+    name = "C/C++"
+    level = "80"
+
+  [[skill.list]]
+    name = "Python"
+    level = "80"
+
+  [[skill.list]]
+    name = "HTML"
+    level = "80"
