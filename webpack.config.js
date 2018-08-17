@@ -27,10 +27,10 @@ PATH.dist = path.resolve(PATH.base, 'static');
 PATH.manifest = path.resolve(PATH.base, 'data', 'manifest.json');
 PATH.publicPath = ENV.isProd ? '/' : '';
 PATH.filename = {
-  js: ENV.isProd ? 'js/[name].[chunkhash:10].js' : 'js/[name].js',
-  css: ENV.isProd ? 'css/[name].[contentHash:10].css' : 'css/[name].css',
-  img: ENV.isProd ? 'img/[name].[hash:10].[ext]' : 'img/[name].[ext]',
-  fonts: ENV.isProd ? 'fonts/[name].[hash:10].[ext]' : 'fonts/[name].[ext]',
+  js: ENV.isProd ? 'js/[name].js?v=[chunkhash:10]' : 'js/[name].js',
+  css: ENV.isProd ? 'css/[name].css?v=[chunkhash:10]' : 'css/[name].css',
+  img: ENV.isProd ? 'img/[name].[ext]?v=[hash:10]' : 'img/[name].[ext]',
+  fonts: ENV.isProd ? 'fonts/[name].[ext]?v=[hash:10]' : 'fonts/[name].[ext]',
 };
 
 // Genertate loader list
