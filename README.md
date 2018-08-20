@@ -170,7 +170,7 @@ The works page layout is under development, you can use github homepage for repl
 
 ### The tags page
 
-Thanks to [@bwangel23](https://github.com/bwangel23)'s great [PR](https://github.com/laozhu/hugo-nuo/pull/37), the tags page has been done, you can use this page by adding it to main menu.  
+Thanks to [@bwangelme](https://github.com/bwangelme)'s great [PR](https://github.com/laozhu/hugo-nuo/pull/37), the tags page has been done, you can use this page by adding it to main menu.  
 
 ```toml
 [[menu.main]]

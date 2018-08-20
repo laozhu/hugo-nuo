@@ -1,0 +1,32 @@
+<div id="gitment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  (function() {
+    var page_url = decodeURI({{ .URL }});
+    var page_uniqueid = "{{ .UniqueID }}";
+
+    if (page_url.length >= 50) {
+      console.log("文章的路径", "[" + page_url + "]:" + page_url.length, "超过了50个字符，使用 UniqueID 设置评论ID");
+      comment_id = page_uniqueid
+    } else {
+      comment_id = page_url
+    }
+
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      console.log(comment_id, comment_id.length);
+      document.getElementById('gitment-container').innerHTML = 'Gitment comments not available by default when the website is previewed locally.';
+    } else {
+      var gitment = new Gitment({
+        id: comment_id,
+        owner: {{ .Site.Params.GitmentOwner }},
+        repo: {{ .Site.Params.GitmentRepo }},
+        oauth: {
+          client_id: {{ .Site.Params.GitmentClientId }},
+          client_secret: {{ .Site.Params.GitmentClientSecret }},
+        },
+      })
+      gitment.render('gitment-container');
+    }
+  })();
+</script>

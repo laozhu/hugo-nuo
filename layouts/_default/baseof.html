@@ -27,6 +27,8 @@
         <a title="Go to comments" class="to-comment" href="#SOHUCS"><span class="icon icon-comment"></span></a>
         {{ else if .Site.DisqusShortname }}
         <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        {{ else if .Site.Params.Gitment }}
+        <a title="Go to comments" class="to-comment" href="#gitment-container"><span class="icon icon-comment"></span></a>
         {{ else }}{{ end }}
       {{ end }}
     </div>
