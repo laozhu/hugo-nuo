@@ -37,7 +37,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 # Add your own params here
 [params]
   author = "Ritchie Zhu"
-  avatar = "/img/avatar.jpg"
+  avatar = "/images/avatar.jpg"
   seotitle = "Hugo Blog (SEO Version)"
   subtitle = "~ Keep It Simple & Stupid ~"
   description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
@@ -49,7 +49,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   twitter = "twitter_username"
   linkedin = "linkedin_username"
   weibo = "weibo_username"
-  wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
+  wechat= "/images/qrcode.jpg" # Replace with your wechat qrcode image
   # facebook = "facebook_username"
   # google = "googlplus_id_number"
   # instagram = "instagram_username"

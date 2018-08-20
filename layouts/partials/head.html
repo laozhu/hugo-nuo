@@ -1,6 +1,6 @@
 <!-- Site & Page Meta Data -->
 {{ $gohugoio := "gohugoio" }}
-{{ $avatar := "/img/avatar.jpg" }}
+{{ $avatar := "/images/avatar.jpg" }}
 
 {{ if eq .Type "post" }}
 
@@ -83,16 +83,18 @@
 <meta name="msapplication-tooltip" content="{{ .Site.Title }}" />
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
-<meta name="msapplication-TileImage" content="{{ "/img/tile-image-windows.png" | relURL }}" />
-<link rel="icon" href="{{ "/img/favicon.ico" | relURL }}" />
-<link rel="icon" type="image/png" sizes="16x16" href="{{ "/img/favicon-16x16.png" | relURL }}" />
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "/img/favicon-32x32.png" | relURL }}" />
-<link rel="icon" sizes="192x192" href="{{ "/img/touch-icon-android.png" | relURL }}" />
-<link rel="apple-touch-icon" href="{{ "/img/touch-icon-apple.png" | relURL }}" />
-<link rel="mask-icon" href="{{ "/img/safari-pinned-tab.svg" | relURL }}" color="#5fbf5e" />
+<meta name="msapplication-TileImage" content="{{ "/images/tile-image-windows.png" | relURL }}" />
+<link rel="icon" href="{{ "/images/favicon.ico" | relURL }}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "/images/favicon-16x16.png" | relURL }}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "/images/favicon-32x32.png" | relURL }}" />
+<link rel="icon" sizes="192x192" href="{{ "/images/touch-icon-android.png" | relURL }}" />
+<link rel="apple-touch-icon" href="{{ "/images/touch-icon-apple.png" | relURL }}" />
+<link rel="mask-icon" href="{{ "/images/safari-pinned-tab.svg" | relURL }}" color="#5fbf5e" />
 
 <!-- Styles -->
 {{ if ne .Kind "home" }}
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 {{ end }}
-<link rel="stylesheet" href="{{ index .Site.Data.manifest "bundle.css" | relURL }}" />
+{{ $options := (dict "targetPath" "styles/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
