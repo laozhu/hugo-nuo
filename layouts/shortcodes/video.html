@@ -28,7 +28,7 @@
     - Video `poster`
 
       optional param
-      default value "/img/poster.jpg"
+      default value "/images/poster.jpg"
       you can overwrite it with your photo (16:9)
 
     ### Examples:
@@ -45,7 +45,7 @@
         "/media/posts/hugo-nuo-post-preview/videojs.mp4"
         "/media/posts/hugo-nuo-post-preview/videojs.webm"
         "/media/posts/hugo-nuo-post-preview/videojs.ogv"
-        "/img/poster.jpg"
+        "/images/poster.jpg"
       %}}
 
     - Named Params
@@ -60,13 +60,13 @@
         video mp4="/media/posts/hugo-nuo-post-preview/videojs.mp4"
         webm="/media/posts/hugo-nuo-post-preview/videojs.webm"
         ogv="/media/posts/hugo-nuo-post-preview/videojs.ogv"
-        poster="/img/poster.jpg"
+        poster="/images/poster.jpg"
       %}}
 
 */}}
 
 {{/* DEFAULTS */}}
-{{ $poster := "/img/poster.jpg" }}
+{{ $poster := "/images/poster.jpg" }}
 
 {{ if .IsNamedParams }}
 

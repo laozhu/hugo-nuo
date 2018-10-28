@@ -32,7 +32,8 @@
   });
 </script>
 {{ end }}
-<script src="{{ index .Site.Data.manifest "bundle.js" | relURL }}"></script>
+{{ $js := resources.Get "scripts/index.js" | resources.Minify }}
+<script src="{{ $js.Permalink }}"></script>
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}

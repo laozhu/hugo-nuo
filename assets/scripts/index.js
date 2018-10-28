@@ -1,5 +1,3 @@
-import './styles/main.css';
-
 // Selected DOM elements
 const html = document.querySelector('html');
 const body = document.querySelector('body');
@@ -61,6 +59,3 @@ const scroll = new SmoothScroll('a[href*="#"]');
 toTopBtn.addEventListener('click', () => {
   scroll.animateScroll(0);
 });
-
-// HMR interface
-if (module.hot) module.hot.accept();

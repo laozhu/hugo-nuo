@@ -75,7 +75,7 @@ The following social network icons are available:
   twitter = "twitter_username"
   linkedin = "linkedin_username"
   weibo = "weibo_username"
-  wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
+  wechat= "/images/qrcode.jpg" # Replace with your wechat qrcode image
   facebook = "facebook_username"
   google = "googlplus_id_number"
   instagram = "instagram_username"
