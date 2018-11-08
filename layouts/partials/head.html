@@ -2,6 +2,9 @@
 {{ $gohugoio := "gohugoio" }}
 {{ $avatar := "/images/avatar.jpg" }}
 
+<!-- DNS Prefetch -->
+<link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+
 {{ if eq .Type "post" }}
 
   <!-- Page Author & Description -->
@@ -93,8 +96,9 @@
 
 <!-- Styles -->
 {{ if ne .Kind "home" }}
-<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css" />
 {{ end }}
+
 {{ $options := (dict "targetPath" "styles/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">

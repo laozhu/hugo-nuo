@@ -31,10 +31,6 @@ const randomErrorEmoji = () => {
 };
 randomErrorEmoji();
 
-// Object-fit polyfill for post cover
-/* eslint-disable no-undef */
-objectFitImages('img.post-cover');
-
 // Show toTopBtn when scroll to 600px
 /* eslint-disable no-undef */
 let lastPosition = 0;
