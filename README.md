@@ -275,39 +275,7 @@ can print out for job hunting.
 
 > **⚠️ Big Change**
 >
-> npm => yarn
->
-> rollup => webpack
->
-> SASS => PostCSS
-
-In the new build system, I use webpack to generate dist files and a `manifest.json` file which lists all dist scripts and styles, then I use hugo data template to read the `manifest.json` content and insert them into the html layout. In this way I can use webpack chunkHash for browser cache and I don't need to change the layout.
-
-```bash
-# Install all dependences
-$ cd themes/hugo-nuo
-$ yarn
-
-# Development watch
-$ yarn dev
-
-# Build static files for production
-$ yarn build
-
-# Scripts lint and autofix
-$ yarn eslint
-$ yarn eslint:fix
-
-# Styles lint and autofix
-$ yarn stylelint
-$ yarn stylelint:fix
-
-# Minify images
-$ yarn imagemin
-
-# Clean
-$ yarn clean
-```
+> This theme has been using hugo pipes instead of webpack now.
 
 I use [ImageOptim](https://imageoptim.com/) to make images load faster, you should install this app before you run `yarn imagemin` script.
 
