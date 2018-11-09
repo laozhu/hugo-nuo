@@ -101,4 +101,4 @@
 
 {{ $options := (dict "targetPath" "styles/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">

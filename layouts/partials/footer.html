@@ -32,8 +32,8 @@
   });
 </script>
 {{ end }}
-{{ $js := resources.Get "scripts/index.js" | resources.Minify }}
-<script src="{{ $js.Permalink }}"></script>
+{{ $script := resources.Get "scripts/index.js" | resources.Minify }}
+<script src="{{ $script.RelPermalink }}"></script>
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}

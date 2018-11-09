@@ -14,11 +14,11 @@
     <nav class="pagination">
       <h3 class="offscreen">Pagination</h3>
       {{ if $paginator.HasPrev }}
-      <a class="pagination-previous" href="{{ $paginator.Prev.URL }}"
+      <a class="pagination-previous" href="{{ $paginator.NextPage.URL }}"
         >← Newer Posts</a
       >
       {{ end }} {{ if $paginator.HasNext }}
-      <a class="pagination-next" href="{{ $paginator.Next.URL }}"
+      <a class="pagination-next" href="{{ $paginator.PrevPage.URL }}"
         >Older Posts →</a
       >
       {{ end }}
