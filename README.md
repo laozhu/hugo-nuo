@@ -277,6 +277,8 @@ can print out for job hunting.
 >
 > This theme has been using hugo pipes instead of webpack now.
 
+I use Hugo pipes and [PostCSS](https://gohugo.io/hugo-pipes/postcss/) to tranpile CSS, you should install devDependencies in `package.json` first if you want to cutomize the `./assets/styles` css files.
+
 I use [ImageOptim](https://imageoptim.com/) to make images load faster, you should install this app before you run `yarn imagemin` script.
 
 *From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/).*

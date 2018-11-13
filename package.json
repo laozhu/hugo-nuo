@@ -1,0 +1,14 @@
+{
+  "name": "hugo-nuo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/laozhu/hugo-nuo",
+  "author": "米老朱 <laozhu.me@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-mqpacker": "^7.0.0",
+    "postcss": "^7.0.5",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.4.0"
+  }
+}

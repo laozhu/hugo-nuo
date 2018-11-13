@@ -1,5 +1,8 @@
+{{- $wechat := resources.Get .Site.Params.wechat -}}
+{{- $avatar := resources.Get .Site.Params.avatar -}}
+
 <header class="site-header">
-  <img class="avatar" src="{{ "/images/avatar.jpg" | relURL }}" alt="Avatar">
+  <img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar">
   {{  if eq .Kind "home" }}
   <h1 class="title">{{ .Site.Title }}</h1>
   {{ else }}
@@ -34,97 +37,32 @@
   <nav class="social-menu collapsed">
     <h2 class="offscreen">Social Networks</h2>
     <ul class="social-list">
-
-      {{ if isset .Site.Params "email" }}
-      <li class="social-item">
-        <a href="mailto:{{ .Site.Params.email }}" title="Email"><span class="icon icon-email"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "github" }}
-      <li class="social-item">
-        <a href="//github.com/{{ .Site.Params.github }}" title="GitHub"><span class="icon icon-github"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "twitter" }}<li class="social-item">
-        <a href="//twitter.com/{{ .Site.Params.twitter }}" title="Twitter"><span class="icon icon-twitter"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "facebook" }}<li class="social-item">
-        <a href="//www.facebook.com/{{ .Site.Params.facebook }}" title="Facebook"><span class="icon icon-facebook"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "google" }}<li class="social-item">
-        <a href="//plus.google.com/{{ .Site.Params.google }}" title="Google+"><span class="icon icon-google"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "instagram" }}<li class="social-item">
-        <a href="//www.instagram.com/{{ .Site.Params.instagram }}" title="Instagram"><span class="icon icon-instagram"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "youtube" }}<li class="social-item">
-        <a href="//www.youtube.com/user/{{ .Site.Params.youtube }}" title="YouTube"><span class="icon icon-youtube"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "vimeo" }}<li class="social-item">
-        <a href="//vimeo.com/{{ .Site.Params.vimeo }}" title="Vimeo"><span class="icon icon-vimeo"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "medium" }}<li class="social-item">
-        <a href="//medium.com/@{{ .Site.Params.medium }}" title="Medium"><span class="icon icon-medium"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "quora" }}<li class="social-item">
-        <a href="//www.quora.com/profile/{{ .Site.Params.quora }}" title="Quora"><span class="icon icon-quora"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "dribbble" }}<li class="social-item">
-        <a href="//dribbble.com/{{ .Site.Params.dribbble }}" title="Dribbble"><span class="icon icon-dribbble"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "behance" }}<li class="social-item">
-        <a href="//www.behance.net/{{ .Site.Params.behance }}" title="Behance"><span class="icon icon-behance"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "pinterest" }}<li class="social-item">
-        <a href="//www.pinterest.com/{{ .Site.Params.pinterest }}" title="Pinterest"><span class="icon icon-pinterest"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "jsfiddle" }}<li class="social-item">
-        <a href="//jsfiddle.net/user/{{ .Site.Params.jsfiddle }}" title="JSFiddle"><span class="icon icon-jsfiddle"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "codepen" }}<li class="social-item">
-        <a href="//codepen.io/{{ .Site.Params.codepen }}" title="Codepen"><span class="icon icon-codepen"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "weibo" }}<li class="social-item">
-        <a href="//weibo.com/{{ .Site.Params.weibo }}" title="Weibo"><span class="icon icon-weibo"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "wechat" }}<li class="social-item">
-        <a href="{{ .Site.Params.wechat }}" title="Wechat"><span class="icon icon-wechat"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "linkedin" }}<li class="social-item">
-        <a href="//www.linkedin.com/in/{{ .Site.Params.linkedin }}" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "zhihu" }}<li class="social-item">
-        <a href="//www.zhihu.com/people/{{ .Site.Params.zhihu }}" title="Zhihu"><span class="icon icon-zhihu"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "douban" }}<li class="social-item">
-        <a href="//www.douban.com/people/{{ .Site.Params.douban }}" title="Douban"><span class="icon icon-douban"></span></a>
-      </li>{{ end }}
-
-      {{ if isset .Site.Params "bilibili" }}<li class="social-item">
-        <a href="//space.bilibili.com/{{ .Site.Params.bilibili }}" title="Bilibili"><span class="icon icon-bilibili"></span></a>
-      </li>{{ end }}
-
-      <li class="social-item">
-        <a rel="alternate" type="application/rss+xml" href="{{ "/index.xml" | relURL }}"><span class="icon icon-rss" title="RSS"></span></a>
-      </li>
-
-    </ul>
+        {{- with .Site.Params.email -}}<li class="social-item"><a href="mailto:{{ . }}" title="Email"><span class="icon icon-email"></span></a></li>{{- end -}}
+        {{- with .Site.Params.github -}}<li class="social-item"><a href="//github.com/{{ . }}" title="GitHub"><span class="icon icon-github"></span></a></li>{{- end -}}
+        {{- with .Site.Params.twitter -}}<li class="social-item"><a href="//twitter.com/{{ . }}" title="Twitter"><span class="icon icon-twitter"></span></a></li>{{- end -}}
+        {{- with .Site.Params.facebook -}}<li class="social-item"><a href="//www.facebook.com/{{ . }}" title="Facebook"><span class="icon icon-facebook"></span></a></li>{{- end -}}
+        {{- with .Site.Params.google -}}<li class="social-item"><a href="//plus.google.com/{{ . }}" title="Google+"><span class="icon icon-google"></span></a></li>{{- end -}}
+        {{- with .Site.Params.instagram -}}<li class="social-item"><a href="//www.instagram.com/{{ . }}" title="Instagram"><span class="icon icon-instagram"></span></a></li>{{- end -}}
+        {{- with .Site.Params.youtube -}}<li class="social-item"><a href="//www.youtube.com/user/{{ . }}" title="YouTube"><span class="icon icon-youtube"></span></a></li>{{- end -}}
+        {{- with .Site.Params.vimeo -}}<li class="social-item"><a href="//vimeo.com/{{ . }}" title="Vimeo"><span class="icon icon-vimeo"></span></a></li>{{- end -}}
+        {{- with .Site.Params.medium -}}<li class="social-item"><a href="//medium.com/@{{ . }}" title="Medium"><span class="icon icon-medium"></span></a></li>{{- end -}}
+        {{- with .Site.Params.reddit -}}<li class="social-item"><a href="//www.reddit.com/user/{{ . }}" title="Reddit"><span class="icon icon-reddit"></span></a></li>{{- end -}}
+        {{- with .Site.Params.quora -}}<li class="social-item"><a href="//www.quora.com/profile/{{ . }}" title="Quora"><span class="icon icon-quora"></span></a></li>{{- end -}}
+        {{- with .Site.Params.stackoverflow -}}<li class="social-item"><a href="//stackoverflow.com/users/{{ . }}" title="stackOverflow"><span class="icon icon-stackoverflow"></span></a></li>{{- end -}}
+        {{- with .Site.Params.npm -}}<li class="social-item"><a href="//www.npmjs.com/~{{ . }}" title="NPM"><span class="icon icon-npm"></span></a></li>{{- end -}}
+        {{- with .Site.Params.dribbble -}}<li class="social-item"><a href="//dribbble.com/{{ . }}" title="Dribbble"><span class="icon icon-dribbble"></span></a></li>{{- end -}}
+        {{- with .Site.Params.behance -}}<li class="social-item"><a href="//www.behance.net/{{ . }}" title="Behance"><span class="icon icon-behance"></span></a></li>{{- end -}}
+        {{- with .Site.Params.pinterest -}}<li class="social-item"><a href="//www.pinterest.com/{{ . }}" title="Pinterest"><span class="icon icon-pinterest"></span></a></li>{{- end -}}
+        {{- with .Site.Params.jsfiddle -}}<li class="social-item"><a href="//jsfiddle.net/user/{{ . }}" title="JSFiddle"><span class="icon icon-jsfiddle"></span></a></li>{{- end -}}
+        {{- with .Site.Params.codepen -}}<li class="social-item"><a href="//codepen.io/{{ . }}" title="Codepen"><span class="icon icon-codepen"></span></a></li>{{- end -}}
+        {{- with .Site.Params.codesandbox -}}<li class="social-item"><a href="//codesandbox.io/u/{{ . }}" title="CodeSandbox"><span class="icon icon-codesandbox"></span></a></li>{{- end -}}
+        {{- with .Site.Params.weibo -}}<li class="social-item"><a href="//weibo.com/{{ . }}" title="Weibo"><span class="icon icon-weibo"></span></a></li>{{- end -}}
+        {{- with .Site.Params.wechat -}}<li class="social-item"><a href="{{ $wechat.RelPermalink }}" title="Wechat"><span class="icon icon-wechat"></span></a></li>{{- end -}}
+        {{- with .Site.Params.linkedin -}}<li class="social-item"><a href="//www.linkedin.com/in/{{ . }}" title="Linkedin"><span class="icon icon-linkedin"></span></a></li>{{- end -}}
+        {{- with .Site.Params.zhihu -}}<li class="social-item"><a href="//www.zhihu.com/people/{{ . }}" title="Zhihu"><span class="icon icon-zhihu"></span></a></li>{{- end -}}
+        {{- with .Site.Params.douban -}}<li class="social-item"><a href="//www.douban.com/people/{{ . }}" title="Douban"><span class="icon icon-douban"></span></a></li>{{- end -}}
+        {{- with .Site.Params.bilibili -}}<li class="social-item"><a href="//space.bilibili.com/{{ . }}" title="Bilibili"><span class="icon icon-bilibili"></span></a></li>{{- end -}}
+        {{- with .Site.Params.rss -}}<li class="social-item"><a rel="alternate" type="application/rss+xml" href="{{ . | relURL }}" title="RSS"><span class="icon icon-rss"></span></a></li>{{- end -}}
+      </ul>
   </nav>
 </header>

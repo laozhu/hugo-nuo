@@ -1,3 +1,6 @@
+{{ $script := resources.Get "scripts/index.js" | resources.Minify }}
+
+<!-- Site Footer -->
 <footer class="site-footer">
   <p>© {{ if eq now.Year 2017 }}2017{{ else }}2017-{{ now.Year }}{{ end }} {{ .Site.Title }}</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
@@ -6,10 +9,14 @@
   {{ end }}
 </footer>
 
-<!-- Scripts -->
-{{ if ne .Kind "home" }}
-<script async src="///cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
-<script async src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- Video.js for post -->
+{{ if and (eq .Kind "page") (eq .Type "post") }}
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+{{ end }}
+
+<!-- Mathjax for post -->
+{{ if and (eq .Kind "page") (eq .Type "post") }}
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.min.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -32,11 +39,16 @@
   });
 </script>
 {{ end }}
-{{ $script := resources.Get "scripts/index.js" | resources.Minify }}
+
+<!-- Main Scripts -->
 <script src="{{ $script.RelPermalink }}"></script>
+
+<!-- Google Analytics -->
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
+
+<!-- Baidu Tongji -->
 {{ if isset .Site.Params "baidutongji" }}
 <script>
 var _hmt = _hmt || [];

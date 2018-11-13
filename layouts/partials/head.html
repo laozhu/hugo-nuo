@@ -1,104 +1,131 @@
 <!-- Site & Page Meta Data -->
-{{ $gohugoio := "gohugoio" }}
-{{ $avatar := "/images/avatar.jpg" }}
+{{- $gohugoio := "gohugoio" -}}
+{{- $themeColor := "#5fbf5e" -}}
+{{- $bg := resources.Get .Site.Params.bg -}}
+{{- $avatar := resources.Get .Site.Params.avatar -}}
+{{- $favicon := resources.Get .Site.Params.favicon -}}
+{{- $favicon16 := resources.Get .Site.Params.favicon16 -}}
+{{- $favicon32 := resources.Get .Site.Params.favicon32 -}}
+{{- $iconWindows := resources.Get .Site.Params.iconWindows -}}
+{{- $iconApple := resources.Get .Site.Params.iconApple -}}
+{{- $iconAndroid := resources.Get .Site.Params.iconAndroid -}}
+{{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
 
-<!-- DNS Prefetch -->
-<link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <!-- DNS Prefetch -->
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  {{ with .Site.DisqusShortname }}<link href="///disqus.com" rel="dns-prefetch">{{ end }}
+  {{ with .Site.DisqusShortname }}<link href="//c.disquscdn.com" rel="dns-prefetch">{{ end }}
+  {{ with .Site.Params.Gitment }}<link href="//imsun.github.io" rel="dns-prefetch">{{ end }}
+  {{ with .Site.GoogleAnalytics }}<link href="//www.google-analytics.com" rel="dns-prefetch">{{ end }}
+  {{ with .Site.Params.baidutongji }}<link href="//hm.baidu.com" rel="dns-prefetch">{{ end }}
 
-{{ if eq .Type "post" }}
+  {{ if and (eq .Kind "page") (eq .Type "post") }}
 
   <!-- Page Author & Description -->
-  <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
-  <meta name="description" content="{{ .Summary | plainify }}" />
+  {{ with .Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <meta name="description" content="{{ .Summary | plainify }}">
 
   <!-- Twitter Card -->
   {{ if isset .Params "cover" }}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}" />
-    <meta name="twitter:title" content="{{ .Title }}" />
-    <meta name="twitter:description" content="{{ .Summary | plainify }}" />
-    <meta name="twitter:image" content="{{ .Params.cover | absURL }}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Summary | plainify }}">
+    <meta name="twitter:image" content="{{ .Params.cover | absURL }}">
   {{ else }}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}" />
-    <meta name="twitter:title" content="{{ .Title }}" />
-    <meta name="twitter:description" content="{{ .Summary | plainify }}" />
-    <meta name="twitter:image" content="{{ $avatar | absURL }}" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Summary | plainify }}">
+    <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
   {{ end }}
 
   <!-- Facebook Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{ .Title }}" />
-  <meta property="og:description" content="{{ .Summary | plainify }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar | absURL }}{{ end }}" />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Summary | plainify }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar.RelPermalink }}{{ end }}">
 
 {{ else }}
 
   <!-- Site Author & Description -->
-  <meta name="author" content="{{ .Site.Params.author }}" />
-  <meta name="description" content="{{ .Site.Params.description }}" />
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}" />
-  <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
-  <meta name="twitter:description" content="{{ .Site.Params.description }}" />
-  <meta name="twitter:image" content="{{ $avatar | absURL }}" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
+  <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}">
+  {{ with .Site.Params.description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+  <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
 
   <!-- Facebook Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}" />
-  <meta property="og:description" content="{{ .Site.Params.description }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:image" content="{{ $avatar | absURL }}" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}">
+  {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $avatar.RelPermalink }}">
 
 {{ end }}
 
 <!-- Site Generator -->
-<meta name="generator" content="Hugo {{ .Hugo.Version }}" />
+<meta name="generator" content="Hugo {{ .Hugo.Version }}">
 
 <!-- Permalink & RSSlink -->
-<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="canonical" href="{{ .Permalink }}">
 {{ range .AlternativeOutputFormats -}}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
 <!-- Rending Prefs -->
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
 
 <!-- SEO Prefs -->
-<meta name="robots" content="index,follow" />
-<meta name="referrer" content="origin-when-cross-origin" />
-{{ if isset .Site.Params "googlesiteverification" }}<meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}" />{{ end }}
-{{ if isset .Site.Params "msvalidate" }}<meta name="msvalidate.01" content="{{ .Site.Params.msValidate }}" />{{ end }}
-{{ if isset .Site.Params "baidusiteverification" }}<meta name="baidu-site-verification" content="{{ .Site.Params.baiduSiteVerification }}" />{{ end }}
-{{ if isset .Site.Params "sogousiteverification" }}<meta name="sogou_site_verification" content="{{ .Site.Params.sogouSiteVerification }}" />{{ end }}
-{{ if isset .Site.Params "sositeverification" }}<meta name="360-site-verification" content="{{ .Site.Params.soSiteVerification }}" />{{ end }}
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+{{ with .Site.Params.googlesiteverification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
+{{ with .Site.Params.msvalidate }}<meta name="msvalidate.01" content="{{ . }}">{{ end }}
+{{ with .Site.Params.baidusiteverification }}<meta name="baidu-site-verification" content="{{ . }}">{{ end }}
+{{ with .Site.Params.sogousiteverification }}<meta name="sogou_site_verification" content="{{ . }}">{{ end }}
+{{ with .Site.Params.sositeverification }}<meta name="360-site-verification" content="{{ . }}">{{ end }}
 
 <!-- Favicon and Touch icons -->
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
-<meta name="msapplication-tooltip" content="{{ .Site.Title }}" />
-<meta name='msapplication-navbutton-color' content="#5fbf5e" />
-<meta name="msapplication-TileColor" content="#5fbf5e" />
-<meta name="msapplication-TileImage" content="{{ "/images/tile-image-windows.png" | relURL }}" />
-<link rel="icon" href="{{ "/images/favicon.ico" | relURL }}" />
-<link rel="icon" type="image/png" sizes="16x16" href="{{ "/images/favicon-16x16.png" | relURL }}" />
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "/images/favicon-32x32.png" | relURL }}" />
-<link rel="icon" sizes="192x192" href="{{ "/images/touch-icon-android.png" | relURL }}" />
-<link rel="apple-touch-icon" href="{{ "/images/touch-icon-apple.png" | relURL }}" />
-<link rel="mask-icon" href="{{ "/images/safari-pinned-tab.svg" | relURL }}" color="#5fbf5e" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
+<meta name="msapplication-tooltip" content="{{ .Site.Title }}">
+<meta name='msapplication-navbutton-color' content="{{ $themeColor }}">
+<meta name="msapplication-TileColor" content="{{ $themeColor }}">
+<meta name="msapplication-TileImage" content="{{ $iconWindows.RelPermalink }}">
+<link rel="icon" href="{{ $favicon.RelPermalink }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
+<link rel="icon" sizes="192x192" href="{{ $iconAndroid.RelPermalink }}">
+<link rel="apple-touch-icon" href="{{ $iconApple.RelPermalink }}">
 
-<!-- Styles -->
-{{ if ne .Kind "home" }}
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css" />
-{{ end }}
+<!-- Preload -->
+<link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="{{ $avatar.RelPermalink }}" as="image">
+<link rel="preload" href="{{ $bg.RelPermalink }}" as="image">
 
-{{ $options := (dict "targetPath" "styles/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+<!-- Main Styles -->
+<style>
+  body {
+    background: rgb(244, 243, 241) url('{{ $bg.RelPermalink }}') repeat fixed;
+  }
+</style>
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+<!-- Video.js Styles -->
+{{ if and (eq .Kind "page") (eq .Type "post") }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+{{ end }}
