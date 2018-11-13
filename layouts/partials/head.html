@@ -1,14 +1,14 @@
 <!-- Site & Page Meta Data -->
 {{- $gohugoio := "gohugoio" -}}
 {{- $themeColor := "#5fbf5e" -}}
-{{- $bg := resources.Get .Site.Params.bg -}}
-{{- $avatar := resources.Get .Site.Params.avatar -}}
-{{- $favicon := resources.Get .Site.Params.favicon -}}
-{{- $favicon16 := resources.Get .Site.Params.favicon16 -}}
-{{- $favicon32 := resources.Get .Site.Params.favicon32 -}}
-{{- $iconWindows := resources.Get .Site.Params.iconWindows -}}
-{{- $iconApple := resources.Get .Site.Params.iconApple -}}
-{{- $iconAndroid := resources.Get .Site.Params.iconAndroid -}}
+{{- $bg := resources.Get (.Site.Params.bg | default "/images/grey-prism.svg") -}}
+{{- $avatar := resources.Get (.Site.Params.avatar | default "/images/avatar.jpg") -}}
+{{- $favicon := resources.Get (.Site.Params.favicon | default "/images/favicon.ico") -}}
+{{- $favicon16 := resources.Get (.Site.Params.favicon16 | default "/images/favicon-16x16.png") -}}
+{{- $favicon32 := resources.Get (.Site.Params.favicon32 | default "/images/favicon-32x32.png") -}}
+{{- $iconWindows := resources.Get (.Site.Params.iconWindows | default "/images/tile-image-windows.png") -}}
+{{- $iconApple := resources.Get (.Site.Params.iconApple | default "/images/touch-icon-apple.png") -}}
+{{- $iconAndroid := resources.Get (.Site.Params.iconAndroid | default "/images/touch-icon-android.png") -}}
 {{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
 
   <!-- DNS Prefetch -->

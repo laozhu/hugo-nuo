@@ -1,5 +1,5 @@
-{{- $wechat := resources.Get .Site.Params.wechat -}}
-{{- $avatar := resources.Get .Site.Params.avatar -}}
+{{- $wechat := resources.Get (.Site.Params.wechat | default "/images/qrcode.jpg") -}}
+{{- $avatar := resources.Get (.Site.Params.avatar | default "/images/avatar.jpg") -}}
 
 <header class="site-header">
   <img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar">
