@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/laozhu/hugo-nuo",
-  "author": "米老朱 <laozhu.me@gmail.com>",
+  "author": "Ritchie Zhu <laozhu.me@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "css-mqpacker": "^7.0.0",
