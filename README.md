@@ -1,5 +1,4 @@
-Hugo Nuo
-========
+# Hugo Nuo
 
 Hugo Nuo is an responsive light & clean hugo theme for blogger. This theme features several page layout, like an [about page](https://laozhu.me/about/) for your portfolio, a [links page](https://laozhu.me/links/) for your friends' blog, a [tags page](https://laozhu.me/tags/) for your tags cloud, a works page is under development. This theme makes many third-party hugo shortcodes, including [Codepen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), [Video.js](http://videojs.com/), ~~Music 163~~ and [Sheng Xiang](https://ppt.baomitu.com/), [Asciinema](https://asciinema.org/).
 
@@ -18,7 +17,7 @@ $ cd themes
 $ git clone https://github.com/laozhu/hugo-nuo
 ```
 
-*For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.*
+_For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo._
 
 ## Getting Started
 
@@ -107,19 +106,19 @@ The hugo-nuo theme support [Google](https://www.google.com/webmasters/), [Bing](
   # Google Webmaster
   # https://www.google.com/webmasters/
   googleSiteVerification = "google_site_verification_code"
-  
+
   # Bing Webmaster
   # https://www.bing.com/toolbox/webmaster/
   msValidate = "bing_site_verification_code"
-  
+
   # Baidu Webmaster (China Only)
   # https://zhanzhang.baidu.com/
   # baiduSiteVerification = "baidu_site_verification_code"
-  
+
   # Sogou Webmaster (China Only)
   # http://zhanzhang.sogou.com/
   # sogouSiteVerification = "sogou_site_verification_code"
-  
+
   # 360 Webmaster (China Only)
   # http://zhanzhang.so.com/
   # soSiteVerification = "360_site_verification_code"
@@ -170,7 +169,7 @@ The works page layout is under development, you can use github homepage for repl
 
 ### The tags page
 
-Thanks to [@bwangelme](https://github.com/bwangelme)'s great [PR](https://github.com/laozhu/hugo-nuo/pull/37), the tags page has been done, you can use this page by adding it to main menu.  
+Thanks to [@bwangelme](https://github.com/bwangelme)'s great [PR](https://github.com/laozhu/hugo-nuo/pull/37), the tags page has been done, you can use this page by adding it to main menu.
 
 ```toml
 [[menu.main]]
@@ -277,11 +276,17 @@ can print out for job hunting.
 >
 > This theme has been using hugo pipes instead of webpack now.
 
-I use Hugo pipes and [PostCSS](https://gohugo.io/hugo-pipes/postcss/) to tranpile CSS, you should install devDependencies in `package.json` first if you want to cutomize the `./assets/styles` css files.
+I use Hugo pipes and [PostCSS](https://gohugo.io/hugo-pipes/postcss/) to tranpile CSS, you should install global postcss-cli package and local devDependencies in `package.json` first if you want to cutomize the `./assets/styles` css files.
+
+```bash
+$ npm install -g postcss-cli # yarn global add postcss-cli
+$ cd themes/hugo-nuo
+$ npm install # yarn
+```
 
 I use [ImageOptim](https://imageoptim.com/) to make images load faster, you should install this app before you run `yarn imagemin` script.
 
-*From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/).*
+_From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/)._
 
 ```bash
 $ hugo gen chromastyles --style=monokai > ./src/styles/partials/syntax.css
