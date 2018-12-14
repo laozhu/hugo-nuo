@@ -162,6 +162,18 @@ disqusShortname = "disqus_shortname"
 
 If you want to use Disqus, you should disable `changyan` to `false`.
 
+**🆕 Medium Zoom**
+
+If you want medium-like photo zoom in your post, you can add `zoomable` class to your `img` or `figure` tag, just something like below:
+
+```html
+<img src="/media/posts/hugo-nuo-post-preview/01.jpg" class="zoomable">
+```
+
+```markdown
+{{% figure src="/media/posts/hugo-nuo-post-preview/01.jpg" alt="这是一只梅花鹿" title="显然，这是一只梅花鹿" class="zoomable" %}}
+```
+
 ### The works page
 
 The works page layout is under development, you can use github homepage for replacement temporarily.
@@ -277,18 +289,6 @@ The resume page will be located at `/resume` off your website root. Different
 from the about page, the resume page is intended as a one pager that you
 can print out for job hunting.
 
-## Medium Zoom (New)
-
-If you want medium-like photo zoom in your post, you can add `zoomable` class to your `img` or `figure` tag, just something like below:
-
-```html
-<img src="/media/posts/hugo-nuo-post-preview/01.jpg" class="zoomable">
-```
-
-```markdown
-{{% figure src="/media/posts/hugo-nuo-post-preview/01.jpg" alt="这是一只梅花鹿" title="显然，这是一只梅花鹿" class="zoomable" %}}
-```
-
 ## Build
 
 > **⚠️ Big Change**
@@ -317,7 +317,7 @@ Now enter [localhost:1313](http://localhost:1313) in the address bar of your bro
 
 ## Credits
 
-- []()
+- [Medium Zoom](https://medium-zoom.francoischalifour.com/)
 - [Video.js](http://videojs.com/)
 - [MathJax](https://www.mathjax.org/)
 - [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
