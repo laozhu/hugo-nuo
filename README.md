@@ -15,6 +15,9 @@ Inside the folder of your Hugo site run:
 ```bash
 $ cd themes
 $ git clone https://github.com/laozhu/hugo-nuo
+
+# Change theme field to 'hugo-nuo' in your config.toml
+# Or just copy exampleSite/config.toml
 ```
 
 _For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo._
@@ -55,10 +58,10 @@ Or you can add some other page to menu in page's front matter:
 
 ```markdown
 ---
-title: "Links"
+title: 'Links'
 date: 2017-08-02
-layout: "links"
-menu: "main"
+layout: 'links'
+menu: 'main'
 weight: 40
 ---
 ```
@@ -90,6 +93,10 @@ The following social network icons are available:
   zhihu = "zhihu_username"
   douban = "douban_username"
   bilibili = "bilibili_id_number"
+  codesandbox = "codesandbox_username"
+  stackoverflow = "stackoverflow_username"
+  npm = "npm_username"
+  reddit = "reddit_username"
 ```
 
 You can choose someone to display, the recommend number is 7 icons.
@@ -194,28 +201,28 @@ Change the content of `links.md`, set page layout to `links`, If you want to add
 
 ```markdown
 ---
-title: "Links"
+title: 'Links'
 date: 2017-08-02
-layout: "links"
-menu: "main"
+layout: 'links'
+menu: 'main'
 weight: 40
 ---
 ```
 
 The links page read data from `data/link.yml` file, now you can add friend's links there. The format looks like:
 
-```yaml
-01_link:
-  title: chekun's blog
-  link: https://chekun.me
-  avatar: /media/links/chekun.jpg
-  description: A full-stack PHP developer
+```toml
+[chekun]
+  title = "chekun's blog"
+  link = "https://chekun.me"
+  avatar = "/media/links/chekun.jpg"
+  description = "A full-stack developer"
 
-02_link:
-  title: Boof Wang
-  link: http://boof.wang
-  avatar: /media/links/wangbo.jpg
-  description: Another full-stack PHP developer
+[wangbo]
+  title = "Boof Wang"
+  link = "http://boof.wang"
+  avatar = "/media/links/wangbo.jpg"
+  description = "Another full-stack developer"
 ```
 
 The links page need friend's avatar, finally you should add friend's avatar to `content/media/links` directory and link to avatar in the `links.yml` file.
@@ -233,10 +240,10 @@ Change the content of `about.md`, set page layout to `about`, If you want to add
 
 ```markdown
 ---
-title: "About"
+title: 'About'
 date: 2017-08-02
-layout: "about"
-menu: "main"
+layout: 'about'
+menu: 'main'
 weight: 50
 comments: false
 ---
@@ -270,21 +277,25 @@ The resume page will be located at `/resume` off your website root. Different
 from the about page, the resume page is intended as a one pager that you
 can print out for job hunting.
 
+## Medium Zoom (New)
+
+If you want medium-like photo zoom in your post, you can add `zoomable` class to your `img` or `figure` tag, just something like below:
+
+```html
+<img src="/media/posts/hugo-nuo-post-preview/01.jpg" class="zoomable">
+```
+
+```markdown
+{{% figure src="/media/posts/hugo-nuo-post-preview/01.jpg" alt="这是一只梅花鹿" title="显然，这是一只梅花鹿" class="zoomable" %}}
+```
+
 ## Build
 
 > **⚠️ Big Change**
 >
-> This theme has been using hugo pipes instead of webpack now.
+> This theme has been using hugo pipes instead of webpack now, no build package needed now.
 
-I use Hugo pipes and [PostCSS](https://gohugo.io/hugo-pipes/postcss/) to tranpile CSS, you should install global postcss-cli package and local devDependencies in `package.json` first if you want to cutomize the `./assets/styles` css files.
-
-```bash
-$ npm install -g postcss-cli # yarn global add postcss-cli
-$ cd themes/hugo-nuo
-$ npm install # yarn
-```
-
-I use [ImageOptim](https://imageoptim.com/) to make images load faster, you should install this app before you run `yarn imagemin` script.
+I use [ImageOptim](https://imageoptim.com/) to make images load faster, I recommend this tool to you.
 
 _From Hugo 0.28, the default syntax hightlighter in Hugo is [Chroma](https://github.com/alecthomas/chroma); it is built in Go and is really, really fast – and for the most important parts compatible with [Pygments](http://pygments.org/)._
 
@@ -299,16 +310,17 @@ Run hugo gen `chromastyles -h` for more options. See <https://help.farbox.com/py
 In order to see your site in action, run Hugo's built-in local server.
 
 ```bash
-$ hugo server -w
+$ hugo server
 ```
 
 Now enter [localhost:1313](http://localhost:1313) in the address bar of your browser.
 
 ## Credits
 
+- []()
 - [Video.js](http://videojs.com/)
 - [MathJax](https://www.mathjax.org/)
 - [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-- [BootCDN](http://www.bootcdn.cn/)
+- [jsDelivr](https://www.jsdelivr.com/)
 
 Also thanks to [Steve Francia](https://github.com/spf13) for creating [Hugo](https://gohugo.io/) and the awesome community around the project.

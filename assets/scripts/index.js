@@ -8,21 +8,32 @@ const socialMenu = document.querySelector('.social-menu');
 const toTopBtn = document.querySelector('.to-top');
 
 // Site and social menu toggle
-if (menuToggle) {
+menuToggle &&
   menuToggle.addEventListener('click', () => {
     siteMenu.classList.toggle('collapsed');
     socialMenu.classList.toggle('collapsed');
     menuIcon.classList.toggle('icon-menu');
     menuIcon.classList.toggle('icon-close');
   });
-}
+
+// Medium zoom init
+mediumZoom(document.querySelectorAll('.zoomable > img, img.zoomable'));
 
 // Random emoji for 404 error message.
 const randomErrorEmoji = () => {
   const error = document.getElementsByClassName('error-emoji')[0];
   const emojiArray = [
-    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
-    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
+    '\\(o_o)/',
+    '(o^^)o',
+    '(˚Δ˚)b',
+    '(^-^*)',
+    '(≥o≤)',
+    '(^_^)b',
+    '(·_·)',
+    "(='X'=)",
+    '(>_<)',
+    '(;-;)',
+    '\\(^Д^)/',
   ];
   if (error) {
     const errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
@@ -52,6 +63,7 @@ window.addEventListener('scroll', () => {
 
 // Smooth Scroll to top when click toTopBtn
 const scroll = new SmoothScroll('a[href*="#"]');
-toTopBtn.addEventListener('click', () => {
-  scroll.animateScroll(0);
-});
+toTopBtn &&
+  toTopBtn.addEventListener('click', () => {
+    scroll.animateScroll(0);
+  });

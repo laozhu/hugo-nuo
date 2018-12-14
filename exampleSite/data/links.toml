@@ -1,0 +1,23 @@
+[chekun]
+  title = "chekun's blog"
+  link = "https://chekun.me"
+  avatar = "/media/links/chekun.jpg"
+  description = "A full-stack developer"
+
+[wangbo]
+  title = "Boof Wang"
+  link = "http://boof.wang"
+  avatar = "/media/links/wangbo.jpg"
+  description = "Another full-stack developer"
+
+[yuanxuxu]
+  title = "Ryan's blog"
+  link = "https://yuanxuxu.com/"
+  avatar = "/media/links/yuanxuxu.jpg"
+  description = "A interesting developer"
+
+[candisheng]
+  title = "Kan Disheng"
+  link = "http://www.kandisheng.com/"
+  avatar = "/media/links/kandisheng.jpg"
+  description = "A crazy developer"
