@@ -5,8 +5,19 @@
       <h1 class="post-title">{{ .Title }}</h1>
       <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</p>
     </header>
-    <article class="post-content">{{ .Content }}</article>
+    <aside class="toc">
+      {{ .TableOfContents }}
+    </aside>
+    <article class="post-content">{{ .Content }}
+      <hr>
+    </article>
+    
     <footer class="post-footer">
+        <div class="post-plug">
+          <!-- insert pat/discord responsive image later-->
+            <h2>JOIN ARGENT GAMES ON:</h2>
+            <h2 class="post-sm"><a href="https://twitter.com/argent_games">AG Twitter</a><b> &nbsp;† &nbsp;</b><a href="https://twitter.com/like_a_heretic">Markus Twitter</a> &nbsp;<b>† &nbsp;</b><b> </b><a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fdiscordapp.com%2Finvite%2F5SrFgVY&amp;t=ZWVlOGU0MzU3MDViZjI2ZmM4M2I4Y2MwMjQ1ZTc1OTYzYzRkZTU0MSxJU1E1Y3lmSQ%3D%3D&amp;b=t%3AxqETnnMjZZ5KgZorf-meJA&amp;p=https%3A%2F%2Fblog.argentgames.co%2Fpost%2F177518504497%2Frehollywood-character-reveal-markus&amp;m=1">Discord</a><b> &nbsp;† &nbsp;</b><a href="https://t.umblr.com/redirect?z=https%3A%2F%2Fwww.patreon.com%2Fargentgames&amp;t=YThkZGQ4NTZkM2YwODRlODhkMDA1NWE1YTYzMGIzZWY4MjE0YzI1ZCxJU1E1Y3lmSQ%3D%3D&amp;b=t%3AxqETnnMjZZ5KgZorf-meJA&amp;p=https%3A%2F%2Fblog.argentgames.co%2Fpost%2F177518504497%2Frehollywood-character-reveal-markus&amp;m=1">Patreon</a></h2>
+          </div>
       {{ if isset .Params "tags" }}
       <ul class="post-tags">
         {{ range $tag := .Params.tags }}
@@ -14,6 +25,19 @@
         {{ end }}
       </ul>
       {{ end }}
+      
+      <div class="related-content">
+        {{ $related := .Site.RegularPages.Related . | first 3 }}
+        {{ with $related }}
+        <h3>Related posts</h3>
+        <ul>
+          {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        </div>
+        
       <p class="post-copyright">
         {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}This post was published <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.{{ end }}
       </p>

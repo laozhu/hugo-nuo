@@ -1,33 +1,29 @@
 html {
   line-height: 1.618;
-  font-family: $family-sans-serif;
+  font-family: var(--family-sans-serif);
   font-size: 16px;
 }
 
 body {
   text-rendering: optimizeLegibility;
-  color: $text;
-  font-feature-settings: "liga" on;
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
 }
 
 a {
-  opacity: 0.7;
+  opacity: 0.85;
   text-decoration: none;
-  color: $text-strong;
+  color: var(--text-strong);
 
   &:focus,
   &:hover {
     opacity: 1;
     outline: none;
-    color: $black-ter;
+    color: var(--red);
   }
 }
 
@@ -44,19 +40,19 @@ a {
   & .is-active {
     & a {
       opacity: 1;
-      color: $text-strong;
-      font-weight: $weight-bold;
+      color: var(--text-strong);
+      font-weight: var(--weight-bold);
     }
   }
 
   & a {
     opacity: 0.5;
-    color: $black-ter;
+    color: var(--red);
 
     &:focus,
     &:hover {
       opacity: 1;
-      color: $text-strong;
+      color: var(--text-strong);
     }
   }
 
@@ -74,10 +70,10 @@ a {
   box-sizing: border-box;
   position: relative;
   margin-left: 20rem;
-  border-right: 1px solid $main-border;
-  border-left: 1px solid $main-border;
-  box-shadow: 0 1px 4px $box-shadow;
-  background: $main-background;
+  border-right: 1px solid var(--main-border);
+  border-left: 1px solid var(--main-border);
+  box-shadow: 0 1px 4px var(--box-shadow);
+  background: var(--main-background);
   padding: 1rem 2rem;
   width: calc(100% - 20rem);
   max-width: 70rem;
@@ -89,9 +85,9 @@ a {
 
   @media print, screen and (max-width: 800px) {
     margin-left: 0;
-    border-top: 1px solid $main-border;
+    border-top: 1px solid var(--main-border);
     border-right: none;
-    border-bottom: 1px solid $main-border;
+    border-bottom: 1px solid var(--main-border);
     border-left: none;
     padding: 0 1rem;
     width: 100%;
@@ -106,13 +102,13 @@ a {
     display: block;
     padding: 2rem 1rem;
     text-align: center;
-    color: $text;
-    font-family: $family-monospace;
-    font-size: $size-7;
+    color: var(--text);
+    font-family: var(--family-monospace);
+    font-size: var(--size-7);
 
     & a {
       opacity: 0.7;
-      color: $text;
+      color: var(--text);
 
       &:focus,
       &:hover {
@@ -121,3 +117,5 @@ a {
     }
   }
 }
+
+

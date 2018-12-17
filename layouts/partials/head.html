@@ -9,7 +9,7 @@
 {{- $iconWindows := resources.Get (.Site.Params.iconWindows | default "/images/tile-image-windows.png") -}}
 {{- $iconApple := resources.Get (.Site.Params.iconApple | default "/images/touch-icon-apple.png") -}}
 {{- $iconAndroid := resources.Get (.Site.Params.iconAndroid | default "/images/touch-icon-android.png") -}}
-{{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify -}}
+{{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify -}}
 
   <!-- DNS Prefetch -->
   <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
@@ -17,6 +17,7 @@
   <link href="//at.alicdn.com" rel="dns-prefetch">
   <link href="//fonts.googleapis.com" rel="dns-prefetch">
   <link href="//fonts.gstatic.com" rel="dns-prefetch">
+
   {{ with .Site.DisqusShortname }}<link href="///disqus.com" rel="dns-prefetch">{{ end }}
   {{ with .Site.DisqusShortname }}<link href="//c.disquscdn.com" rel="dns-prefetch">{{ end }}
   {{ with .Site.Params.Gitment }}<link href="//imsun.github.io" rel="dns-prefetch">{{ end }}
@@ -125,9 +126,7 @@
 </style>
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-
-<!-- Medium Zoom -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans" rel="stylesheet"> 
 
 <!-- Video.js Styles -->
 {{ if and (eq .Kind "page") (eq .Type "post") }}

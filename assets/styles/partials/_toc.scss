@@ -1,0 +1,23 @@
+.toc{
+    @media screen and (max-width: 800px){
+      display: none;
+    }
+  
+    position: fixed;
+    right: 0;
+    padding-right: 3.25rem;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: var(--white-ter);
+    
+    & li {
+      list-style: none;
+    }
+
+    & a{
+        color: var(--white-ter);
+    }
+    & a:hover{
+        color: var(--red);
+    }
+}

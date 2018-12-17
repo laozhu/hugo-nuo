@@ -10,7 +10,7 @@
       border-radius: 5px;
 
       &.tag-s {
-        color: $grey;
+        color: var(--grey-light);
         font-size: 1rem;
         line-height: 2rem;
         padding: 0 0.5rem;
@@ -18,7 +18,7 @@
       }
 
       &.tag-m {
-        color: $grey-dark;
+        color: var(--grey-lighter);
         font-size: 1.25rem;
         line-height: 2.5rem;
         padding: 0 0.75rem;
@@ -26,29 +26,29 @@
       }
 
       &.tag-l {
-        color: $grey-darker;
+        color: var(--white-ter);
         font-size: 1.5rem;
         line-height: 3rem;
         padding: 0 1rem;
       }
 
       &.tag-xl {
-        color: $black-ter;
+        color: var(--white-bis);
         font-size: 1.75rem;
         line-height: 3.25rem;
         padding: 0 1.25rem;
       }
 
       &.tag-xxl {
-        color: $primary;
+        color: var(--primary);
         font-size: 2rem;
         line-height: 3.5rem;
         padding: 0 1.5rem;
       }
 
       &:hover {
-        color: $white;
-        background-color: $primary;
+        color: var(--white);
+        background-color: var(--primary);
         opacity: 0.8;
       }
     }

@@ -16,9 +16,9 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 2px solid $media-border;
-      box-shadow: 0 1px 4px $box-shadow-darker;
-      transition: transform $easing $speed;
+      border: 2px solid var(--media-border);
+      box-shadow: 0 1px 4px var(--box-shadow-darker);
+      transition: transform var(--easing) var(--speed);
 
       &:hover {
         transform: rotate(45deg);
@@ -26,7 +26,7 @@
     }
 
     & .link-title {
-      font-size: $size-6;
+      font-size: var(--size-6);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -34,7 +34,7 @@
     }
 
     & .link-description {
-      font-size: $size-7;
+      font-size: var(--size-7);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;

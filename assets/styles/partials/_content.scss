@@ -1,9 +1,14 @@
 .post-content {
   position: relative;
-  color: $text;
+  color: var(--text);
   line-height: 1.8;
   word-wrap: break-word;
   word-break: break-word;
+  width: 75%;
+  @media screen and (max-width: 800px){
+    width: 100%;
+  }
+  
 
   & li + li {
     margin-top: 0.5rem;
@@ -11,51 +16,51 @@
 
   & a {
     padding-bottom: 0.1em;
-    border-bottom: 1px dashed $green-light;
-    color: $primary;
+    border-bottom: 1px solid var(--red-light);
+    color: var(--white-bis);
     opacity: 1;
 
     &:focus,
     &:hover {
-      border-bottom: 1px solid $green-light;
+      border-bottom: 3px double var(--red-light);
     }
   }
 
   & em {
-    color: $text-light;
+    color: var(--red-light);
     font-style: italic;
   }
 
   & strong {
-    color: $text-strong;
+    color: var(--red-light);
   }
 
   & del {
-    color: $text-light;
+    color: var(--red-light);
     text-decoration: line-through;
   }
 
   & ins {
-    color: $text-strong;
+    color: var(--text-strong);
     text-decoration: underline;
   }
 
   & hr {
     position: relative;
     margin: 2rem auto;
-    border-top: 1px dashed $grey-lighter;
+    border-top: 1px solid var(--grey-lighter);
     border-bottom: none;
 
     &::before {
-      content: "sep line";
+      //content: "sep line";
       position: absolute;
       top: -12px;
       left: calc(50% - 40px);
       padding: 0 0.5rem;
-      background-color: $white;
-      color: $grey-lighter;
-      font-size: $size-7;
-      font-family: $family-monospace;
+      background-color: var(--white);
+      color: var(--grey-lighter);
+      font-size: var(--size-7);
+      font-family: var(--family-monospace);
     }
   }
 
@@ -65,57 +70,60 @@
   & h4,
   & h5,
   & h6 {
-    color: $text-strong;
-    font-weight: $weight-semibold;
+    color: var(--text-strong);
+    font-weight: var(--weight-semibold);
     line-height: 1.125;
     text-align: left;
+    font-family: var(--header-font);
   }
 
   & h1 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-size: $size-2;
+    font-size: var(--size-2);
   }
 
   & h2 {
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
-    font-size: $size-3;
+    font-size: var(--size-3);
   }
 
   & h3 {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    font-size: $size-4;
+    font-size: var(--size-4);
   }
 
   & h4 {
     margin-top: 1.25rem;
     margin-bottom: 0.25rem;
-    font-size: $size-5;
+    font-size: var(--size-5);
   }
 
   & h5 {
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: $size-6;
+    font-size: var(--size-6);
   }
 
   & h6 {
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: $size-7;
+    font-size: var(--size-7);
   }
 
   & p {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: justify;
+    font-family: var(--body-font);
   }
 
   & blockquote {
-    background-color: $background;
-    border-left: 5px solid $border;
+    background-color: var(--grey-darker);
+    color: var(--white-ter);
+    border-left: 5px solid var(--border);
     padding: 0.5rem 1rem;
     margin: 2rem 0;
 
@@ -126,7 +134,7 @@
 
     & cite {
       margin-top: 1.5rem;
-      color: $text-light;
+      color: var(--text-light);
       font-size: 0.9rem;
     }
   }
@@ -138,8 +146,8 @@
     padding-bottom: 0.2em;
     margin: 0;
     font-size: 0.9em;
-    background-color: $code-background;
-    font-family: $family-monospace;
+    background-color: var(--code-background);
+    font-family: var(--family-monospace);
 
     &::before,
     &::after {
@@ -157,27 +165,28 @@
   & kbd {
     display: inline-block;
     padding: 0.25em;
-    background-color: $white-bis;
-    border: 1px solid $grey-lighter;
-    border-bottom-color: $grey-light;
-    border-radius: $radius;
-    box-shadow: inset 0 -1px 0 $grey-light;
+    background-color: var(--white-bis);
+    border: 1px solid var(--grey-lighter);
+    border-bottom-color: var(--grey-light);
+    border-radius: var(--radius);
+    box-shadow: inset 0 -1px 0 var(--grey-light);
     font-size: 0.8em;
     line-height: 1.25;
-    font-family: $family-monospace;
-    color: $text;
+    font-family: var(--family-monospace);
+    color: var(--text);
   }
 
   & pre {
     margin: 2rem auto;
     padding: 1rem;
     overflow-x: auto;
-    border-radius: $radius;
+    border-radius: var(--radius);
     font-size: 0.9rem;
     line-height: 1.618;
     white-space: pre;
     word-wrap: normal;
     word-break: normal;
+    background-color: var(--code-background);
 
     & code {
       font-size: 0.9rem;
@@ -192,7 +201,7 @@
 
   & sup,
   & sub {
-    font-size: $size-7;
+    font-size: var(--size-7);
 
     & a {
       border-bottom: none;
@@ -262,7 +271,7 @@
     margin-bottom: 2rem;
 
     & dt {
-      color: $primary;
+      color: var(--primary);
       margin-top: 1rem;
 
       &::after {
@@ -283,7 +292,7 @@
 
     & img {
       max-width: 100%;
-      box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+      box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
 
       @media screen and (max-width: 800px) {
         box-shadow: none;
@@ -292,7 +301,7 @@
 
     & figcaption {
       & h4 {
-        color: $grey-light;
+        color: var(--grey-light);
         font-size: 0.9rem;
         text-align: center;
       }
@@ -303,7 +312,7 @@
     display: block;
     margin: 2rem auto;
     max-width: 100%;
-    box-shadow: 2px 20px 40px 10px $box-shadow-dark;
+    box-shadow: 2px 20px 40px 10px var(--box-shadow-dark);
 
     @media screen and (max-width: 800px) {
       box-shadow: none;
@@ -312,7 +321,6 @@
 
   & div.has-jax {
     margin: 2rem auto;
-    overflow-x: auto;
   }
 
   & .MathJax_Display,
@@ -320,5 +328,12 @@
     &:focus {
       outline: none;
     }
+  }
+}
+.related-content{
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  & li{
+    list-style: none;
   }
 }

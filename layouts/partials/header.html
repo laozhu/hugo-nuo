@@ -2,7 +2,7 @@
 {{- $avatar := resources.Get (.Site.Params.avatar | default "/images/avatar.jpg") -}}
 
 <header class="site-header">
-  <img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar">
+  <a style="opacity:1;" href="http://argentgames.co>"><img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar"></a>
   {{  if eq .Kind "home" }}
   <h1 class="title">{{ .Site.Title }}</h1>
   {{ else }}
@@ -43,7 +43,7 @@
         {{- with .Site.Params.facebook -}}<li class="social-item"><a href="//www.facebook.com/{{ . }}" title="Facebook"><span class="icon icon-facebook"></span></a></li>{{- end -}}
         {{- with .Site.Params.google -}}<li class="social-item"><a href="//plus.google.com/{{ . }}" title="Google+"><span class="icon icon-google"></span></a></li>{{- end -}}
         {{- with .Site.Params.instagram -}}<li class="social-item"><a href="//www.instagram.com/{{ . }}" title="Instagram"><span class="icon icon-instagram"></span></a></li>{{- end -}}
-        {{- with .Site.Params.youtube -}}<li class="social-item"><a href="//www.youtube.com/user/{{ . }}" title="YouTube"><span class="icon icon-youtube"></span></a></li>{{- end -}}
+        {{- with .Site.Params.youtube -}}<li class="social-item"><a href="//www.youtube.com/c/{{ . }}" title="YouTube"><span class="icon icon-youtube"></span></a></li>{{- end -}}
         {{- with .Site.Params.vimeo -}}<li class="social-item"><a href="//vimeo.com/{{ . }}" title="Vimeo"><span class="icon icon-vimeo"></span></a></li>{{- end -}}
         {{- with .Site.Params.medium -}}<li class="social-item"><a href="//medium.com/@{{ . }}" title="Medium"><span class="icon icon-medium"></span></a></li>{{- end -}}
         {{- with .Site.Params.reddit -}}<li class="social-item"><a href="//www.reddit.com/user/{{ . }}" title="Reddit"><span class="icon icon-reddit"></span></a></li>{{- end -}}
@@ -63,6 +63,9 @@
         {{- with .Site.Params.douban -}}<li class="social-item"><a href="//www.douban.com/people/{{ . }}" title="Douban"><span class="icon icon-douban"></span></a></li>{{- end -}}
         {{- with .Site.Params.bilibili -}}<li class="social-item"><a href="//space.bilibili.com/{{ . }}" title="Bilibili"><span class="icon icon-bilibili"></span></a></li>{{- end -}}
         {{- with .Site.Params.rss -}}<li class="social-item"><a rel="alternate" type="application/rss+xml" href="{{ . | relURL }}" title="RSS"><span class="icon icon-rss"></span></a></li>{{- end -}}
+        {{- with .Site.Params.discord -}}<li class="social-item"><a href="//www.discord.gg/{{ . }}" title="Discord"><span class="icon icon-discord"><img src="icon/Discord-Logo-White.png" style="width: 16px; height: 16px;"></span></a></li>{{- end -}}
+        {{- with .Site.Params.patreon -}}<li class="social-item"><a href="//www.patreon.com/{{ . }}" title="Patreon"><span class="icon icon-patreon"><img src="icon/Patreon-Icon_White.png" style="width: 16px; height: 16px;"></span></a></li>{{- end -}}
+        <li class="social-item"><a href="/index.xml" title="RSS"><span class="icon icon-rss"></span></a></li>
       </ul>
   </nav>
 </header>

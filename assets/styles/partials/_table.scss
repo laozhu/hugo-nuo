@@ -1,13 +1,13 @@
 table {
-  background-color: $table-background;
-  color: $table;
+  background-color: var(--table-background);
+  color: var(--table);
   margin: 2rem auto;
   width: 100%;
   border-collapse: collapse;
 
   & td,
   & th {
-    border: 1px solid $table-border;
+    border: 1px solid var(--table-border);
     border-width: 0 0 1px;
     padding: 0.5em 0.75em;
     vertical-align: center;
@@ -19,17 +19,17 @@ table {
   }
 
   & th {
-    color: $text-strong;
+    color: var(--text-strong);
   }
 
   & tr {
     &:hover {
-      background-color: $table-row-hover-background;
+      background-color: var(--table-row-hover-background);
     }
 
     &.is-selected {
-      background-color: $table-row-active-background;
-      color: $table-row-active;
+      background-color: var(--table-row-active-background);
+      color: var(--table-row-active);
 
       & a,
       & strong {
@@ -38,7 +38,7 @@ table {
 
       & td,
       & th {
-        border-color: $table-row-active;
+        border-color: var(--table-row-active);
         color: currentColor;
       }
     }
@@ -48,7 +48,7 @@ table {
     & td,
     & th {
       border-width: 0 0 2px;
-      color: $table-head;
+      color: var(--table-head);
     }
   }
 
@@ -56,7 +56,7 @@ table {
     & td,
     & th {
       border-width: 2px 0 0;
-      color: $table-head;
+      color: var(--table-head);
     }
   }
 
@@ -107,10 +107,10 @@ table {
     & tbody {
       & tr:not(.is-selected) {
         &:nth-child(even) {
-          background-color: $table-row-even-background;
+          background-color: var(--table-row-even-background);
 
           &:hover {
-            background-color: $table-row-even-hover-background;
+            background-color: var(--table-row-even-hover-background);
           }
         }
       }

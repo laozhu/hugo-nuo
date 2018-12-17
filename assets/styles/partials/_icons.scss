@@ -1,6 +1,5 @@
 @font-face {
   font-family: 'icon';  /* project id 174169 */
-  font-display: 'swap';
   src: url('//at.alicdn.com/t/font_174169_qmgvd10zwbf.eot');
   src: url('//at.alicdn.com/t/font_174169_qmgvd10zwbf.eot?#iefix') format('embedded-opentype'),
   url('//at.alicdn.com/t/font_174169_qmgvd10zwbf.woff') format('woff'),
@@ -79,3 +78,8 @@
 .icon-vimeo::before { content: "\f25a"; }
 
 .icon-youtube::before { content: "\f274"; }
+
+.icon-patreon::before { background-image: url('icon/Patreon-Icon_White.png'); width: 16px; height: 16px;}
+
+.icon-discord::before { background-image: url('icon/Discord-Logo-White.png'); width:16px; height:16px;}
+.icon-rss::before { background-image: url('icon/47.png'); width:16px; height:16px;}
