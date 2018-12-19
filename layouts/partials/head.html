@@ -127,7 +127,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 
 <!-- Medium Zoom -->
+{{ if and (eq .Kind "page") (eq .Type "post") }}
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+{{ end }}
 
 <!-- Video.js Styles -->
 {{ if and (eq .Kind "page") (eq .Type "post") }}

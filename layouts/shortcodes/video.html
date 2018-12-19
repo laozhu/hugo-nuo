@@ -74,7 +74,7 @@
     <source src="{{ .Get "mp4" }}" type="video/mp4"></source>
     <source src="{{ .Get "webm" }}" type="video/webm"></source>
     <source src="{{ .Get "ogv" }}" type=video/ogg></source>
-    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a></p>
   </video>
 
 {{ else }}
@@ -83,7 +83,7 @@
     <source src="{{ .Get 0 }}" type="video/mp4"></source>
     <source src="{{ .Get 1 }}" type="video/webm"></source>
     <source src="{{ .Get 2 }}" type="video/ogg"></source>
-    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a></p>
   </video>
 
 {{ end }}

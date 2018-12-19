@@ -111,7 +111,7 @@
 {{ if .IsNamedParams }}
 
   {{ if eq (.Get "type") "image" }}
-    <a href="https://asciinema.org/a/{{ .Get "id" }}{{ if ne (.Get "started") "" }}?t={{ .Get "started" }}{{ end }}" target="_blank"><img src="https://asciinema.org/a/{{ .Get "id" }}.png"></a>
+    <a href="https://asciinema.org/a/{{ .Get "id" }}{{ if ne (.Get "started") "" }}?t={{ .Get "started" }}{{ end }}" target="_blank" rel="noopener"><img src="https://asciinema.org/a/{{ .Get "id" }}.png"></a>
   {{ else }}
     <script src="https://asciinema.org/a/{{ .Get "id" }}.js" id="asciicast-{{ .Get "id" }}" {{ if ne (.Get "started") "" }}data-t="{{ .Get "started" }}"{{ end }} {{ if ne (.Get "speed") "" }}data-speed="{{ .Get "speed" }}"{{ end }} data-size="{{ or (.Get "size") $size }}" data-theme="{{ or (.Get "theme") $theme }}" {{ if ne (.Get "cols") "" }}data-cols="{{ .Get "cols" }}"{{ end }} {{ if ne (.Get "rows") "" }}data-rows="{{ .Get "rows" }}"{{ end }} {{ if ne (.Get "autoplay") "" }}data-autoplay="{{ .Get "autoplay" }}"{{ end }} {{ if ne (.Get "loop") "" }}data-loop="{{ .Get "loop" }}"{{ end }}  data-preload={{ or (.Get "preload") $preload }} async></script>
   {{ end }}
@@ -120,7 +120,7 @@
 
   {{ if isset .Params 1 }}
     {{ if eq (.Get 1) "image" }}
-      <a href="https://asciinema.org/a/{{ .Get 0 }}{{ if isset .Params 2 }}?t={{ .Get 2 }}{{ end }}" target="_blank"><img src="https://asciinema.org/a/{{ .Get 0 }}.png"></a>
+      <a href="https://asciinema.org/a/{{ .Get 0 }}{{ if isset .Params 2 }}?t={{ .Get 2 }}{{ end }}" target="_blank" rel="noopener"><img src="https://asciinema.org/a/{{ .Get 0 }}.png"></a>
     {{ else if eq (.Get 1) $type }}
       <script src="https://asciinema.org/a/{{ .Get 0 }}.js" id="asciicast-{{ .Get 0 }}" {{ if isset .Params 2 }}data-t="{{ .Get 2 }}"{{ end }} {{ if isset .Params 3 }}data-speed="{{ .Get 3 }}"{{ end }} {{ if isset .Params 4 }}data-size="{{ .Get 4 }}"{{ else }}data-size="{{ $size }}"{{ end }} {{ if isset .Params 5 }}data-theme="{{ .Get 5 }}"{{ else }}data-theme="{{ $theme }}"{{ end }} {{ if isset .Params 6 }}data-cols="{{ .Get 6 }}"{{ end }} {{ if isset .Params 7 }}data-rows="{{ .Get 7 }}"{{ end }} {{ if isset .Params 8 }}data-autoplay="{{ .Get 8 }}"{{ end }} {{ if isset .Params 9 }}data-loop="{{ .Get 9 }}"{{ end }} {{ if isset .Params 10 }}data-preload="{{ .Get 10 }}"{{ else }}data-preload="{{ $preload }}"{{ end }} async></script>
     {{ else }}
