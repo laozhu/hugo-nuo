@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313"
+baseURL = ""
 languageCode = "en"
 title = "Hugo Blog"
 theme = "hugo-nuo"
