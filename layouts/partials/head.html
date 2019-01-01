@@ -1,14 +1,15 @@
 <!-- Site & Page Meta Data -->
 {{- $gohugoio := "gohugoio" -}}
-{{- $themeColor := "#5fbf5e" -}}
-{{- $bg := resources.Get (.Site.Params.bg | default "/images/grey-prism.svg") -}}
-{{- $avatar := resources.Get (.Site.Params.avatar | default "/images/avatar.jpg") -}}
-{{- $favicon := resources.Get (.Site.Params.favicon | default "/images/favicon.ico") -}}
-{{- $favicon16 := resources.Get (.Site.Params.favicon16 | default "/images/favicon-16x16.png") -}}
-{{- $favicon32 := resources.Get (.Site.Params.favicon32 | default "/images/favicon-32x32.png") -}}
-{{- $iconWindows := resources.Get (.Site.Params.iconWindows | default "/images/tile-image-windows.png") -}}
-{{- $iconApple := resources.Get (.Site.Params.iconApple | default "/images/touch-icon-apple.png") -}}
-{{- $iconAndroid := resources.Get (.Site.Params.iconAndroid | default "/images/touch-icon-android.png") -}}
+{{- $themeColor := "#02b875" -}}
+{{- $favicon := "favicon.ico" -}}
+{{- $icon16 := "icons/icon-16x16.png" -}}
+{{- $icon32 := "icons/icon-32x32.png" -}}
+{{- $icon144 := "icons/icon-144x144.png" -}}
+{{- $icon152 := "icons/icon-152x152.png" -}}
+{{- $icon192 := "icons/icon-192x192.png" -}}
+{{- $manifest := "manifest.json" -}}
+{{- $bg := resources.Get (.Site.Params.bg | default "images/grey-prism.svg") -}}
+{{- $avatar := resources.Get (.Site.Params.avatar | default "images/avatar.png") -}}
 {{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify -}}
 
   <!-- DNS Prefetch -->
@@ -98,18 +99,20 @@
 {{ with .Site.Params.sositeverification }}<meta name="360-site-verification" content="{{ . }}">{{ end }}
 
 <!-- Favicon and Touch icons -->
+<meta name="theme-color" content="{{ $themeColor }}">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
 <meta name="msapplication-tooltip" content="{{ .Site.Title }}">
 <meta name='msapplication-navbutton-color' content="{{ $themeColor }}">
 <meta name="msapplication-TileColor" content="{{ $themeColor }}">
-<meta name="msapplication-TileImage" content="{{ $iconWindows.RelPermalink }}">
-<link rel="icon" href="{{ $favicon.RelPermalink }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
-<link rel="icon" sizes="192x192" href="{{ $iconAndroid.RelPermalink }}">
-<link rel="apple-touch-icon" href="{{ $iconApple.RelPermalink }}">
+<meta name="msapplication-TileImage" content="{{ $icon144 | relURL }}">
+<link rel="icon" href="{{ $favicon | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ $icon16 | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ $icon32 | relURL }}">
+<link rel="icon" sizes="192x192" href="{{ $icon192 | relURL }}">
+<link rel="apple-touch-icon" href="{{ $icon152 | relURL }}">
+<link rel="manifest" href="{{ $manifest | relURL }}">
 
 <!-- Preload -->
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">

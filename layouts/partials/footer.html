@@ -1,4 +1,5 @@
-{{ $script := resources.Get "scripts/index.js" | resources.Minify }}
+{{- $script := resources.Get "scripts/index.js" | resources.Minify -}}
+{{- $serviceWorker := resources.Get "service-worker.js" -}}
 
 <!-- Site Footer -->
 <footer class="site-footer">
@@ -46,13 +47,21 @@
 <!-- Main Scripts -->
 <script src="{{ $script.RelPermalink }}"></script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('{{ $serviceWorker.RelPermalink }}').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
 <!-- Google Analytics -->
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
 <!-- Baidu Tongji -->
-{{ if isset .Site.Params "baidutongji" }}
+{{ with .Site.Params.baidutongji }}
 <script>
 var _hmt = _hmt || [];
 (function() {

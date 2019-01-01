@@ -4,7 +4,7 @@
     <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</p>
   </header>
   {{ if isset .Params "cover" }}
-    <img class="post-cover" src="{{ .Params.cover }}" alt="{{ .Title }}">
+    <img class="post-cover" src="{{ .Params.cover }}" alt="{{ .Title }}" lazyload="on">
   {{ end }}
   <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}</p>
   <footer class="post-footer">
