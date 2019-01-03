@@ -1,55 +1,81 @@
-var cacheName = 'hugo-nuo-v1';
+var cacheName = 'hugo-nuo-v2';
 var filesToCache = [
-  './favicon.ico',
-  './manifest.json',
-  './styles/main.min.css',
-  './scripts/index.min.js',
-  './images/avatar.png',
-  './images/grey-prism.svg',
-  './images/qrcode.jpg',
-  './icons/icon-16x16.png',
-  './icons/icon-32x32.png',
-  './icons/icon-128x128.png',
-  './icons/icon-144x144.png',
-  './icons/icon-152x152.png',
-  './icons/icon-192x192.png',
-  './icons/icon-256x256.png',
-  './icons/icon-512x512.png',
+  '404.html',
+  'favicon.ico',
+  'manifest.json',
+  'icons/icon-16x16.png',
+  'icons/icon-32x32.png',
+  'icons/icon-128x128.png',
+  'icons/icon-144x144.png',
+  'icons/icon-152x152.png',
+  'icons/icon-192x192.png',
+  'icons/icon-256x256.png',
+  'icons/icon-512x512.png',
+  'images/avatar.png',
+  'images/grey-prism.svg',
+  'images/qrcode.jpg',
+  'styles/main.min.css',
+  'scripts/index.min.js',
+
+  // Google fonts
   'https://fonts.googleapis.com/css?family=Lobster',
   'https://fonts.gstatic.com/s/lobster/v20/neILzCirqoswsqX9zoKmM4MwWJU.woff2',
+
+  // Iconfont
   'https://at.alicdn.com/t/font_174169_qmgvd10zwbf.woff',
+
+  // smooth-scroll
   'https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js',
+
+  // medium-zoom
   'https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js',
+
+  // Video.js
   'https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css',
   'https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js',
+
+  // MathJax
   'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
-  'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js?V=2.7.5'
+  'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js?V=2.7.5',
 ];
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
+// Cache the application assets
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache)));
 });
 
-self.addEventListener('fetch', function (event) {
+// Serve files from the cache
+self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (response) return response;
-      var request = event.request.clone();
-      return fetch(request).then(function (httpResponse) {
-        if (!httpResponse || httpResponse.status !== 200) return httpResponse;
-        // Update caches
-        var responseClone = httpResponse.clone();
-        caches.open(cacheName).then(function (cache) {
-          cache.put(event.request, responseClone);
+    caches
+      .match(event.request)
+      .then(response => {
+        if (response) return response;
+        return fetch(event.request);
+      })
+      .then(response => {
+        if (response.status === 404) return caches.match('404.html');
+        return caches.open(cacheName).then(cache => {
+          cache.put(event.request.url, response.clone());
+          return response;
         });
-        return httpResponse;
-      });
-    })
+      })
+      .catch(error => console.log('Error, ', error)),
   );
 });
 
-
+// Delete outdated caches
+self.addEventListener('activate', event => {
+  const cacheWhitelist = [cacheName];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        }),
+      );
+    }),
+  );
+});
