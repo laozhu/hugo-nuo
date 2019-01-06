@@ -29,6 +29,8 @@
         <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
         {{ else if .Site.Params.Gitment }}
         <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#gitment-container"><span class="icon icon-comment" aria-hidden="true"></span></a>
+        {{ else if .Site.Params.GitalkShow }}
+        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#gitalk-container"><span class="icon icon-comment" aria-hidden="true"></span></a>
         {{ else }}{{ end }}
       {{ end }}
     </div>
