@@ -3,11 +3,15 @@
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
   var comment_id = "{{ .UniqueID }}";
-//   if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-//     console.log(comment_id, comment_id.length);
-//     document.getElementById('gitalk-container').innerHTML =
-//       'Gitalk comments not available by default when the website is previewed locally.';
-//   } else {
+  var page_url = decodeURI({{ .URL }});
+  if (page_url.length <= 50) 
+    comment_id = page_url
+  }
+  if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+    console.log(comment_id, comment_id.length);
+    document.getElementById('gitalk-container').innerHTML =
+      'Gitalk comments not available by default when the website is previewed locally.';
+  } else {
     var Gitalk = new Gitalk({
       clientID: {{ .Site.Params.GitalkClientID }},
       clientSecret: {{ .Site.Params.gitalkClientSecret }},
@@ -18,5 +22,5 @@
       distractionFreeMode: false // Facebook-like distraction free mode
     })
     Gitalk.render('gitalk-container')
-//   }
+  }
 </script>
