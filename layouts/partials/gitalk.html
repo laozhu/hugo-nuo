@@ -4,7 +4,7 @@
 <script>
   var comment_id = "{{ .UniqueID }}";
   var page_url = decodeURI({{ .URL }});
-  if (page_url.length <= 50) 
+  if (page_url.length <= 50) {
     comment_id = page_url
   }
   if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
