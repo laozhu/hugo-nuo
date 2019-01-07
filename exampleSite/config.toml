@@ -38,7 +38,7 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
 [params]
   author = "Ritchie Zhu"
   bg = "images/grey-prism.svg"
-  avatar = "images/avatar.jpg"
+  avatar = "images/avatar.png"
   seotitle = "Hugo Blog (SEO Version)"
   subtitle = "~ Keep It Simple & Stupid ~"
   description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
