@@ -71,6 +71,9 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   # npm = "laozhu"
   # reddit = "melaozhu"
 
+  # Overrid theme styles in this file
+  # customStyle = "styles/custom.scss"
+
   # Changyan Comments (China Only)
   changyan = false
   changyanId = "cyt3toRiB"

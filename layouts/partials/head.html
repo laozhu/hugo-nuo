@@ -11,6 +11,7 @@
 {{- $bg := resources.Get (.Site.Params.bg | default "images/grey-prism.svg") -}}
 {{- $avatar := resources.Get (.Site.Params.avatar | default "images/avatar.png") -}}
 {{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify -}}
+{{- $customStyle := resources.Get (.Site.Params.customStyle | default "styles/custom.scss") | resources.ToCSS | resources.Minify -}}
 
   <!-- DNS Prefetch -->
   <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
@@ -116,6 +117,7 @@
 
 <!-- Preload -->
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+{{ with .Site.Params.customStyle }}<link rel="preload" href="{{ $customStyle.RelPermalink }}" as="style">{{ end }}
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
 <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image">
 <link rel="preload" href="{{ $bg.RelPermalink }}" as="image">
@@ -127,6 +129,7 @@
   }
 </style>
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ with .Site.Params.customStyle }}<link rel="stylesheet" href="{{ $customStyle.RelPermalink }}">{{ end }}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 
 <!-- Medium Zoom -->

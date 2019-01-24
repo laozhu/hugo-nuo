@@ -289,6 +289,39 @@ The resume page will be located at `/resume` off your website root. Different
 from the about page, the resume page is intended as a one pager that you
 can print out for job hunting.
 
+## Custom theme
+
+If you don't want change default theme SCSS files, you can override styles with an custom SCSS file. Set file in your `config.toml` as below.
+
+```toml
+[params]
+  # Overrid theme styles in this file
+  customStyle = "styles/custom.scss"
+```
+
+Then create `styles/custom.scss` file and write your own styles there. your custom rules will override the default ones. you can place custom.scss in theme-scoped or site-scoped assets folder.
+
+```
+.
+├── README.md
+├── assets
+│   └── styles
+│       └── custom.scss ✅
+├── config.toml
+├── content
+└── themes
+    └── hugo-nuo
+        ├── assets
+            │   ├── images
+            │   ├── scripts
+            │   ├── service-worker.js
+            │   └── styles
+                    ├── partials
+                    ├── main.scss
+            │       └── custom.scss ✅
+            └── theme.toml
+```
+
 ## Build
 
 > **⚠️ Big Change**

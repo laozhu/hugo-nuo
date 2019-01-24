@@ -15,6 +15,7 @@ var filesToCache = [
   'images/grey-prism.svg',
   'images/qrcode.jpg',
   'styles/main.min.css',
+  'styles/custom.min.css',
   'scripts/index.min.js',
 
   // Google fonts
