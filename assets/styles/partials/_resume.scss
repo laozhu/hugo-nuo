@@ -55,7 +55,7 @@
     font-size: 0.8em;
   }
 
-  @media print, screen and (max-width: 800px) {
+  @media print, screen and (max-width: $tablet) {
     width: 100%;
   }
 }

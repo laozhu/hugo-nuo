@@ -19,7 +19,7 @@
 .cp_embed_wrapper {
   margin: 2rem auto;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     & iframe {
       height: 265px;
     }
@@ -33,12 +33,12 @@
   width: 1054px;
   height: 768px;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: $widescreen) {
     width: 100%;
     height: calc((100vw - 24rem) * 0.729);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     width: 100%;
     height: calc((100vw - 2rem) * 0.729);
   }

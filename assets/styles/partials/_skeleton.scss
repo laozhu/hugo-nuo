@@ -60,7 +60,7 @@ a {
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     position: relative;
     width: 100%;
   }
@@ -87,7 +87,7 @@ a {
     padding: 1.5rem 0;
   }
 
-  @media print, screen and (max-width: 800px) {
+  @media print, screen and (max-width: $tablet) {
     margin-left: 0;
     border-top: 1px solid $main-border;
     border-right: none;
@@ -102,7 +102,7 @@ a {
 .site-footer {
   display: none;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     display: block;
     padding: 2rem 1rem;
     text-align: center;

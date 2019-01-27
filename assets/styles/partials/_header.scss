@@ -11,7 +11,7 @@
     transform: rotate(180deg);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -28,7 +28,7 @@
   font-weight: $weight-bold;
   margin: 1rem auto;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     margin-top: 3rem;
   }
 }
@@ -48,7 +48,7 @@
   background-color: transparent;
   transition: all $easing $speed;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -75,12 +75,12 @@
   }
 
   &.collapsed {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $tablet) {
       max-height: 0;
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     overflow-y: hidden;
     max-height: 1000px;
     transition: max-height $easing $speed;
@@ -110,13 +110,13 @@
   }
 
   &.collapsed {
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $tablet) {
       margin: 0 auto;
       max-height: 0;
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $tablet) {
     position: relative;
     left: 0;
     right: 0;
@@ -127,7 +127,7 @@
     transition: all $easing $speed;
   }
 
-  @media screen and (min-width: 800px) and (max-height: 768px) {
+  @media screen and (min-width: $tablet) and (max-height: $min-height) {
     display: none;
   }
 }

@@ -50,7 +50,7 @@
       padding-right: 9rem;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $tablet) {
       position: static;
       width: 100vw;
       height: 56.25vw;

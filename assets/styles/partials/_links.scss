@@ -41,7 +41,7 @@
       min-width: 100px;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $tablet) {
       width: 50%;
     }
   }
