@@ -221,7 +221,7 @@ weight: 40
 ---
 ```
 
-The links page read data from `data/link.yml` file, now you can add friend's links there. The format looks like:
+The links page read data from `data/links.toml` file, now you can add friend's links there. The format looks like:
 
 ```toml
 [chekun]
@@ -237,7 +237,7 @@ The links page read data from `data/link.yml` file, now you can add friend's lin
   description = "Another full-stack developer"
 ```
 
-The links page need friend's avatar, finally you should add friend's avatar to `content/media/links` directory and link to avatar in the `links.yml` file.
+The links page need friend's avatar, finally you should add friend's avatar to `content/media/links` directory and link to avatar in the `links.toml` file.
 
 ### The about page
 
