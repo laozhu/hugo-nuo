@@ -110,7 +110,6 @@
   & p {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    text-align: justify;
   }
 
   & blockquote {
@@ -168,11 +167,32 @@
     color: $text;
   }
 
+  & .highlight {
+    margin: 2rem auto;
+    border-radius: $radius;
+    overflow: hidden;
+
+    & pre {
+      margin: 0 auto;
+    }
+
+    & td:first-child {
+      & pre {
+        padding-right: 0;
+      }
+    }
+
+    & td:last-child {
+      & pre {
+        padding-left: 0;
+      }
+    }
+  }
+
   & pre {
     margin: 2rem auto;
     padding: 1rem;
     overflow-x: auto;
-    border-radius: $radius;
     font-size: 0.9rem;
     line-height: 1.618;
     white-space: pre;
