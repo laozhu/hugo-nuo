@@ -22,9 +22,13 @@ var filesToCache = [
   'https://fonts.googleapis.com/css?family=Lobster',
   'https://fonts.gstatic.com/s/lobster/v20/neILzCirqoswsqX9zoKmM4MwWJU.woff2',
 
+{{ with .Site.Params.fontAwesome }}
+  // FontAwesome
+  'https://use.fontawesome.com/releases/v5.7.2/css/all.css',
+{{ else }}
   // Iconfont
   'https://at.alicdn.com/t/font_174169_qmgvd10zwbf.woff',
-
+{{ end }}
   // smooth-scroll
   'https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js',
 

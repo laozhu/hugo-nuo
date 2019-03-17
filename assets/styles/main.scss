@@ -1,6 +1,9 @@
 @import 'partials/reset';
 @import 'partials/variables';
+{{- with .Site.Params.fontAwesome -}}
+{{- else -}}
 @import 'partials/icons';
+{{- end -}}
 @import 'partials/skeleton';
 @import 'partials/header';
 @import 'partials/summary';
