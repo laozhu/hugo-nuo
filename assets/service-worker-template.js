@@ -14,8 +14,8 @@ var filesToCache = [
   'images/avatar.png',
   'images/grey-prism.svg',
   'images/qrcode.jpg',
-  'styles/main.min.css',
-  'styles/custom.min.css',
+  'styles/main-rendered.min.css',
+{{ with .Site.Params.customStyle }}'styles/custom.min.css',{{ end }}
   'scripts/index.min.js',
 
   // Google fonts

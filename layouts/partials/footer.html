@@ -1,5 +1,5 @@
 {{- $script := resources.Get "scripts/index.js" | resources.Minify -}}
-{{- $serviceWorker := resources.Get "service-worker.js" -}}
+{{- $serviceWorker := resources.Get "service-worker-template.js" | resources.ExecuteAsTemplate "service-worker.js" . -}}
 
 <!-- Site Footer -->
 <footer class="site-footer">
