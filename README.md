@@ -101,6 +101,10 @@ The following social network icons are available:
 
 You can choose someone to display, the recommend number is 7 icons.
 
+Icons are provided by [iconfont](https://www.iconfont.cn/) by default, but you
+can choose to use [FontAwesome](https://fontawesome.com/) instead by adding
+`fontAwesome = true` to the `[params]` section.
+
 **SEO**
 
 The hugo-nuo theme support [Google](https://www.google.com/webmasters/), [Bing](https://www.bing.com/toolbox/webmaster/), [Baidu](https://zhanzhang.baidu.com/), [Sogou](http://zhanzhang.sogou.com/), [360](http://zhanzhang.so.com/) webmaster's meta verification tool, you can activate as required. The `seotitle` and `description` will show in search results and browser title.

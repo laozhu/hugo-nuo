@@ -32,10 +32,66 @@
   <nav class="social-menu collapsed">
     <h2 class="offscreen">Social Networks</h2>
     <ul class="social-list">
+      {{- $emailIcon := "icon icon-email" -}}
+      {{- $githubIcon := "icon icon-github" -}}
+      {{- $twitterIcon := "icon icon-twitter" -}}
+      {{- $facebookIcon := "icon icon-facebook" -}}
+      {{- $googleIcon := "icon icon-google" -}}
+      {{- $instagramIcon := "icon icon-instagram" -}}
+      {{- $youtubeIcon := "icon icon-youtube" -}}
+      {{- $vimeoIcon := "icon icon-vimeo" -}}
+      {{- $mediumIcon := "icon icon-medium" -}}
+      {{- $redditIcon := "icon icon-reddit" -}}
+      {{- $quoraIcon := "icon icon-quora" -}}
+      {{- $stackoverflowIcon := "icon icon-stackoverflow" -}}
+      {{- $npmIcon := "icon icon-npm" -}}
+      {{- $dribbbleIcon := "icon icon-dribbble" -}}
+      {{- $behanceIcon := "icon icon-behance" -}}
+      {{- $pinterestIcon := "icon icon-pinterest" -}}
+      {{- $jsfiddleIcon := "icon icon-jsfiddle" -}}
+      {{- $codepenIcon := "icon icon-codepen" -}}
+      {{- $codesandboxIcon := "icon icon-codesandbox" -}}
+      {{- $weiboIcon := "icon icon-weibo" -}}
+      {{- $wechatIcon := "icon icon-wechat" -}}
+      {{- $linkedinIcon := "icon icon-linkedin" -}}
+      {{- $zhihuIcon := "icon icon-zhihu" -}}
+      {{- $doubanIcon := "icon icon-douban" -}}
+      {{- $bilibiliIcon := "icon icon-bilibili" -}}
+      {{- $rssIcon := "icon icon-rss" -}}
+
+      {{- with .Site.Params.fontAwesome -}}
+        {{- $emailIcon = "fas fa-envelope" -}}
+        {{- $githubIcon = "fab fa-github" -}}
+        {{- $twitterIcon = "fab fa-twitter" -}}
+        {{- $facebookIcon = "fab fa-facebook" -}}
+        {{- $googleIcon = "fab fa-google-plus-g" -}}
+        {{- $instagramIcon = "fab fa-instagram" -}}
+        {{- $youtubeIcon = "fab fa-youtube" -}}
+        {{- $vimeoIcon = "fab fa-vimeo" -}}
+        {{- $mediumIcon = "fab fa-medium" -}}
+        {{- $redditIcon = "fab fa-reddit" -}}
+        {{- $quoraIcon = "fab fa-quora" -}}
+        {{- $stackoverflowIcon = "fab fa-stack-overflow" -}}
+        {{- $npmIcon = "fab fa-npm" -}}
+        {{- $dribbbleIcon = "fab fa-dribbble" -}}
+        {{- $behanceIcon = "fab fa-behance" -}}
+        {{- $pinterestIcon = "fab fa-pinterest" -}}
+        {{- $jsfiddleIcon = "fab fa-jsfiddle" -}}
+        {{- $codepenIcon = "fab fa-codepen" -}}
+        {{- $codesandboxIcon = "fas fa-code" -}}
+        {{- $weiboIcon = "fab fa-weibo" -}}
+        {{- $wechatIcon = "fab fa-weixin" -}}
+        {{- $linkedinIcon = "fab fa-linkedin" -}}
+        {{- $zhihuIcon = "fab fa-zhihu" -}}
+        {{- $doubanIcon = "fas fa-comment" -}}
+        {{- $bilibiliIcon = "fas fa-video" -}}
+        {{- $rssIcon = "fas fa-rss" -}}
+      {{- end -}}
+
       {{- with .Site.Params.email -}}
         <li class="social-item">
           <a href="mailto:{{ . }}" title="Email" aria-label="Email">
-            <span class="icon icon-email" aria-hidden="true"></span>
+            <span class="{{ $emailIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -43,7 +99,7 @@
       {{- with .Site.Params.github -}}
         <li class="social-item">
           <a href="//github.com/{{ . }}" title="GitHub" aria-label="GitHub">
-            <span class="icon icon-github" aria-hidden="true"></span>
+	    <span class="{{ $githubIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -51,7 +107,7 @@
       {{- with .Site.Params.twitter -}}
         <li class="social-item">
           <a href="//twitter.com/{{ . }}" title="Twitter" aria-label="Twitter">
-            <span class="icon icon-twitter" aria-hidden="true"></span>
+            <span class="{{ $twitterIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -59,7 +115,7 @@
       {{- with .Site.Params.facebook -}}
         <li class="social-item">
           <a href="//www.facebook.com/{{ . }}" title="Facebook" aria-label="Facebook">
-            <span class="icon icon-facebook" aria-hidden="true"></span>
+            <span class="{{ $facebookIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -67,7 +123,7 @@
       {{- with .Site.Params.google -}}
         <li class="social-item">
           <a href="//plus.google.com/{{ . }}" title="Google+" aria-label="Google+">
-            <span class="icon icon-google" aria-hidden="true"></span>
+            <span class="{{ $googleIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -75,7 +131,7 @@
       {{- with .Site.Params.instagram -}}
         <li class="social-item">
           <a href="//www.instagram.com/{{ . }}" title="Instagram" aria-label="Instagram">
-            <span class="icon icon-instagram" aria-hidden="true"></span>
+            <span class="{{ $instagramIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -83,7 +139,7 @@
       {{- with .Site.Params.youtube -}}
         <li class="social-item">
           <a href="//www.youtube.com/user/{{ . }}" title="YouTube" aria-label="YouTube">
-            <span class="icon icon-youtube" aria-hidden="true"></span>
+            <span class="{{ $youtubeIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -91,7 +147,7 @@
       {{- with .Site.Params.vimeo -}}
         <li class="social-item">
           <a href="//vimeo.com/{{ . }}" title="Vimeo" aria-label="Vimeo">
-            <span class="icon icon-vimeo" aria-hidden="true"></span>
+            <span class="{{ $vimeoIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -99,7 +155,7 @@
       {{- with .Site.Params.medium -}}
         <li class="social-item">
           <a href="//medium.com/@{{ . }}" title="Medium" aria-label="Medium">
-            <span class="icon icon-medium" aria-hidden="true"></span>
+            <span class="{{ $mediumIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -107,7 +163,7 @@
       {{- with .Site.Params.reddit -}}
         <li class="social-item">
           <a href="//www.reddit.com/user/{{ . }}" title="Reddit" aria-label="Reddit">
-            <span class="icon icon-reddit" aria-hidden="true"></span>
+            <span class="{{ $redditIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -115,7 +171,7 @@
       {{- with .Site.Params.quora -}}
         <li class="social-item">
           <a href="//www.quora.com/profile/{{ . }}" title="Quora" aria-label="Quora">
-            <span class="icon icon-quora" aria-hidden="true"></span>
+            <span class="{{ $quoraIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -123,7 +179,7 @@
       {{- with .Site.Params.stackoverflow -}}
         <li class="social-item">
           <a href="//stackoverflow.com/users/{{ . }}" title="stackOverflow"  aria-label="stackOverflow">
-            <span class="icon icon-stackoverflow" aria-hidden="true"></span>
+            <span class="{{ $stackoverflowIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -131,7 +187,7 @@
       {{- with .Site.Params.npm -}}
         <li class="social-item">
           <a href="//www.npmjs.com/~{{ . }}" title="NPM" aria-label="NPM">
-            <span class="icon icon-npm" aria-hidden="true"></span>
+            <span class="{{ $npmIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -139,7 +195,7 @@
       {{- with .Site.Params.dribbble -}}
         <li class="social-item">
           <a href="//dribbble.com/{{ . }}" title="Dribbble" aria-label="Dribbble">
-            <span class="icon icon-dribbble" aria-hidden="true"></span>
+            <span class="{{ $dribbbleIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -147,7 +203,7 @@
       {{- with .Site.Params.behance -}}
         <li class="social-item">
           <a href="//www.behance.net/{{ . }}" title="Behance" aria-label="Behance">
-            <span class="icon icon-behance" aria-hidden="true"></span>
+            <span class="{{ $behanceIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -155,7 +211,7 @@
       {{- with .Site.Params.pinterest -}}
         <li class="social-item">
           <a href="//www.pinterest.com/{{ . }}" title="Pinterest" aria-label="Pinterest">
-            <span class="icon icon-pinterest" aria-hidden="true"></span>
+            <span class="{{ $pinterestIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -163,7 +219,7 @@
       {{- with .Site.Params.jsfiddle -}}
         <li class="social-item">
           <a href="//jsfiddle.net/user/{{ . }}" title="JSFiddle" aria-label="JSFiddle">
-            <span class="icon icon-jsfiddle" aria-hidden="true"></span>
+            <span class="{{ $jsfiddleIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -171,7 +227,7 @@
       {{- with .Site.Params.codepen -}}
         <li class="social-item">
           <a href="//codepen.io/{{ . }}" title="Codepen" aria-label="Codepen">
-            <span class="icon icon-codepen" aria-hidden="true"></span>
+            <span class="{{ $codepenIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -179,7 +235,7 @@
       {{- with .Site.Params.codesandbox -}}
         <li class="social-item">
           <a href="//codesandbox.io/u/{{ . }}" title="CodeSandbox" aria-label="CodeSandbox">
-            <span class="icon icon-codesandbox" aria-hidden="true"></span>
+            <span class="{{ $codesandboxIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -187,7 +243,7 @@
       {{- with .Site.Params.weibo -}}
         <li class="social-item">
           <a href="//weibo.com/{{ . }}" title="Weibo" aria-label="Weibo">
-            <span class="icon icon-weibo" aria-hidden="true"></span>
+            <span class="{{ $weiboIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -195,7 +251,7 @@
       {{- with .Site.Params.wechat -}}
         <li class="social-item">
           <a href="{{ $wechat.RelPermalink }}" title="Wechat" aria-label="Wechat">
-            <span class="icon icon-wechat" aria-hidden="true"></span>
+            <span class="{{ $wechatIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -203,7 +259,7 @@
       {{- with .Site.Params.linkedin -}}
         <li class="social-item">
           <a href="//www.linkedin.com/in/{{ . }}" title="Linkedin" aria-label="Linkedin">
-            <span class="icon icon-linkedin" aria-hidden="true"></span>
+            <span class="{{ $linkedinIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -211,7 +267,7 @@
       {{- with .Site.Params.zhihu -}}
         <li class="social-item">
           <a href="//www.zhihu.com/people/{{ . }}" title="Zhihu" aria-label="Zhihu">
-            <span class="icon icon-zhihu" aria-hidden="true"></span>
+            <span class="{{ $zhihuIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -219,7 +275,7 @@
       {{- with .Site.Params.douban -}}
         <li class="social-item">
           <a href="//www.douban.com/people/{{ . }}" title="Douban" aria-label="Douban">
-            <span class="icon icon-douban" aria-hidden="true"></span>
+            <span class="{{ $doubanIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -227,7 +283,7 @@
       {{- with .Site.Params.bilibili -}}
         <li class="social-item">
           <a href="//space.bilibili.com/{{ . }}" title="Bilibili" aria-label="Bilibili">
-            <span class="icon icon-bilibili" aria-hidden="true"></span>
+            <span class="{{ $bilibiliIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}
@@ -235,7 +291,7 @@
       {{- with .Site.Params.rss -}}
         <li class="social-item">
           <a rel="alternate" type="application/rss+xml" href="{{ . | relURL }}" title="RSS" aria-label="RSS">
-            <span class="icon icon-rss" aria-hidden="true"></span>
+            <span class="{{ $rssIcon }}" aria-hidden="true"></span>
           </a>
         </li>
       {{- end -}}

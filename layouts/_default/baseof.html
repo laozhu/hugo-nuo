@@ -20,15 +20,21 @@
 </head>
   <body>
     {{ if ne .Kind "404" }}
+    {{- $upIcon := "icon icon-up" -}}
+    {{- $commentIcon := "icon icon-comment" -}}
+    {{- with .Site.Params.fontAwesome -}}
+      {{- $upIcon = "fas fa-caret-up" -}}
+      {{- $commentIcon = "fas fa-comment-dots" -}}
+    {{- end -}}
     <div class="suspension">
-      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="{{ $upIcon }}" aria-hidden="true"></span></a>
       {{ if and (eq .Type "post") (eq .Kind "page") }}
         {{ if .Site.Params.changyan }}
-        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#SOHUCS"><span class="icon icon-comment" aria-hidden="true"></span></a>
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#SOHUCS"><span class="{{ $commentIcon }}" aria-hidden="true"></span></a>
         {{ else if .Site.DisqusShortname }}
-        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment" aria-hidden="true"></span></a>
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#disqus_thread"><span class="{{ $commentIcon }}" aria-hidden="true"></span></a>
         {{ else if .Site.Params.Gitment }}
-        <a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#gitment-container"><span class="icon icon-comment" aria-hidden="true"></span></a>
+	<a role="button" aria-label="Go to comments" title="Go to comments" class="to-comment" href="#gitment-container"><span class="{{ $commentIcon }}" aria-hidden="true"></span></a>
         {{ else }}{{ end }}
       {{ end }}
     </div>

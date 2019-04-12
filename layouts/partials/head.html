@@ -10,13 +10,18 @@
 {{- $manifest := "manifest.json" -}}
 {{- $bg := resources.Get (.Site.Params.bg | default "images/grey-prism.svg") -}}
 {{- $avatar := resources.Get (.Site.Params.avatar | default "images/avatar.png") -}}
-{{- $style := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify -}}
+{{- $style := resources.Get "styles/main.scss" | resources.ExecuteAsTemplate "styles/main-rendered.scss" . | resources.ToCSS | resources.Minify -}}
 {{- $customStyle := resources.Get (.Site.Params.customStyle | default "styles/custom.scss") | resources.ToCSS | resources.Minify -}}
-
+{{- $fontAwesome := "https://use.fontawesome.com/releases/v5.8.1/css/all.css" -}}
+{{- $fontAwesomeIntegrity := "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" -}}
   <!-- DNS Prefetch -->
   <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
   <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  {{ with .Site.Params.fontAwesome }}
+  <link href="//use.fontawesome.com" rel="dns-prefetch">
+  {{ else }}
   <link href="//at.alicdn.com" rel="dns-prefetch">
+  {{ end }}
   <link href="//fonts.googleapis.com" rel="dns-prefetch">
   <link href="//fonts.gstatic.com" rel="dns-prefetch">
   {{ with .Site.DisqusShortname }}<link href="///disqus.com" rel="dns-prefetch">{{ end }}
@@ -117,6 +122,7 @@
 
 <!-- Preload -->
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+<!-- FontAwesome is not preloaded because we use integrity and https://bugs.chromium.org/p/chromium/issues/detail?id=677022  -->
 {{ with .Site.Params.customStyle }}<link rel="preload" href="{{ $customStyle.RelPermalink }}" as="style">{{ end }}
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
 <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image">
@@ -129,6 +135,9 @@
   }
 </style>
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ with .Site.Params.fontAwesome }}
+<link rel="stylesheet" href="{{ $fontAwesome }}" {{ printf "integrity=%q" $fontAwesomeIntegrity | safeHTMLAttr }} crossorigin="anonymous">
+{{ end }}
 {{ with .Site.Params.customStyle }}<link rel="stylesheet" href="{{ $customStyle.RelPermalink }}">{{ end }}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 
