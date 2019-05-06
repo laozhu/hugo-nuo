@@ -326,6 +326,24 @@ Then create `styles/custom.scss` file and write your own styles there. your cust
             └── theme.toml
 ```
 
+If you want to change avatar or favicons without modifying this theme, just copy `themes/hugo-nuo/assets` and `themes/hugo-nuo/static` to your blog root dir and keep the filename the same with theme.
+
+```bash
+~/D/@/my-blog ❯❯❯ tree -L 2
+.
+├── config.toml
+├── assets
+│   └── images          <-- replace images
+├── static
+│   ├── favicon.ico     <-- replace favicon.ico
+│   ├── icons           <-- replace icons
+│   └── manifest.json
+└── themes
+    └── hugo-nuo
+```
+
+Above is your blog repo structure, now you can replace images with your own, and don't need to modify theme anymore.
+
 ## Build
 
 > **⚠️ Big Change**
