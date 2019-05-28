@@ -2,11 +2,11 @@
 {{- $avatar := resources.Get (.Site.Params.avatar | default "images/avatar.png") -}}
 
 <header class="site-header">
-  <img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar">
+  <a href="{{ .Site.BaseURL }}"><img class="avatar" src="{{ $avatar.RelPermalink }}" alt="Avatar"></a>
   {{  if eq .Kind "home" }}
-  <h1 class="title">{{ .Site.Title }}</h1>
+  <h1 class="title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
   {{ else }}
-  <h2 class="title">{{ .Site.Title }}</h2>
+  <h2 class="title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
   {{ end }}
   <p class="subtitle">{{ .Site.Params.subtitle }}</p>
   <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
