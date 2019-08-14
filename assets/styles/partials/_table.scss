@@ -9,7 +9,7 @@ table {
     border: 1px solid $table-border;
     border-width: 0 0 1px;
     padding: 0.5em 0.75em;
-    vertical-align: center;
+    vertical-align: middle;
     // Modifiers
     &.is-narrow {
       white-space: nowrap;
