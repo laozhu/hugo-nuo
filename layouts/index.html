@@ -3,7 +3,7 @@
   <header class="list-header offscreen">
     <h2 class="list-label">All Posts</h2>
   </header>
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 10) }}
+  {{ $paginator := .Paginate (where site.RegularPages "Type" "post") (index .Site.Params "paginate" | default 10) }}
   {{ if ne $paginator.TotalPages 0 }}
   {{ range $paginator.Pages.ByDate.Reverse }} {{ .Render "summary" }} {{ end }}
   {{ else }}
@@ -14,13 +14,9 @@
     <nav class="pagination">
       <h3 class="offscreen">Pagination</h3>
       {{ if $paginator.HasPrev }}
-      <a class="pagination-previous" href="{{ $paginator.Prev.URL }}"
-        >← Newer Posts</a
-      >
+      <a class="pagination-previous" href="{{ $paginator.Prev.URL }}">← Newer Posts</a>
       {{ end }} {{ if $paginator.HasNext }}
-      <a class="pagination-next" href="{{ $paginator.Next.URL }}"
-        >Older Posts →</a
-      >
+      <a class="pagination-next" href="{{ $paginator.Next.URL }}">Older Posts →</a>
       {{ end }}
     </nav>
   </footer>
