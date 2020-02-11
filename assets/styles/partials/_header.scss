@@ -8,7 +8,7 @@
   transition: all $easing $speed;
 
   &:hover {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 
   @media screen and (max-width: $tablet) {
