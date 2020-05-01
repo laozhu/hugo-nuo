@@ -7,6 +7,7 @@
     display: inline-block;
     width: 25%;
     box-sizing: border-box;
+    vertical-align: top;
 
     & + .link-item {
       padding-left: 1rem;
